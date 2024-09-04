@@ -1,36 +1,32 @@
-﻿#if UDONSHARP
-using UdonSharp;
+﻿#if PVR_CCK_WORLDS
+using PVR.PSharp;
 
 using UnityEngine.UI;
 
-using VRC.SDKBase;
 
 namespace AudioLink
 {
-    [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
-    public class GlobalToggle : UdonSharpBehaviour
+    public class GlobalToggle : PSharpBehaviour
     {
-        [UdonSynced]
+        [PSharpSynced(SyncType.Manual)]
         private bool syncedValue;
         private bool deserializing;
         private Toggle toggle;
-        private VRCPlayerApi localPlayer;
+        private PSharpPlayer localPlayer;
 
         private void Start()
         {
             toggle = transform.GetComponent<Toggle>();
-            localPlayer = Networking.LocalPlayer;
+            localPlayer = PSharpPlayer.LocalPlayer;
             syncedValue = toggle.isOn;
             deserializing = false;
 
-            if (Networking.IsOwner(gameObject))
-                RequestSerialization();
+            if (PSharpNetworking.IsOwner(localPlayer, gameObject))
+                Sync("syncedValue");
         }
 
         public override void OnDeserialization()
         {
-            if (!enabled) return;
-
             deserializing = true;
             toggle.isOn = syncedValue;
             deserializing = false;
@@ -38,17 +34,15 @@ namespace AudioLink
 
         public void ToggleUpdate()
         {
-            if (!enabled) return;
-            
             if (toggle == null)
                 return;
             if (deserializing)
                 return;
-            if (!Networking.IsOwner(gameObject))
-                Networking.SetOwner(localPlayer, gameObject);
+            if (!PSharpNetworking.IsOwner(localPlayer, gameObject))
+                PSharpNetworking.SetOwner(localPlayer, gameObject);
 
             syncedValue = toggle.isOn;
-            RequestSerialization();
+            Sync("syncedValue");
         }
     }
 }

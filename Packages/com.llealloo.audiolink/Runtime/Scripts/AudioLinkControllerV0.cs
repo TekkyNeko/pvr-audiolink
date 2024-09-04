@@ -3,15 +3,13 @@ using UnityEngine.UI;
 
 namespace AudioLink
 {
-#if UDONSHARP
-    using UdonSharp;
-    using VRC.SDKBase;
-    using VRC.Udon;
-    using static VRC.SDKBase.VRCShader;
-
-    public class AudioLinkControllerV0 : UdonSharpBehaviour
-#else
     using static Shader;
+
+#if PVR_CCK_WORLDS
+    using PVR.PSharp;
+    
+    public class AudioLinkControllerV0 : PSharpBehaviour
+#else
 
     public class AudioLinkControllerV0 : MonoBehaviour
 #endif
@@ -86,6 +84,13 @@ namespace AudioLink
         }
 
         #endregion
+
+#if UNITY_EDITOR
+        void Update()
+        {
+            //UpdateSettings();
+        }
+#endif
 
         ThemeColorControllerV0 FindThemeColorController()
         {

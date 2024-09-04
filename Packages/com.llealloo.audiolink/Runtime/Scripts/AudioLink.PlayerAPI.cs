@@ -1,8 +1,11 @@
 ﻿
 using UnityEngine;
-
+using PVR.PSharp;
 namespace AudioLink
 {
+    public class AudioLinkPlayerAPI : PSharpBehaviour {
+        // Stub to attach to AudioLink due to a PVR limitation
+    }
     public partial class AudioLink
     {
         /// <summary>

@@ -3,27 +3,25 @@ using UnityEngine.UI;
 
 namespace AudioLink
 {
-#if UDONSHARP
-    using UdonSharp;
-    using VRC.SDKBase;
-    using VRC.Udon;
-    using static VRC.SDKBase.VRCShader;
-
-    public class AudioLinkController : UdonSharpBehaviour
-#else
     using static Shader;
+#if PVR_CCK_WORLDS
+    using PVR.PSharp;
+    public class AudioLinkController : PSharpBehaviour
+#else
+    
 
     public class AudioLinkController : MonoBehaviour
 #endif
     {
         [Space(10)]
         public AudioLink audioLink;
-        public ControllerSyncMode controllerSyncMode;
-        [Space(25)]
+        [Space(10)]
         [Header("Internal (Do not modify)")]
         public ThemeColorController themeColorController;
         public Material audioLinkUI;
         public Slider gainSlider;
+        public Slider trebleSlider;
+        public Slider bassSlider;
         public Slider fadeLengthSlider;
         public Slider fadeExpFalloffSlider;
         public Slider x0Slider;
@@ -94,46 +92,18 @@ namespace AudioLink
 
         #endregion
 
+#if UNITY_EDITOR
+        void Update()
+        {
+            //UpdateSettings();
+        }
+#endif
+
         ThemeColorController FindThemeColorController()
         {
             Transform controllerTransform = transform.Find("ThemeColorController");
             if (controllerTransform == null) return null;
             return controllerTransform.GetComponent<ThemeColorController>();
-        }
-
-        private void UpdateSyncMode(Transform inputTransform, ControllerSyncMode userSyncMode, ControllerSyncMode desiredSyncMode)
-        {
-
-            #if UDONSHARP
-
-                inputTransform.GetComponent<UdonBehaviour>().enabled = (int)userSyncMode < (int)desiredSyncMode;
-
-            #endif
-
-        }
-
-        public void SetControllerSyncMode(ControllerSyncMode syncMode)
-        {
-            
-            UpdateSyncMode(gainSlider.transform, syncMode, ControllerSyncMode.ExcludePowerAndGain);
-            UpdateSyncMode(fadeLengthSlider.transform, syncMode, ControllerSyncMode.None);
-            UpdateSyncMode(fadeExpFalloffSlider.transform, syncMode, ControllerSyncMode.None);
-
-            UpdateSyncMode(x0Slider.transform, syncMode, ControllerSyncMode.None);
-            UpdateSyncMode(x1Slider.transform, syncMode, ControllerSyncMode.None);
-            UpdateSyncMode(x2Slider.transform, syncMode, ControllerSyncMode.None);
-            UpdateSyncMode(x3Slider.transform, syncMode, ControllerSyncMode.None);
-
-            UpdateSyncMode(threshold0Slider.transform, syncMode, ControllerSyncMode.None);
-            UpdateSyncMode(threshold1Slider.transform, syncMode, ControllerSyncMode.None);
-            UpdateSyncMode(threshold2Slider.transform, syncMode, ControllerSyncMode.None);
-            UpdateSyncMode(threshold3Slider.transform, syncMode, ControllerSyncMode.None);
-
-            UpdateSyncMode(autoGainToggle.transform, syncMode, ControllerSyncMode.None);
-            UpdateSyncMode(powerToggle.transform, syncMode, ControllerSyncMode.ExcludePower);
-
-            themeColorController.networkSynced = (int)syncMode < (int)ControllerSyncMode.None;
-
         }
 
         void Start()
@@ -165,12 +135,12 @@ namespace AudioLink
                 themeColorController.audioLinkUI = audioLinkUI;
                 themeColorController.InitializeAudioLinkThemeColors();
             }
-            
-            SetControllerSyncMode(controllerSyncMode);
 
             GetSettings();
 
             _initGain = gainSlider.value;
+            //_initTreble = trebleSlider.value;
+            //_initBass = bassSlider.value;
             _initFadeLength = fadeLengthSlider.value;
             _initFadeExpFalloff = fadeExpFalloffSlider.value;
             _initAutoGain = autoGainToggle.isOn;
@@ -194,6 +164,8 @@ namespace AudioLink
         {
             // General settings
             gainSlider.SetValueWithoutNotify(audioLink.gain);
+            //trebleSlider.value = audioLink.treble;
+            //bassSlider.value = audioLink.bass;
             fadeLengthSlider.SetValueWithoutNotify(audioLink.fadeLength);
             fadeExpFalloffSlider.SetValueWithoutNotify(audioLink.fadeExpFalloff);
             autoGainToggle.SetIsOnWithoutNotify(audioLink.autogain);
@@ -209,19 +181,33 @@ namespace AudioLink
             threshold3Slider.SetValueWithoutNotify(audioLink.threshold3);
 
             // Send events
-#if UDONSHARP
-            gainSlider.GetComponent<GlobalSlider>().SlideUpdate();
-            fadeLengthSlider.GetComponent<GlobalSlider>().SlideUpdate();
-            fadeExpFalloffSlider.GetComponent<GlobalSlider>().SlideUpdate();
-            autoGainToggle.GetComponent<GlobalToggle>().ToggleUpdate();
-            x0Slider.GetComponent<GlobalSlider>().SlideUpdate();
-            x1Slider.GetComponent<GlobalSlider>().SlideUpdate();
-            x2Slider.GetComponent<GlobalSlider>().SlideUpdate();
-            x3Slider.GetComponent<GlobalSlider>().SlideUpdate();
-            threshold0Slider.GetComponent<GlobalSlider>().SlideUpdate();
-            threshold1Slider.GetComponent<GlobalSlider>().SlideUpdate();
-            threshold2Slider.GetComponent<GlobalSlider>().SlideUpdate();
-            threshold3Slider.GetComponent<GlobalSlider>().SlideUpdate();
+#if PVR_CCK_WORLDS
+            //Initialize vars to store components temporarily due to PVR limitations
+            var gainSliderVar = (GlobalSlider)gainSlider.GetComponent(typeof(GlobalSlider));
+            var fadeLengthSliderVar = (GlobalSlider)fadeLengthSlider.GetComponent(typeof(GlobalSlider));
+            var fadeExpFalloffSliderVar = (GlobalSlider)fadeExpFalloffSlider.GetComponent(typeof(GlobalSlider));
+            var autoGainToggleVar = (GlobalToggle)autoGainToggle.GetComponent(typeof(GlobalToggle));
+            var x0SliderVar = (GlobalSlider)x0Slider.GetComponent(typeof(GlobalSlider));
+            var x1SliderVar = (GlobalSlider)x1Slider.GetComponent(typeof(GlobalSlider));
+            var x2SliderVar = (GlobalSlider)x2Slider.GetComponent(typeof(GlobalSlider));
+            var x3SliderVar = (GlobalSlider)x3Slider.GetComponent(typeof(GlobalSlider));
+            var threshold0SliderVar = (GlobalSlider)threshold0Slider.GetComponent(typeof(GlobalSlider));
+            var threshold1SliderVar = (GlobalSlider)threshold1Slider.GetComponent(typeof(GlobalSlider));
+            var threshold2SliderVar = (GlobalSlider)threshold2Slider.GetComponent(typeof(GlobalSlider));
+            var threshold3SliderVar = (GlobalSlider)threshold3Slider.GetComponent(typeof(GlobalSlider));
+
+            gainSliderVar.SlideUpdate();
+            fadeLengthSliderVar.SlideUpdate();
+            fadeExpFalloffSliderVar.SlideUpdate();
+            autoGainToggleVar.ToggleUpdate();
+            x0SliderVar.SlideUpdate();
+            x1SliderVar.SlideUpdate();
+            x2SliderVar.SlideUpdate();
+            x3SliderVar.SlideUpdate();
+            threshold0SliderVar.SlideUpdate();
+            threshold1SliderVar.SlideUpdate();
+            threshold2SliderVar.SlideUpdate();
+            threshold3SliderVar.SlideUpdate();
 #endif
         }
 
@@ -262,6 +248,8 @@ namespace AudioLink
             }
             // General settings
             audioLink.gain = gainSlider.value;
+            // audioLink.treble = trebleSlider.value;
+            // audioLink.bass = bassSlider.value;
             audioLink.fadeLength = fadeLengthSlider.value;
             audioLink.fadeExpFalloff = fadeExpFalloffSlider.value;
             audioLink.autogain = autoGainToggle.isOn;
@@ -279,12 +267,21 @@ namespace AudioLink
             audioLink.UpdateSettings();
 
             // Toggle
-            audioLink.SetAudioLinkState(powerToggle.isOn);
+            if (powerToggle.isOn)
+            {
+                audioLink.EnableAudioLink();
+            }
+            else
+            {
+                audioLink.DisableAudioLink();
+            }
         }
 
         public void ResetSettings()
         {
             gainSlider.value = _initGain;
+            //trebleSlider.value = _initTreble;
+            // bassSlider.value = _initBass;
             fadeLengthSlider.value = _initFadeLength;
             fadeExpFalloffSlider.value = _initFadeExpFalloff;
             autoGainToggle.isOn = _initAutoGain;
@@ -307,12 +304,5 @@ namespace AudioLink
         {
             return ((t - a) / (b - a)) * (v - u) + u;
         }
-    }
-
-    public enum ControllerSyncMode {
-        All = 0,
-        ExcludePower = 1,
-        ExcludePowerAndGain = 2,
-        None = 3
     }
 }

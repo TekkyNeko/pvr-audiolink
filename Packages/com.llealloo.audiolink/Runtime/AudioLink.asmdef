@@ -1,10 +1,7 @@
 {
     "name": "AudioLink",
-    "references": [
-        "UdonSharp.Runtime",
-        "UdonSharp.Lib",
-        "VRC.Udon"
-    ],
+    "rootNamespace": "",
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

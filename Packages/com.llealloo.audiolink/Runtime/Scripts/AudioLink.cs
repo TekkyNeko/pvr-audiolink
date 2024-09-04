@@ -4,34 +4,25 @@ using UnityEngine;
 
 namespace AudioLink
 {
-#if UDONSHARP
-    using UdonSharp;
-    using VRC.SDK3.Rendering;
-    using VRC.SDKBase;
-    using static VRC.SDKBase.VRCShader;
-
-    [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
-    public partial class AudioLink : UdonSharpBehaviour
-#else
     using Unity.Collections;
     using UnityEngine.Rendering;
     using static Shader;
 
-#if UNITY_WEBGL
-    using System.Runtime.InteropServices;
-#endif
-
+#if PVR_CCK_WORLDS
+    using PVR.PSharp;
+    public partial class AudioLink : PSharpBehaviour
+#else
     public partial class AudioLink : MonoBehaviour
 #endif
+    
     {
+        
         const float AudioLinkVersionNumberMajor = 1.00f;
         const float AudioLinkVersionNumberMinor = 4.00f;
 
         [Header("Main Settings")]
         [Tooltip("Should be used with AudioLinkInput unless source is 2D. WARNING: if used with a custom 3D audio source (not through AudioLinkInput), audio reactivity will be attenuated by player position away from the Audio Source")]
         public AudioSource audioSource;
-        [Tooltip("Optional Right Audio Source for Dual Mono setups (AVPro video players)")]
-        public AudioSource optionalRightAudioSource;
 
         [Header("Basic EQ")]
         [Range(0.0f, 2.0f)]
@@ -96,9 +87,9 @@ namespace AudioLink
 
         [Header("Theme Colors")]
         [Tooltip("Enable for custom theme colors for Avatars to use.")]
-#if UNITY_EDITOR
-        [Editor.StringInList("ColorChord Colors", "Custom")]
-#endif
+// #if UNITY_EDITOR
+//         [Editor.StringInList("ColorChord Colors", "Custom")]
+// #endif
         public int themeColorMode;
         public Color customThemeColor0 = new Color(1.0f, 1.0f, 0.0f, 1.0f);
         public Color customThemeColor1 = new Color(0.0f, 0.0f, 1.0f, 1.0f);
@@ -106,8 +97,8 @@ namespace AudioLink
         public Color customThemeColor3 = new Color(0.0f, 1.0f, 0.0f, 1.0f);
 
         [Header("Custom Global Strings")]
-        [UdonSynced] public string customString1;
-        [UdonSynced] public string customString2;
+        [PSharpSynced(SyncType.Manual)] public string customString1;
+        [PSharpSynced(SyncType.Manual)] public string customString2;
 
         [HideInInspector] public Material audioMaterial;
         [HideInInspector] public CustomRenderTexture audioRenderTexture;
@@ -131,24 +122,19 @@ namespace AudioLink
 
         private string _masterName;
         // Mechanism to provide sync'd instance time to all avatars.
-        [UdonSynced] private double _masterInstanceJoinTime;
+        [PSharpSynced(SyncType.Manual)] private double _masterInstanceJoinTime;
         private double _elapsedTime = 0;
         private double _elapsedTimeMSW = 0;
         private int _networkTimeMS;
         private double _networkTimeMSAccumulatedError;
-#if UDONSHARP
+#if PVR_CCK_WORLDS
         private bool _hasInitializedTime = false;
-        private VRCPlayerApi _localPlayer;
+        private PSharpPlayer _localPlayer;
 #endif
         private double _fpsTime = 0;
         private int _fpsCount = 0;
 
-#if UDONSHARP
-        private double GetElapsedSecondsSince2019() { return (Networking.GetNetworkDateTime() - new DateTime(2020, 1, 1)).TotalSeconds; }
-        //private double GetElapsedSecondsSinceMidnightUTC() { return (Networking.GetNetworkDateTime() - DateTime.UtcNow.Date ).TotalSeconds; }
-#else
         private double GetElapsedSecondsSince2019() { return (DateTime.UtcNow - new DateTime(2020, 1, 1)).TotalSeconds; }
-#endif
 
         // Fix for AVPro mono game output bug (if running the game with a mono output source like a headset)
         private int _rightChannelTestDelay = 300;
@@ -216,25 +202,6 @@ namespace AudioLink
         private int _Samples3R;
         // ReSharper restore InconsistentNaming
 
-#if UNITY_WEBGL
-
-        public static WebALPeer audioLinkWebPeer { get; private set; }
-
-        [DllImport("__Internal")]
-        private static extern int SetupAnalyzerSpace();
-        [DllImport("__Internal")]
-        private static extern int LinkAnalyzer(int ID, float duration, int bufferSize);
-        [DllImport("__Internal")]
-        private static extern int UnlinkAnalyzer(int ID);
-        [DllImport("__Internal")]
-        private static extern int FetchAnalyzerLeft(int ID, float[] timeDomainDataLeft, int size);
-        [DllImport("__Internal")]
-        private static extern int FetchAnalyzerRight(int ID, float[] timeDomainDataRight, int size);
-
-        private int WebALID = 0;
-
-#endif
-
         private bool _IsInitialized = false;
         private void InitIDs()
         {
@@ -298,67 +265,26 @@ namespace AudioLink
         // TODO(3): try to port this to standalone
         void Start()
         {
-#if UDONSHARP
-            {
-                // Handle sync'd time stuff.
-                // OLD NOTES
-                //Originally used GetServerTimeInMilliseconds
-                //Networking.GetServerTimeInMilliseconds will alias to every 49.7 days (2^32ms). GetServerTimeInSeconds also aliases.
-                //We still alias, but TCL suggested using Networking.GetNetworkDateTime.
-                //DateTime currentDate = Networking.GetNetworkDateTime();
-                //UInt64 currentTimeTicks = (UInt64)(currentDate.Ticks/TimeSpan.TicksPerMillisecond);
-                // NEW NOTES
-                //We now just compute delta times per frame.
 
-                double startTime = GetElapsedSecondsSince2019();
-                _networkTimeMS = Networking.GetServerTimeInMilliseconds();
-                if (Networking.IsMaster)
-                {
-                    _masterInstanceJoinTime = startTime;
-                    RequestSerialization();
-                }
-
-                //_networkTimeOfDayUTC = GetElapsedSecondsSinceMidnightUTC();
-                //Debug.Log($"[AudioLink] _networkTimeOfDayUTC = {_networkTimeOfDayUTC}" );
-                //Debug.Log($"[AudioLink] _networkTimeMS = {_networkTimeMS}");
-                //Debug.Log($"[AudioLink] Time Sync Debug: IsMaster: {Networking.IsMaster} startTime: {startTime}");
-
-                _rightChannelTestCounter = _rightChannelTestDelay;
-
-                // Set localplayer name on start
-                _localPlayer = Networking.LocalPlayer;
-                if (VRC.SDKBase.Utilities.IsValid(_localPlayer))
-                {
-                    UpdateGlobalString(_StringLocalPlayer, _localPlayer.displayName);
-                }
-
-                // Set master name once on start
-                FindAndUpdateMasterName();
+#if PVR_CCK_WORLDS
+        {
+            double startTime = GetElapsedSecondsSince2019();
+            _localPlayer = PSharpPlayer.LocalPlayer;
+            if(_localPlayer.IsMaster) {
+                _masterInstanceJoinTime = startTime;
+                Sync("_masterInstanceJoinTime");
             }
-#elif UNITY_WEBGL && !UNITY_EDITOR
+            _rightChannelTestCounter = _rightChannelTestDelay;
 
-            SetupAnalyzerSpace();
-            audioLinkWebPeer = new WebALPeer();
+            
+            if(!_localPlayer.IsNull) {
+                UpdateGlobalString(_StringLocalPlayer, _localPlayer.Username);
+            }
 
-            WebALID = UnityEngine.Random.Range(0, 99999);
-
-            LinkAnalyzer(WebALID, audioSource.clip.length, 4096);
-
-            Application.focusChanged += (focus) => 
-            {
-                if (_audioLinkEnabled) 
-                {
-                    if (focus) 
-                    {
-                        LinkAnalyzer(WebALID, audioSource.clip.length, 4096);
-                    }
-                    else
-                        UnlinkAnalyzer(WebALID);
-                }
-            };
-
+            FindAndUpdateMasterName();
+        }
+            
 #endif
-
             UpdateSettings();
             UpdateThemeColors();
             UpdateCustomStrings();
@@ -382,36 +308,33 @@ namespace AudioLink
         // Only happens once per second.
         private void FPSUpdate()
         {
-#if UDONSHARP
-            if (!_hasInitializedTime)
+#if PVR_CCK_WORLDS
+        if(!_hasInitializedTime)
+        {
+            if(_masterInstanceJoinTime > 0.00001)
             {
-                if (_masterInstanceJoinTime > 0.00001)
-                {
-                    //We can now do our time setup.
-                    double Now = GetElapsedSecondsSince2019();
-                    _elapsedTime = Now - _masterInstanceJoinTime;
-                    //Debug.Log($"[AudioLink] Time Sync Debug: Received instance time of {_masterInstanceJoinTime} and current time of {Now} delta of {_elapsedTime}");
-                    _hasInitializedTime = true;
-                    _fpsTime = _elapsedTime;
-                }
-                else if (_elapsedTime > 10 && Networking.IsMaster)
-                {
-                    //Have we gone more than 10 seconds and we're master?
-                    //Debug.Log("[AudioLink] Time Sync Debug: You were master.  But no _masterInstanceJoinTime was provided for 10 seconds.  Resetting instance time.");
-                    _masterInstanceJoinTime = GetElapsedSecondsSince2019();
-                    RequestSerialization();
-                    _hasInitializedTime = true;
-                    _elapsedTime = 0;
-                    _fpsTime = _elapsedTime;
-                }
+                double Now = GetElapsedSecondsSince2019();
+                _elapsedTime = Now - _masterInstanceJoinTime;
+
+                _hasInitializedTime = true;
+                _fpsTime = _elapsedTime;
             }
+            else if (_elapsedTime > 10 && _localPlayer.IsMaster)
+            {
+                _masterInstanceJoinTime = GetElapsedSecondsSince2019();
+                Sync("_masterInstanceJoinTime");
+                _hasInitializedTime = true;
+                _elapsedTime = 0;
+                _fpsTime = _elapsedTime;
+            }
+        }
 #endif
             // The red channel should be 3.02f forever - this is the last version before the versioning change.
             audioMaterial.SetVector(_VersionNumberAndFPSProperty, new Vector4(3.02f, AudioLinkVersionNumberMajor, _fpsCount, AudioLinkVersionNumberMinor));
-#if UDONSHARP
+#if PVR_CCK_WORLDS
             audioMaterial.SetVector(_PlayerCountAndData, new Vector4(
-                VRCPlayerApi.GetPlayerCount(),
-                Networking.IsMaster ? 1.0f : 0.0f,
+                PSharpPlayer.Players.Length,
+                _localPlayer.IsMaster ? 1.0f : 0.0f,
 #if UNITY_EDITOR
                     0.0f,
 #else
@@ -445,11 +368,9 @@ namespace AudioLink
             }
 
             // Finely adjust our network time estimate if needed.
-#if UDONSHARP
-            int networkTimeMSNow = Networking.GetServerTimeInMilliseconds();
-#else
+
             int networkTimeMSNow = (int)(Time.time * 1000.0f);
-#endif
+
             int networkTimeDelta = networkTimeMSNow - _networkTimeMS;
             if (networkTimeDelta > 3000)
             {
@@ -478,11 +399,7 @@ namespace AudioLink
 
             if (audioDataToggle)
             {
-#if UDONSHARP
-                VRCAsyncGPUReadback.Request(audioRenderTexture, 0, TextureFormat.RGBAFloat, (VRC.Udon.Common.Interfaces.IUdonEventReceiver)(Component)this);
-#else
                 AsyncGPUReadback.Request(audioRenderTexture, 0, TextureFormat.RGBAFloat, OnAsyncGpuReadbackComplete);
-#endif
             }
 
             // Tested: There does not appear to be any drift updating it this way.
@@ -580,10 +497,10 @@ namespace AudioLink
                 }
 
 
-#if UDONSHARP
-                if (VRC.SDKBase.Utilities.IsValid(_localPlayer))
+#if PVR_CCK_WORLDS
+                if (!_localPlayer.IsNull)
                 {
-                    float distanceToSource = Vector3.Distance(_localPlayer.GetTrackingData(VRCPlayerApi.TrackingDataType.Head).position, audioSource.transform.position);
+                    float distanceToSource = Vector3.Distance(_localPlayer.GetBonePosition(HumanBodyBones.Head), audioSource.transform.position);
                     audioMaterial.SetFloat(_SourceDistance, distanceToSource);
                 }
 #endif
@@ -601,25 +518,16 @@ namespace AudioLink
 #endif
         }
 
-#if UDONSHARP
-        public override void OnAsyncGpuReadbackComplete(VRCAsyncGPUReadbackRequest request)
-        {
-            if (request.hasError || !request.done) return;
-
-            request.TryGetData(audioData);
-        }
-#else
         public void OnAsyncGpuReadbackComplete(AsyncGPUReadbackRequest request)
         {
             if (request.hasError || !request.done) return;
-
+            
             NativeArray<Color> data = request.GetData<Color>();
             for (int i = 0; i < data.Length; i++)
             {
                 audioData[i] = data[i];
             }
         }
-#endif
 
         private void OnEnable()
         {
@@ -669,19 +577,19 @@ namespace AudioLink
             return (frac / 8388608F) * 1.1754944e-38F;
         }
 
-#if UDONSHARP
-        public override void OnPlayerJoined(VRCPlayerApi player)
+#if PVR_CCK_WORLDS
+        public override void OnPlayerJoined(PSharpPlayer player)
         {
-            if (VRC.SDKBase.Utilities.IsValid(player) && player.isMaster)
+            if (!player.IsNull && player.IsMaster)
             {
-                _masterName = player.displayName;
-                UpdateGlobalString(_StringMasterPlayer, player.displayName);
+                _masterName = player.Username;
+                UpdateGlobalString(_StringMasterPlayer, player.Username);
             }
         }
 
-        public override void OnPlayerLeft(VRCPlayerApi player)
+        public override void OnPlayerLeft(PSharpPlayer player)
         {
-            if (VRC.SDKBase.Utilities.IsValid(player) && (player.isMaster || player.displayName == _masterName))
+            if (!player.IsNull && (player.IsMaster || player.Username == _masterName))
             {
                 FindAndUpdateMasterName();
             }
@@ -689,16 +597,16 @@ namespace AudioLink
 
         private void FindAndUpdateMasterName()
         {
-            VRCPlayerApi[] players = new VRCPlayerApi[VRCPlayerApi.GetPlayerCount()];
-            VRCPlayerApi.GetPlayers(players);
-            foreach (VRCPlayerApi player in players)
+            PSharpPlayer[] players = PSharpPlayer.Players;
+            
+            foreach (PSharpPlayer player in players)
             {
                 if (player != null)
                 {
-                    if (VRC.SDKBase.Utilities.IsValid(player) && player.isMaster)
+                    if (!player.IsNull && player.IsMaster)
                     {
-                        _masterName = player.displayName;
-                        UpdateGlobalString(_StringMasterPlayer, player.displayName);
+                        _masterName = player.Username;
+                        UpdateGlobalString(_StringMasterPlayer, player.Username);
                         break;
                     }
                 }
@@ -708,23 +616,24 @@ namespace AudioLink
 
         public void UpdateCustomStrings()
         {
-#if UDONSHARP
-            if (!Networking.IsOwner(gameObject))
-                Networking.SetOwner(_localPlayer, gameObject);
+#if PVR_CCK_WORLDS
+            if (!PSharpNetworking.IsOwner(_localPlayer, gameObject))
+                PSharpNetworking.SetOwner(_localPlayer, gameObject);
 #endif
 
             UpdateGlobalString(_StringCustom1, customString1);
             UpdateGlobalString(_StringCustom2, customString2);
 
-#if UDONSHARP
-            RequestSerialization();
+#if PVR_CCK_WORLDS
+            Sync("customString1");
+            Sync("customString2");
 #endif
         }
 
-#if UDONSHARP
+#if PVR_CCK_WORLDS
         public override void OnDeserialization()
         {
-            if (!Networking.IsOwner(gameObject))
+            if (!PSharpNetworking.IsOwner(_localPlayer, gameObject))
             {
                 UpdateGlobalString(_StringCustom1, customString1);
                 UpdateGlobalString(_StringCustom2, customString2);
@@ -766,54 +675,22 @@ namespace AudioLink
             audioMaterial.SetVectorArray(nameID, vecs);
         }
 
-        public void ToggleAudioLink()
-        {
-            SetAudioLinkState(!_audioLinkEnabled);
-        }
-
-        public void SetAudioLinkState(bool state)
-        {
-            if (state)
-            {
-                EnableAudioLink();
-            }
-            else
-            {
-                DisableAudioLink();
-            }
-        }
-
         public void EnableAudioLink()
         {
             InitIDs();
             _audioLinkEnabled = true;
             audioRenderTexture.updateMode = CustomRenderTextureUpdateMode.Realtime;
-            SetGlobalTextureWrapper(_AudioTexture, audioRenderTexture, UnityEngine.Rendering.RenderTextureSubElement.Default);
 
-#if UNITY_WEBGL && !UNITY_EDITOR
-            SetupAnalyzerSpace();
-            LinkAnalyzer(WebALID, audioSource.clip.length, 4096);
-#endif
+            SetGlobalTexture(_AudioTexture, audioRenderTexture, RenderTextureSubElement.Default);
         }
 
         public void DisableAudioLink()
         {
             _audioLinkEnabled = false;
             if (audioRenderTexture != null) { audioRenderTexture.updateMode = CustomRenderTextureUpdateMode.OnDemand; }
-            SetGlobalTextureWrapper(_AudioTexture, null, UnityEngine.Rendering.RenderTextureSubElement.Default);
 
-#if UNITY_WEBGL && !UNITY_EDITOR
-            UnlinkAnalyzer(WebALID);
-#endif
-        }
+            SetGlobalTexture(_AudioTexture, null, RenderTextureSubElement.Default);
 
-        public void SetGlobalTextureWrapper(int nameID, RenderTexture value, UnityEngine.Rendering.RenderTextureSubElement element)
-        {
-#if UDONSHARP
-            SetGlobalTexture(nameID, value);
-#else
-            SetGlobalTexture(nameID, value, element);
-#endif
         }
 
         public void EnableReadback()
@@ -829,27 +706,7 @@ namespace AudioLink
         public void SendAudioOutputData()
         {
             InitIDs();
-
-#if UNITY_WEBGL && !UNITY_EDITOR
-
-            if (audioSource.isPlaying)
-            {
-                FetchAnalyzerLeft(WebALID, audioLinkWebPeer.WaveformSamplesLeft, 4096);
-                FetchAnalyzerRight(WebALID, audioLinkWebPeer.WaveformSamplesRight, 4096);
-            }
-
-            _audioFramesL = audioLinkWebPeer.WaveformSamplesLeft;
-            _audioFramesR = audioLinkWebPeer.WaveformSamplesRight;
-
-#else
-
             audioSource.GetOutputData(_audioFramesL, 0);                // left channel
-
-#if UDONSHARP
-            bool hasDualMono = VRC.SDKBase.Utilities.IsValid(optionalRightAudioSource);
-#else
-            bool hasDualMono = optionalRightAudioSource != null;
-#endif
 
             if (_rightChannelTestCounter > 0)
             {
@@ -859,25 +716,17 @@ namespace AudioLink
                 }
                 else
                 {
-                    if (hasDualMono)
-                    {
-                        optionalRightAudioSource.GetOutputData(_audioFramesR, 0);
-                    } else audioSource.GetOutputData(_audioFramesR, 1);
+                    audioSource.GetOutputData(_audioFramesR, 1);
                 }
                 _rightChannelTestCounter--;
             }
             else
             {
-                _rightChannelTestCounter = _rightChannelTestDelay;                  // reset test countdown
-                _audioFramesR[0] = 0f;                                              // reset tested array element to zero just in case
-                if (hasDualMono)                                                    // check if dual mono is present
-                {
-                    optionalRightAudioSource.GetOutputData(_audioFramesR, 0);       // right channel test
-                } else audioSource.GetOutputData(_audioFramesR, 1);                 // right channel test
+                _rightChannelTestCounter = _rightChannelTestDelay;      // reset test countdown
+                _audioFramesR[0] = 0f;                                  // reset tested array element to zero just in case
+                audioSource.GetOutputData(_audioFramesR, 1);            // right channel test
                 _ignoreRightChannel = (_audioFramesR[0] == 0f) ? true : false;
             }
-
-#endif
 
             Array.Copy(_audioFramesL, 0, _samples, 0, 1023); // 4092 - 1023 * 4
             audioMaterial.SetFloatArray(_Samples0L, _samples);
@@ -902,5 +751,6 @@ namespace AudioLink
         {
             return ((t - a) / (b - a)) * (v - u) + u;
         }
+
     }
 }

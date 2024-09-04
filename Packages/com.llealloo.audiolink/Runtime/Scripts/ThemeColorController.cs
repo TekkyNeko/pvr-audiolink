@@ -3,20 +3,19 @@ using UnityEngine.UI;
 
 namespace AudioLink
 {
-#if UDONSHARP
-    using UdonSharp;
+   
 
-    using VRC.SDKBase;
+#if PVR_CCK_WORLDS
+    using PVR.PSharp;
 
-    [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
-    public class ThemeColorController : UdonSharpBehaviour
+    public class ThemeColorController : PSharpBehaviour
 #else
     public class ThemeColorController : MonoBehaviour
 #endif
     {
-        [UdonSynced] private int _themeColorMode;
+        [PSharpSynced(SyncType.Manual)] private int _themeColorMode;
 
-        [UdonSynced]
+        [PSharpSynced(SyncType.Manual)]
         public Color[] customThemeColors = {
                 Color.yellow,
                 Color.blue,
@@ -33,8 +32,8 @@ namespace AudioLink
 
         private bool _processGUIEvents = true;
 
-#if UDONSHARP
-        private VRCPlayerApi localPlayer;
+#if PVR_CCK_WORLDS
+        private PSharpPlayer localPlayer;
 #endif
 
         // A view-controller for customThemeColors
@@ -44,12 +43,10 @@ namespace AudioLink
         public Toggle themeColorToggle;
         public int customColorIndex = 0;
 
-        [HideInInspector] public bool networkSynced = true;
-
         private void Start()
         {
-#if UDONSHARP
-            localPlayer = Networking.LocalPlayer;
+#if PVR_CCK_WORLDS
+            localPlayer = PSharpPlayer.LocalPlayer;
 #endif
 
             _initCustomThemeColors = new[] {
@@ -60,10 +57,9 @@ namespace AudioLink
             };
         }
 
-#if UDONSHARP
+#if PVR_CCK_WORLDS
         public override void OnDeserialization()
         {
-            if (!networkSynced) return;
             UpdateGUI();
             UpdateAudioLinkThemeColors();
         }
@@ -84,9 +80,8 @@ namespace AudioLink
             _themeColorMode = themeColorToggle.isOn ? 0 : 1;
             UpdateGUI();
             UpdateAudioLinkThemeColors();
-#if UDONSHARP
-            if (networkSynced)
-                RequestSerialization();
+#if PVR_CCK_WORLDS
+            Sync("_themeColorMode");
 #endif
         }
 
@@ -106,9 +101,9 @@ namespace AudioLink
             {
                 return;
             }
-#if UDONSHARP
-            if (!Networking.IsOwner(gameObject))
-                Networking.SetOwner(localPlayer, gameObject);
+#if PVR_CCK_WORLDS
+            if (!PSharpNetworking.IsOwner(localPlayer, gameObject))
+                PSharpNetworking.SetOwner(localPlayer, gameObject);
 #endif
             customThemeColors[customColorIndex] = Color.HSVToRGB(
                 sliderHue.value,
@@ -118,9 +113,8 @@ namespace AudioLink
 
             UpdateGUI();
             UpdateAudioLinkThemeColors();
-#if UDONSHARP
-            if (networkSynced)
-                RequestSerialization();
+#if PVR_CCK_WORLDS
+            Sync("customThemeColors");
 #endif
         }
 
@@ -133,9 +127,9 @@ namespace AudioLink
             }
             UpdateGUI();
             UpdateAudioLinkThemeColors();
-#if UDONSHARP
-            if (networkSynced)
-                RequestSerialization();
+#if PVR_CCK_WORLDS
+            Sync("customThemeColors");
+            Sync("_themeColorMode");
 #endif
         }
 
@@ -193,9 +187,10 @@ namespace AudioLink
 
             UpdateGUI();
             UpdateAudioLinkThemeColors();
-#if UDONSHARP
-            if (Networking.IsOwner(gameObject) && networkSynced)
-                RequestSerialization();
+#if PVR_CCK_WORLDS
+            if (PSharpNetworking.IsOwner(localPlayer, gameObject))
+                Sync("_themeColorMode");
+                Sync("customThemeColors");
 #endif
         }
 

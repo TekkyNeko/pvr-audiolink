@@ -1,8 +1,12 @@
 ﻿using System;
+using PVR.PSharp;
 using UnityEngine;
 
 namespace AudioLink
 {
+    public class AudioLinkDataAPI : PSharpBehaviour {
+        // Stub to attach to AudioLink due to a PVR limitation
+    }
     public partial class AudioLink
     {
         #region Passes
@@ -73,6 +77,7 @@ namespace AudioLink
         public static Vector2 GetALPassGlobalStrings() => new Vector2(40, 28);
         #endregion
 
+#if !PVR_CCK_WORLDS
         #region Deprecated
         [Obsolete("Use the AudioLink.ALPassDft() function instead.")] public static Vector2 ALPassDft => new Vector2(0, 4);
         [Obsolete("Use the AudioLink.ALPassWaveform() function instead.")] public static Vector2 ALPassWaveform => new Vector2(0, 6);
@@ -107,7 +112,7 @@ namespace AudioLink
         [Obsolete("Use the AudioLink.ALPassFilteredVUMarker() function instead.")] public static Vector2 ALPassFilteredVUMarker => new Vector2(24, 29);
         [Obsolete("Use the AudioLink.ALPassGlobalStrings() function instead.")] public static Vector2 ALPassGlobalStrings => new Vector2(40, 28);
         #endregion
-
+#endif
         #region Constants
         /// <remarks>Corresponds to AUDIOLINK_EXPBINS in AudioLink.cginc.</remarks>
         public const int AudioLinkExpBins = 24;

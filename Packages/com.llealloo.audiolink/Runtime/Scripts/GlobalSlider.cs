@@ -1,36 +1,33 @@
-﻿#if UDONSHARP
-using UdonSharp;
+﻿#if PVR_CCK_WORLDS
+using PVR.PSharp;
 
 using UnityEngine.UI;
 
-using VRC.SDKBase;
 
 namespace AudioLink
 {
-    [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
-    public class GlobalSlider : UdonSharpBehaviour
+
+    public class GlobalSlider : PSharpBehaviour
     {
-        [UdonSynced]
+        [PSharpSynced(SyncType.Manual)]
         private float syncedValue;
         private bool deserializing;
         private Slider slider;
-        private VRCPlayerApi localPlayer;
+        private PSharpPlayer localPlayer;
 
         private void Start()
         {
             slider = transform.GetComponent<Slider>();
-            localPlayer = Networking.LocalPlayer;
+            localPlayer = PSharpPlayer.LocalPlayer;
             syncedValue = slider.value;
             deserializing = false;
 
-            if (Networking.IsOwner(gameObject))
-                RequestSerialization();
+            if (PSharpNetworking.IsOwner(localPlayer, gameObject))
+                Sync("syncedValue");
         }
 
         public override void OnDeserialization()
         {
-            if (!enabled) return;
-
             deserializing = true;
             slider.value = syncedValue;
             deserializing = false;
@@ -38,17 +35,15 @@ namespace AudioLink
 
         public void SlideUpdate()
         {
-            if (!enabled) return;
-
             if (slider == null)
                 return;
             if (deserializing)
                 return;
-            if (!Networking.IsOwner(gameObject))
-                Networking.SetOwner(localPlayer, gameObject);
+            if (!PSharpNetworking.IsOwner(localPlayer, gameObject))
+                PSharpNetworking.SetOwner(localPlayer, gameObject);
 
             syncedValue = slider.value;
-            RequestSerialization();
+            Sync("syncedValue");
         }
     }
 }

@@ -1,14 +1,11 @@
 ﻿
-#if UDONSHARP
-using UdonSharp;
+using PVR.PSharp;
 using UnityEngine;
 using UnityEngine.Animations;
-using VRC.SDKBase;
-using VRC.Udon;
 
 namespace AudioLink
 {
-    public class AudioLinkControllerHandle : UdonSharpBehaviour
+    public class AudioLinkControllerHandle : PSharpBehaviour
     {
         public ParentConstraint parentConstraint;
 
@@ -19,9 +16,9 @@ namespace AudioLink
             selfConstraint = GetComponent<ParentConstraint>();
         }
 
-        public override void OnPickup()
+        public override void OnInteract()
         {
-            Networking.SetOwner(Networking.LocalPlayer, parentConstraint.gameObject);
+            PSharpNetworking.SetOwner(PSharpPlayer.LocalPlayer, parentConstraint.gameObject);
 
             selfConstraint.enabled = false;
 
@@ -57,7 +54,7 @@ namespace AudioLink
             }
         }
 
-        public override void OnDrop()
+        public override void OnRelease()
         {
             selfConstraint.enabled = true;
 
@@ -90,4 +87,3 @@ namespace AudioLink
         }
     }
 }
-#endif
