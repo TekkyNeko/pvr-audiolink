@@ -1,8 +1,10 @@
 [![Discord - AudioLink Discord](https://img.shields.io/badge/Discord-AudioLink_Discord-7289da?logo=discord&logoColor=7289da)](https://discord.gg/d5wjNwZBR3) [![Website - AudioLink Website](https://img.shields.io/badge/Website-AudioLink_Website-7289da)](https://audiolink.dev/)
 
-# AudioLink
+# PVR AudioLink
 
-## A repository of audio reactive prefabs for Unity, written in CSharp and HLSL, compatible with VRChat and ChilloutVR
+## A repository of audio reactive prefabs for Unity, written in CSharp and HLSL, compatible with PoligonVR, 
+
+### This project is on hold due to current limitations in P#, currently waiting for a future release of PoligonVR (close to open beta maybe)
 
 AudioLink is a system that analyzes and processes in-world audio into many different highly reactive data streams and exposes the data to Scripts and Shaders. 
 
