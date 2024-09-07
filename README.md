@@ -4,7 +4,7 @@
 
 ## A repository of audio reactive prefabs for Unity, written in CSharp and HLSL, compatible with PoligonVR, 
 
-### This project is on hold due to current limitations in P#, currently waiting for a future release of PoligonVR (close to open beta maybe)
+### This project is on hold due to current limitations in the release build of P#, currently waiting next release of the CCK!
 
 AudioLink is a system that analyzes and processes in-world audio into many different highly reactive data streams and exposes the data to Scripts and Shaders. 
 
