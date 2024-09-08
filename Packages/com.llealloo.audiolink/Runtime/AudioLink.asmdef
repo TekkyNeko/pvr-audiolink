@@ -1,7 +1,9 @@
 {
     "name": "AudioLink",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "Unity.Postprocessing.Runtime"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
@@ -9,6 +11,12 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
-    "versionDefines": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.postprocessing",
+            "expression": "",
+            "define": "AUDIOLINK_HAS_POSTPROCESSING"
+        }
+    ],
     "noEngineReferences": false
 }

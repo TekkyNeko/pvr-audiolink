@@ -27,6 +27,8 @@ namespace AudioLink
 
         public override void OnDeserialization()
         {
+            if (!enabled) return;
+
             deserializing = true;
             toggle.isOn = syncedValue;
             deserializing = false;
@@ -34,6 +36,8 @@ namespace AudioLink
 
         public void ToggleUpdate()
         {
+            if (!enabled) return;
+            
             if (toggle == null)
                 return;
             if (deserializing)

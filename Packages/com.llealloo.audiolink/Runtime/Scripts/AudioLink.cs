@@ -17,12 +17,14 @@ namespace AudioLink
     
     {
         
-        const float AudioLinkVersionNumberMajor = 1.00f;
-        const float AudioLinkVersionNumberMinor = 4.00f;
+        const float AudioLinkVersionNumberMajor = 2.00f;
+        const float AudioLinkVersionNumberMinor = 0.00f;
 
         [Header("Main Settings")]
         [Tooltip("Should be used with AudioLinkInput unless source is 2D. WARNING: if used with a custom 3D audio source (not through AudioLinkInput), audio reactivity will be attenuated by player position away from the Audio Source")]
         public AudioSource audioSource;
+        [Tooltip("Optional Right Audio Source for Dual Mono setups (AVPro video players)")]
+        public AudioSource optionalRightAudioSource;
 
         [Header("Basic EQ")]
         [Range(0.0f, 2.0f)]
@@ -338,7 +340,7 @@ namespace AudioLink
 #if UNITY_EDITOR
                     0.0f,
 #else
-                    _localPlayer.isInstanceOwner ? 1.0f : 0.0f,
+                    _localPlayer.IsInstanceCreator ? 1.0f : 0.0f,
 #endif
                 0));
 
@@ -674,7 +676,22 @@ namespace AudioLink
             // Expose the vectors to shader
             audioMaterial.SetVectorArray(nameID, vecs);
         }
+        public void ToggleAudioLink()
+        {
+            SetAudioLinkState(!_audioLinkEnabled);
+        }
 
+        public void SetAudioLinkState(bool state)
+        {
+            if (state)
+            {
+                EnableAudioLink();
+            }
+            else
+            {
+                DisableAudioLink();
+            }
+        }
         public void EnableAudioLink()
         {
             InitIDs();
@@ -688,11 +705,14 @@ namespace AudioLink
         {
             _audioLinkEnabled = false;
             if (audioRenderTexture != null) { audioRenderTexture.updateMode = CustomRenderTextureUpdateMode.OnDemand; }
-
-            SetGlobalTexture(_AudioTexture, null, RenderTextureSubElement.Default);
+            SetGlobalTextureWrapper(_AudioTexture, null, UnityEngine.Rendering.RenderTextureSubElement.Default);
+            
 
         }
-
+        public void SetGlobalTextureWrapper(int nameID, RenderTexture value, UnityEngine.Rendering.RenderTextureSubElement element)
+        {
+            SetGlobalTexture(nameID, value, element);
+        }
         public void EnableReadback()
         {
             audioDataToggle = true;
@@ -708,6 +728,10 @@ namespace AudioLink
             InitIDs();
             audioSource.GetOutputData(_audioFramesL, 0);                // left channel
 
+
+            bool hasDualMono = optionalRightAudioSource != null;
+
+
             if (_rightChannelTestCounter > 0)
             {
                 if (_ignoreRightChannel)
@@ -716,15 +740,21 @@ namespace AudioLink
                 }
                 else
                 {
-                    audioSource.GetOutputData(_audioFramesR, 1);
+                    if(hasDualMono)
+                    {
+                        optionalRightAudioSource.GetOutputData(_audioFramesR, 0);
+                    } else audioSource.GetOutputData(_audioFramesR, 1);
                 }
                 _rightChannelTestCounter--;
             }
             else
             {
-                _rightChannelTestCounter = _rightChannelTestDelay;      // reset test countdown
-                _audioFramesR[0] = 0f;                                  // reset tested array element to zero just in case
-                audioSource.GetOutputData(_audioFramesR, 1);            // right channel test
+                _rightChannelTestCounter = _rightChannelTestDelay;                  // reset test countdown
+                _audioFramesR[0] = 0f;                                              // reset tested array element to zero just in case
+                if (hasDualMono)                                                    // check if dual mono is present
+                {
+                    optionalRightAudioSource.GetOutputData(_audioFramesR, 0);       // right channel test
+                } else audioSource.GetOutputData(_audioFramesR, 1);                 // right channel test
                 _ignoreRightChannel = (_audioFramesR[0] == 0f) ? true : false;
             }
 

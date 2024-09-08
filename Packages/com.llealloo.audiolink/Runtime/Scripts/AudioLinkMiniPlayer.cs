@@ -50,13 +50,18 @@ namespace AudioLink
         int _syncVideoNumber;
         int _loadedVideoNumber;
 
-        [UdonSynced, NonSerialized]
+        /// <summary>
+        /// Synced via <see cref="_flags"/>
+        /// </summary>
+        [NonSerialized]
         public bool _syncOwnerPlaying;
 
         [UdonSynced]
         float _syncVideoStartNetworkTime;
 
-        [UdonSynced]
+        /// <summary>
+        /// Synced via <see cref="_flags"/>
+        /// </summary>
         bool _syncLocked = true;
 
         [NonSerialized]
@@ -101,6 +106,8 @@ namespace AudioLink
             avProVideo.Stop();
 
             _currentPlayer = avProVideo;
+            
+            CopyIntoFlags()
 
             if (Networking.IsOwner(gameObject))
             {
@@ -110,6 +117,27 @@ namespace AudioLink
 
                 _PlayVideo(defaultUrl);
             }
+        }
+
+        /// <summary>
+        /// Copys all the associated bools into the flags byte
+        /// </summary>
+        private void CopyIntoFlags()
+        {
+            _flags = 0;
+            if (_syncOwnerPlaying)
+                _flags |= 1;
+            if (_syncLocked)
+                _flags |= 2;
+        }
+
+        /// <summary>
+        /// Copys all the associated bools out of the flags byte into the associated bools
+        /// </summary>
+        private void CopyOutOfFlags()
+        {
+            _syncOwnerPlaying = (_flags & 1) != 0;
+            _syncLocked = (_flags & 2) != 0;
         }
 
         public void _TriggerPlay()
@@ -468,11 +496,18 @@ namespace AudioLink
 
             return player.isMaster || player.isInstanceOwner || !_syncLocked;
         }
+        
+        public override void OnPreSerialization()
+        {
+            CopyIntoFlags();
+        }
 
         public override void OnDeserialization()
         {
             if (Networking.IsOwner(gameObject))
                 return;
+            
+            CopyOutOfFlags();
 
             if (debugLogging)
             {
