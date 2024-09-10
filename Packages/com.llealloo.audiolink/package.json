@@ -8,7 +8,7 @@
         "url" : "https://audiolink.dev/"
     },
     "unity" : "2022.3",
-    "description" : "Audio reactive prefabs for VRChat",
+    "description" : "Audio reactive prefabs for PoligonVR",
     "gitDependencies" : {},
     "vpmDependencies" : {
     },

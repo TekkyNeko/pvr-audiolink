@@ -1,16 +1,12 @@
 ﻿
 using UnityEngine;
-#if VRC_SDK_VRCSDK2 || VRC_SDK_VRCSDK3
-using VRC.SDKBase;
-#endif
 
-#if UDON
-using UdonSharp;
-using VRC.Udon;
+#if PVR_CCK_WORLDS
+using PVR.PSharp;
 
 namespace AudioLink
 {
-    public class MirrorToggle : UdonSharpBehaviour
+    public class MirrorToggle : PSharpBehaviour
     {
 
         public GameObject mirror;
@@ -20,11 +16,11 @@ namespace AudioLink
             
         }
 
-        public override void Interact()
+        public override void OnInteract()
         {
             bool toggle = !mirror.activeSelf;
             mirror.SetActive(toggle);
-            InteractionText = "Mirror is " + (string)((toggle == true) ? "ON" : "OFF") + " (local)";
+            SetInteractText("Mirror is " + (string)((toggle == true) ? "ON" : "OFF") + " (local)");
         }
 
     }
