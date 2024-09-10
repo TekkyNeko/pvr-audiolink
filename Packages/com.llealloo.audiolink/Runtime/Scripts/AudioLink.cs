@@ -113,6 +113,8 @@ namespace AudioLink
         [Tooltip("Enable Udon audioData array. Required by AudioReactiveLight and AudioReactiveObject. Uses ReadPixels which carries a performance hit. For experimental use when performance is less of a concern")]
         [HideInInspector] public bool audioDataToggle = false;
 
+        private bool isReadbackDone = true;
+
         [NonSerialized] public Color[] audioData = new Color[AudioLinkWidth * AudioLinkHeight];
         [HideInInspector] public Texture2D audioData2D; // Texture2D reference for hacked Blit, may eventually be depreciated
 
@@ -399,9 +401,14 @@ namespace AudioLink
                 return;
             }
 
-            if (audioDataToggle)
+            if (audioDataToggle && isReadbackDone)
             {
+                isReadbackDone = false;
+#if UDONSHARP
+                VRCAsyncGPUReadback.Request(audioRenderTexture, 0, TextureFormat.RGBAFloat, (VRC.Udon.Common.Interfaces.IUdonEventReceiver)(Component)this);
+#else
                 AsyncGPUReadback.Request(audioRenderTexture, 0, TextureFormat.RGBAFloat, OnAsyncGpuReadbackComplete);
+#endif
             }
 
             // Tested: There does not appear to be any drift updating it this way.
@@ -520,6 +527,15 @@ namespace AudioLink
 #endif
         }
 
+#if UDONSHARP
+        public override void OnAsyncGpuReadbackComplete(PVRAsyncGPUReadbackRequest request)
+        {
+            if (request.hasError || !request.done) return;
+
+            request.TryGetData(audioData);
+        }
+
+#else
         public void OnAsyncGpuReadbackComplete(AsyncGPUReadbackRequest request)
         {
             if (request.hasError || !request.done) return;
@@ -529,8 +545,10 @@ namespace AudioLink
             {
                 audioData[i] = data[i];
             }
+            
+            isReadbackDone = true;
         }
-
+#endif
         private void OnEnable()
         {
             EnableAudioLink();

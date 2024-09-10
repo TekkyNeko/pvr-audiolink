@@ -2,10 +2,10 @@
 
 namespace AudioLink
 {
-#if UDONSHARP
-    using UdonSharp;
+#if PVR_CCK_WORLDS
+    using PVR.PSharp;
 
-    public class AudioReactiveObject : UdonSharpBehaviour
+    public class AudioReactiveObject : PSharpBehaviour
 #else
     public class AudioReactiveObject : MonoBehaviour
 #endif

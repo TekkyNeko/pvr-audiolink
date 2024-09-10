@@ -90,7 +90,21 @@ namespace AudioLink
         {
             Transform controllerTransform = transform.Find("ThemeColorController");
             if (controllerTransform == null) return null;
-            return controllerTransform.GetComponent<ThemeColorControllerV0>();
+            return (ThemeColorControllerV0)controllerTransform.GetComponent(typeof(ThemeColorControllerV0));
+        }
+
+        public override void OnNetworkReady()
+        {
+            if(themeColorController == null) 
+            {
+                // Something really weird has gone on. maybe using updated script
+                // on un-updated prefab?
+                Debug.LogError("[AudioLink] AudioLinkController could not find themeColorController");
+            }
+            else
+            {
+                themeColorController.InitializeAudioLinkThemeColors();
+            }
         }
 
         void Start()
@@ -119,7 +133,7 @@ namespace AudioLink
             else
             {
                 themeColorController.audioLink = audioLink;
-                themeColorController.InitializeAudioLinkThemeColors();
+                
             }
 
             GetSettings();

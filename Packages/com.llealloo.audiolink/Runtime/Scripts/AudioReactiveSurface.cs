@@ -2,11 +2,10 @@ using UnityEngine;
 
 namespace AudioLink
 {
-#if UDONSHARP
-    using UdonSharp;
-    using static VRC.SDKBase.VRCShader;
-
-    public class AudioReactiveSurface : UdonSharpBehaviour
+#if PVR_CCK_WORLDS
+    using PVR.PSharp;
+    using static Shader;
+    public class AudioReactiveSurface : PSharpBehaviour
 #else
     using static Shader;
 

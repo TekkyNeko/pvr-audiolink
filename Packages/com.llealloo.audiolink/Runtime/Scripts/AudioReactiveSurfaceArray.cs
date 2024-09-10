@@ -2,11 +2,11 @@
 
 namespace AudioLink
 {
-#if UDONSHARP
-    using UdonSharp;
-    using static VRC.SDKBase.VRCShader;
+#if PVR_CCK_WORLDS
+    using PVR.PSharp;
+    using static Shader;
 
-    public class AudioReactiveSurfaceArray : UdonSharpBehaviour
+    public class AudioReactiveSurfaceArray : PSharpBehaviour
 #else
     using static Shader;
 

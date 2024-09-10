@@ -1,9 +1,9 @@
 ﻿#if !COMPILER_UDONSHARP && UNITY_EDITOR
 using System.Reflection;
 
-#if UDONSHARP
-using UdonSharp;
-using UdonSharpEditor;
+#if PVR_CCK_WORLDS
+using PVR.PSharp.Editor;
+using PVR.PSharp;
 #endif
 
 using UnityEditor;
@@ -14,8 +14,8 @@ namespace AudioLink.Editor
     [CustomEditor(typeof(AudioLink))]
     public class AudioLinkEditor : UnityEditor.Editor
     {
-        private readonly static GUIContent DisableReadbackButtonContent = EditorGUIUtility.TrTextContent("Disable readback", "Disables asynchronous readback, which is required for audio-reactive Udon scripts to function. This feature comes with a slight performance penalty.");
-        private readonly static GUIContent EnableReadbackButtonContent = EditorGUIUtility.TrTextContent("Enable readback", "Enables asynchronous readback, which is required for audio-reactive Udon scripts to function. This feature comes with a slight performance penalty.");
+        private readonly static GUIContent DisableReadbackButtonContent = EditorGUIUtility.TrTextContent("Disable readback", "Disables asynchronous readback, which is required for audio-reactive PSharp scripts to function. This feature comes with a slight performance penalty.");
+        private readonly static GUIContent EnableReadbackButtonContent = EditorGUIUtility.TrTextContent("Enable readback", "Enables asynchronous readback, which is required for audio-reactive PSharp scripts to function. This feature comes with a slight performance penalty.");
 
         public void OnEnable()
         {

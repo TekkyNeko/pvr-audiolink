@@ -11,6 +11,8 @@ namespace AudioLink
 
         private ParentConstraint selfConstraint;
 
+        public GameObject Body;
+
         public void Start()
         {
             selfConstraint = GetComponent<ParentConstraint>();
@@ -19,6 +21,7 @@ namespace AudioLink
         public override void OnInteract()
         {
             PSharpNetworking.SetOwner(PSharpPlayer.LocalPlayer, parentConstraint.gameObject);
+            PSharpNetworking.SetOwner(PSharpPlayer.LocalPlayer, Body);
 
             selfConstraint.enabled = false;
 

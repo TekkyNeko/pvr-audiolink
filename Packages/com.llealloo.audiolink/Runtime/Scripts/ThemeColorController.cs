@@ -171,7 +171,10 @@ namespace AudioLink
 #if PVR_CCK_WORLDS
             if(networkSynced)
             {
-                Sync("customThemeColors");
+                Sync("themeColor1");
+                Sync("themeColor2");
+                Sync("themeColor3");
+                Sync("themeColor4");
             }    
 #endif
         }
@@ -185,7 +188,10 @@ namespace AudioLink
 #if PVR_CCK_WORLDS
             if(networkSynced)
             {
-                Sync("customThemeColors");
+                Sync("themeColor1");
+                Sync("themeColor2");
+                Sync("themeColor3");
+                Sync("themeColor4");
                 Sync("_themeColorMode");
             }
 #endif
@@ -247,7 +253,10 @@ namespace AudioLink
 #if PVR_CCK_WORLDS
             if (PSharpNetworking.IsOwner(localPlayer, gameObject) && networkSynced)
                 Sync("_themeColorMode");
-                Sync("customThemeColors");
+                Sync("themeColor1");
+                Sync("themeColor2");
+                Sync("themeColor3");
+                Sync("themeColor4");
 #endif
         }
 

@@ -1,21 +1,23 @@
-﻿#if PVR_CCK_WORLDS
-using UnityEngine;
+﻿using UnityEngine;
 using PVR.PSharp;
 using UnityEngine.UI;
 
 namespace AudioLink
 {
-	public class AudioLinkControllerInput : PSharpBehaviour
+	public class AudioLinkControllerInputV0 : PSharpBehaviour
 	{
 		public AudioLink audioLink;
-		public ThemeColorController themeColorController;
-		public AudioLinkController audioLinkController;
-		public Button CustomColorButton3;
-		public Button CustomColorButton2;
-		public Button CustomColorButton1;
+		public ThemeColorControllerV0 themeColorController;
+		public AudioLinkControllerV0 audioLinkController;
+
+		public Dropdown ThemeColorDropdown;
 		public Button CustomColorButton0;
-		public Toggle ThemeColorToggle;
+		public Button CustomColorButton1;
+		public Button CustomColorButton2;
+		public Button CustomColorButton3;
 		public Slider Gain;
+		public Slider Treble;
+		public Slider Bass;
 		public Slider FadeLength;
 		public Slider FadeExpFalloff;
 		public Slider SliderX0;
@@ -26,47 +28,47 @@ namespace AudioLink
 		public Slider Threshold1;
 		public Slider Threshold2;
 		public Slider Threshold3;
-		public Slider Hue;
-		public Slider Saturation;
-		public Slider Value;
-		public Toggle AutoGainToggle;
-		public Button ResetButton;
-		public Toggle PowerButton;
+		public Button Reset;
+		public Slider ThemeHue;
+		public Slider ThemeSaturation;
+		public Slider ThemeValue;
 
 		private void Awake()
 		{
-			
-			CustomColorButton3.onClick.AddListener(() => {
-				themeColorController.SelectCustomColor3();
-				themeColorController.ForceThemeColorMode();
-			});
-
-			CustomColorButton2.onClick.AddListener(() => {
-				themeColorController.SelectCustomColor2();
-				themeColorController.ForceThemeColorMode();
-			});
-
-			CustomColorButton2.onClick.AddListener(() => {
-				themeColorController.SelectCustomColor2();
-				themeColorController.ForceThemeColorMode();
-			});
-			
-			CustomColorButton1.onClick.AddListener(() => {
-				themeColorController.SelectCustomColor1();
-				themeColorController.ForceThemeColorMode();
+			ThemeColorDropdown.onValueChanged.AddListener((val) => {
+				themeColorController.OnGUIchange();
 			});
 
 			CustomColorButton0.onClick.AddListener(() => {
 				themeColorController.SelectCustomColor0();
-				themeColorController.ForceThemeColorMode();
 			});
 
-			ThemeColorToggle.onValueChanged.AddListener((val) => {
-				themeColorController.ToggleThemeColorMode();
+			CustomColorButton1.onClick.AddListener(() => {
+				themeColorController.SelectCustomColor1();
+			});
+
+			CustomColorButton2.onClick.AddListener(() => {
+				themeColorController.SelectCustomColor2();
+			});
+
+			CustomColorButton3.onClick.AddListener(() => {
+				themeColorController.SelectCustomColor3();
 			});
 
 			Gain.onValueChanged.AddListener((val) => {
 				var globalSlider = (GlobalSlider)Gain.GetComponent(typeof(GlobalSlider));
+				globalSlider.SlideUpdate();
+				audioLinkController.UpdateSettings();
+			});
+
+			Treble.onValueChanged.AddListener((val) => {
+				var globalSlider = (GlobalSlider)Treble.GetComponent(typeof(GlobalSlider));
+				globalSlider.SlideUpdate();
+				audioLinkController.UpdateSettings();
+			});
+
+			Bass.onValueChanged.AddListener((val) => {
+				var globalSlider = (GlobalSlider)Bass.GetComponent(typeof(GlobalSlider));
 				globalSlider.SlideUpdate();
 				audioLinkController.UpdateSettings();
 			});
@@ -130,40 +132,22 @@ namespace AudioLink
 				globalSlider.SlideUpdate();
 				audioLinkController.UpdateSettings();
 			});
-
-			Hue.onValueChanged.AddListener((val) => {
-				themeColorController.OnGUIchange();
-				themeColorController.ForceThemeColorMode();
-			});
-
-			Saturation.onValueChanged.AddListener((val) => {
-				themeColorController.OnGUIchange();
-				themeColorController.ForceThemeColorMode();
-			});
-
-			Value.onValueChanged.AddListener((val) => {
-				themeColorController.OnGUIchange();
-				themeColorController.ForceThemeColorMode();
-			});
-
-			AutoGainToggle.onValueChanged.AddListener((val) => {
-				var globalToggle = (GlobalToggle)AutoGainToggle.GetComponent(typeof(GlobalToggle));
-				globalToggle.ToggleUpdate();
-				audioLinkController.UpdateSettings();
-				
-			});
-
-			ResetButton.onClick.AddListener(() => {
+			
+			Reset.onClick.AddListener(() => {
 				audioLinkController.ResetSettings();
 			});
 
-			PowerButton.onValueChanged.AddListener((val) => {
-				var globalToggle = (GlobalToggle)PowerButton.GetComponent(typeof(GlobalToggle));
-				globalToggle.ToggleUpdate();
-				audioLinkController.UpdateSettings();
-				
+			ThemeHue.onValueChanged.AddListener((val) => {
+				themeColorController.OnGUIchange();
+			});
+
+			ThemeSaturation.onValueChanged.AddListener((val) => {
+				themeColorController.OnGUIchange();
+			});
+
+			ThemeValue.onValueChanged.AddListener((val) => {
+				themeColorController.OnGUIchange();
 			});
 		}
 	}
 }
-#endif

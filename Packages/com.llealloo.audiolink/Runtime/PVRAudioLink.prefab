@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5453216728570425052}
   - component: {fileID: 316586662372299798}
   - component: {fileID: 8783629179043051357}
-  - component: {fileID: 3905871369727468953}
-  - component: {fileID: 6826274029101133545}
-  - component: {fileID: 7036724609855722432}
+  - component: {fileID: 1242851372204114068}
+  - component: {fileID: 1203125858227579366}
+  - component: {fileID: 2134041239007433204}
   m_Layer: 0
   m_Name: PVRWorkaround
   m_TagString: Untagged
@@ -31,8 +31,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4016116325079817110}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2da783f49becad44bb769a5d61c7d71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 3905871369727468953}
+  PSharpProgram: {fileID: 1242851372204114068}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
@@ -64,11 +64,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb8b1f7b70d62da41bcb350e5f3fb7d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 7036724609855722432}
+  PSharpProgram: {fileID: 2134041239007433204}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &3905871369727468953
+--- !u!114 &1242851372204114068
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -82,14 +82,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 70a2bea70f3c732439bb0fcd90685a93, type: 2}
   type: AudioLink.AudioLinkDataAPI
-  pSharpNetworkedObject: {fileID: 0}
+  pSharpNetworkedObject: {fileID: 1203125858227579366}
   pSharpBehaviour: {fileID: 316586662372299798}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &6826274029101133545
+--- !u!114 &1203125858227579366
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,7 +104,7 @@ MonoBehaviour:
   proxies: []
   ID: 1
   OwnerID: 0
---- !u!114 &7036724609855722432
+--- !u!114 &2134041239007433204
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,7 +169,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.01
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -263,8 +263,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4016116325079817110}
   - component: {fileID: 7661750041344093898}
-  - component: {fileID: 1125238644696324989}
-  - component: {fileID: 6386534145576651861}
+  - component: {fileID: 5194418790184964924}
+  - component: {fileID: 4506767425245650744}
   m_Layer: 0
   m_Name: PVRAudioLink
   m_TagString: Untagged
@@ -301,11 +301,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa856f4528fc71343ae13d211071a669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 1125238644696324989}
+  PSharpProgram: {fileID: 5194418790184964924}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
   audioSource: {fileID: 2627088015405890554}
+  optionalRightAudioSource: {fileID: 0}
   gain: 1
   bass: 1
   treble: 1
@@ -331,9 +332,9 @@ MonoBehaviour:
   audioMaterial: {fileID: 2100000, guid: 5189d837989b9144e8e43d3ce618e450, type: 2}
   audioRenderTexture: {fileID: 8600000, guid: f51fa799ef0abde489235f40fc0328ef, type: 2}
   autoSetMediaState: 1
-  audioDataToggle: 0
+  audioDataToggle: 1
   audioData2D: {fileID: 2800000, guid: b07c8466531ac5e4e852f3e276e4baca, type: 2}
---- !u!114 &1125238644696324989
+--- !u!114 &5194418790184964924
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -347,7 +348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: dd9e1c1682c609547ab173388c12d3b8, type: 2}
   type: AudioLink.AudioLink
-  pSharpNetworkedObject: {fileID: 0}
+  pSharpNetworkedObject: {fileID: 4506767425245650744}
   pSharpBehaviour: {fileID: 7661750041344093898}
   pSharpProxy: {fileID: 0}
   variables:
@@ -466,6 +467,122 @@ MonoBehaviour:
     enumValue: 0
     enumArrayValue: 
     objectValue: {fileID: 2627088015405890554}
+    objectArrayValue: []
+  - fieldName: optionalRightAudioSource
+    typeFullName: UnityEngine.AudioSource
+    typeAsString: UnityEngine.AudioSource, UnityEngine.AudioModule
+    isArray: 0
+    unknownVariableType: 0
+    stringValue: 
+    stringArrayValue: []
+    charValue: 0
+    charArrayValue: 
+    floatValue: 0
+    floatArrayValue: []
+    doubleValue: 0
+    doubleArrayValue: []
+    sbyteValue: 0
+    sbyteArrayValue: 
+    byteValue: 0
+    byteArrayValue: 
+    int16Value: 0
+    int16ArrayValue: 
+    int32Value: 0
+    int32ArrayValue: 
+    int64Value: 0
+    int64ArrayValue: 
+    uint16Value: 0
+    uint16ArrayValue: 
+    uint32Value: 0
+    uint32ArrayValue: 
+    uint64Value: 0
+    uint64ArrayValue: 
+    boolValue: 0
+    boolArrayValue: 
+    colorValue: {r: 0, g: 0, b: 0, a: 0}
+    colorArrayValue: []
+    color32Value:
+      serializedVersion: 2
+      rgba: 0
+    color32ArrayValue: []
+    vector2Value: {x: 0, y: 0}
+    vector2ArrayValue: []
+    vector2IntValue: {x: 0, y: 0}
+    vector2IntArrayValue: []
+    vector3Value: {x: 0, y: 0, z: 0}
+    vector3ArrayValue: []
+    vector3IntValue: {x: 0, y: 0, z: 0}
+    vector3IntArrayValue: []
+    vector4Value: {x: 0, y: 0, z: 0, w: 0}
+    vector4ArrayValue: []
+    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
+    quaternionArrayValue: []
+    animationCurveValue:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    animationCurveArrayValue: []
+    gradientValue:
+      serializedVersion: 2
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_ColorSpace: -1
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    gradientArrayValue: []
+    layerMaskValue:
+      serializedVersion: 2
+      m_Bits: 0
+    layerMaskArrayValue: []
+    boundsValue:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+    boundsArrayValue: []
+    boundsIntValue:
+      m_Position: {x: 0, y: 0, z: 0}
+      m_Size: {x: 0, y: 0, z: 0}
+    boundsIntArrayValue: []
+    rectValue:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    rectArrayValue: []
+    rectIntValue:
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    rectIntArrayValue: []
+    enumValue: 0
+    enumArrayValue: 
+    objectValue: {fileID: 0}
     objectArrayValue: []
   - fieldName: gain
     typeFullName: System.Single
@@ -3396,7 +3513,7 @@ MonoBehaviour:
     uint32ArrayValue: 
     uint64Value: 0
     uint64ArrayValue: 
-    boolValue: 0
+    boolValue: 1
     boolArrayValue: 
     colorValue: {r: 0, g: 0, b: 0, a: 0}
     colorArrayValue: []
@@ -14230,7 +14347,7 @@ MonoBehaviour:
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &6386534145576651861
+--- !u!114 &4506767425245650744
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

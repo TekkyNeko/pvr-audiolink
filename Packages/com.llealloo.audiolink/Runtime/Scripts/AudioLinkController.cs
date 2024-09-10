@@ -91,13 +91,14 @@ namespace AudioLink
 
         #endregion
 
-
+        #if PVR_CCK_WORLDS
         ThemeColorController FindThemeColorController()
         {
             Transform controllerTransform = transform.Find("ThemeColorController");
             if (controllerTransform == null) return null;
-            return controllerTransform.GetComponent<ThemeColorController>();
+            return (ThemeColorController)controllerTransform.GetComponent(typeof(ThemeColorController));
         }
+        #endif
         
         private void UpdateSyncMode(Transform inputTransform, ControllerSyncMode userSyncMode, ControllerSyncMode desiredSyncMode)
         {
@@ -130,7 +131,16 @@ namespace AudioLink
                 themeColorController.networkSynced = (int)syncMode < (int)ControllerSyncMode.None;
 
             }
-        
+        public override void OnNetworkReady()
+        {
+            if(themeColorController == null)
+            {
+                Debug.LogError("[AudioLink] AudioLinkController could not find themeColorController");
+            }
+            else {
+                themeColorController.InitializeAudioLinkThemeColors();
+            }
+        }
         void Start()
         {
             InitIDs();
@@ -139,7 +149,7 @@ namespace AudioLink
                 Debug.LogError("[AudioLink] Controller not connected to AudioLink");
                 return;
             }
-
+#if PVR_CCK_WORLDS
             if (themeColorController == null)
             {
                 // This is here in case someone upgraded AudioLink, which updates
@@ -148,6 +158,7 @@ namespace AudioLink
                 Debug.Log("[AudioLink] AudioLinkController using fallback method for finding themeColorController");
                 themeColorController = FindThemeColorController();
             }
+#endif
             if (themeColorController == null)
             {
                 // Something really weird has gone on. maybe using updated script
@@ -158,7 +169,7 @@ namespace AudioLink
             {
                 themeColorController.audioLink = audioLink;
                 themeColorController.audioLinkUI = audioLinkUI;
-                themeColorController.InitializeAudioLinkThemeColors();
+                //themeColorController.InitializeAudioLinkThemeColors();
             }
 
             SetControllerSyncMode(controllerSyncMode);

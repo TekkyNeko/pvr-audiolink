@@ -2,11 +2,11 @@ using UnityEngine;
 
 namespace AudioLink
 {
-#if UDONSHARP
-    using UdonSharp;
+#if PVR_CCK_WORLDS
+    using PVR.PSharp;
 
     [RequireComponent(typeof(SkinnedMeshRenderer))]
-    public class AudioReactiveBlendshapes : UdonSharpBehaviour
+    public class AudioReactiveBlendshapes : PSharpBehaviour
 #else
     [RequireComponent(typeof(SkinnedMeshRenderer))]
     public class AudioReactiveBlendshapes : MonoBehaviour
