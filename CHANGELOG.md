@@ -1,4 +1,7 @@
 # Changelog
+## 2.0.1 - September 11th, 2024
+### Bugfixes
+- Fix the AudioLinkController pickups and object sync as i accidentally reverted it before release
 
 ## 2.0.0 - September 8th, 2024
 ### New features

@@ -1930,7 +1930,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -2962,10 +2962,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3844225528926831349, guid: a8d95ffbd8dc8cf458d83d53be54c6e5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 496645078}
+      addedObject: {fileID: 496645074}
     - targetCorrespondingSourceObject: {fileID: 3844225528926831349, guid: a8d95ffbd8dc8cf458d83d53be54c6e5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 496645077}
+      addedObject: {fileID: 496645073}
   m_SourcePrefab: {fileID: 100100000, guid: a8d95ffbd8dc8cf458d83d53be54c6e5, type: 3}
 --- !u!1 &159806526
 GameObject:
@@ -3709,74 +3709,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &219811612
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 219811615}
-  - component: {fileID: 219811614}
-  - component: {fileID: 219811613}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &219811613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 219811612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &219811614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 219811612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &219811615
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 219811612}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &222196992 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7104607123551869852, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
@@ -3793,7 +3725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 238d41f5a089ab542815c1f455244d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &222197008
+--- !u!114 &222196998
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3808,7 +3740,7 @@ MonoBehaviour:
   proxies: []
   ID: 6
   OwnerID: 0
---- !u!114 &222197009
+--- !u!114 &222196999
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3822,7 +3754,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: ca356c509fac7484a86f6c40fee6795e, type: 2}
   type: AudioLink.AudioLinkControllerInput
-  pSharpNetworkedObject: {fileID: 222197008}
+  pSharpNetworkedObject: {fileID: 222196998}
   pSharpBehaviour: {fileID: 222196996}
   pSharpProxy: {fileID: 0}
   variables:
@@ -3940,7 +3872,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: themeColorController
     typeFullName: AudioLink.ThemeColorController
@@ -4056,7 +3988,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 970514053}
+    objectValue: {fileID: 970514051}
     objectArrayValue: []
   - fieldName: audioLinkController
     typeFullName: AudioLink.AudioLinkController
@@ -4172,7 +4104,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 557470210}
+    objectValue: {fileID: 557470206}
     objectArrayValue: []
   - fieldName: CustomColorButton3
     typeFullName: UnityEngine.UI.Button
@@ -7799,10 +7731,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3844225528926831349, guid: a8d95ffbd8dc8cf458d83d53be54c6e5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1842948914}
+      addedObject: {fileID: 1842948910}
     - targetCorrespondingSourceObject: {fileID: 3844225528926831349, guid: a8d95ffbd8dc8cf458d83d53be54c6e5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1842948913}
+      addedObject: {fileID: 1842948909}
   m_SourcePrefab: {fileID: 100100000, guid: a8d95ffbd8dc8cf458d83d53be54c6e5, type: 3}
 --- !u!1 &255901013
 GameObject:
@@ -9560,7 +9492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4049912ceef2cfd46b4119db70a9b88c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &354183369
+--- !u!114 &354183367
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9575,7 +9507,7 @@ MonoBehaviour:
   proxies: []
   ID: 19
   OwnerID: 0
---- !u!114 &354183370
+--- !u!114 &354183368
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9589,7 +9521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: aabe4a63821b40041b9b082eea36650b, type: 2}
   type: AudioLink.GlobalToggle
-  pSharpNetworkedObject: {fileID: 354183369}
+  pSharpNetworkedObject: {fileID: 354183367}
   pSharpBehaviour: {fileID: 354183365}
   pSharpProxy: {fileID: 0}
   variables: []
@@ -11413,7 +11345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &434152184
+--- !u!114 &434152182
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11428,7 +11360,7 @@ MonoBehaviour:
   proxies: []
   ID: 14
   OwnerID: 0
---- !u!114 &434152185
+--- !u!114 &434152183
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11442,7 +11374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 434152184}
+  pSharpNetworkedObject: {fileID: 434152182}
   pSharpBehaviour: {fileID: 434152179}
   pSharpProxy: {fileID: 0}
   variables: []
@@ -13287,7 +13219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &469147805
+--- !u!114 &469147803
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13302,7 +13234,7 @@ MonoBehaviour:
   proxies: []
   ID: 7
   OwnerID: 0
---- !u!114 &469147806
+--- !u!114 &469147804
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13316,7 +13248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 469147805}
+  pSharpNetworkedObject: {fileID: 469147803}
   pSharpBehaviour: {fileID: 469147800}
   pSharpProxy: {fileID: 0}
   variables: []
@@ -13486,7 +13418,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -14197,7 +14129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 022a3d4ea0790ab4f96c8396ee532434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &479514248
+--- !u!114 &479514244
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14212,7 +14144,7 @@ MonoBehaviour:
   proxies: []
   ID: 39
   OwnerID: 0
---- !u!114 &479514249
+--- !u!114 &479514245
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14226,7 +14158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9177bc7eb795b1b4f853131d1f2f726d, type: 2}
   type: AudioLink.AudioReactiveLight
-  pSharpNetworkedObject: {fileID: 479514248}
+  pSharpNetworkedObject: {fileID: 479514244}
   pSharpBehaviour: {fileID: 479514243}
   pSharpProxy: {fileID: 0}
   variables:
@@ -14344,7 +14276,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -15379,7 +15311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 022a3d4ea0790ab4f96c8396ee532434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &496645077
+--- !u!114 &496645073
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15394,7 +15326,7 @@ MonoBehaviour:
   proxies: []
   ID: 40
   OwnerID: 0
---- !u!114 &496645078
+--- !u!114 &496645074
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15408,7 +15340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9177bc7eb795b1b4f853131d1f2f726d, type: 2}
   type: AudioLink.AudioReactiveLight
-  pSharpNetworkedObject: {fileID: 496645077}
+  pSharpNetworkedObject: {fileID: 496645073}
   pSharpBehaviour: {fileID: 496645072}
   pSharpProxy: {fileID: 0}
   variables:
@@ -15526,7 +15458,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -16332,7 +16264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35ad02220e27d1d4ab6413ec7f2abc17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &526539299
+--- !u!114 &526539293
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16347,7 +16279,7 @@ MonoBehaviour:
   proxies: []
   ID: 3
   OwnerID: 0
---- !u!114 &526539300
+--- !u!114 &526539294
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16361,7 +16293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 0677e858166927c4699ec539291774e1, type: 2}
   type: AudioLink.AudioLinkControllerHandle
-  pSharpNetworkedObject: {fileID: 526539299}
+  pSharpNetworkedObject: {fileID: 526539293}
   pSharpBehaviour: {fileID: 526539291}
   pSharpProxy: {fileID: 0}
   variables:
@@ -16998,7 +16930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111447505f22b73428da6baa8bcd8bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &557470209
+--- !u!114 &557470205
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17013,7 +16945,7 @@ MonoBehaviour:
   proxies: []
   ID: 2
   OwnerID: 0
---- !u!114 &557470210
+--- !u!114 &557470206
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17027,7 +16959,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 10c4e32934389984281a5d35c87c2892, type: 2}
   type: AudioLink.AudioLinkController
-  pSharpNetworkedObject: {fileID: 557470209}
+  pSharpNetworkedObject: {fileID: 557470205}
   pSharpBehaviour: {fileID: 557470204}
   pSharpProxy: {fileID: 0}
   variables:
@@ -17145,7 +17077,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: controllerSyncMode
     typeFullName: AudioLink.ControllerSyncMode
@@ -17377,7 +17309,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 970514053}
+    objectValue: {fileID: 970514051}
     objectArrayValue: []
   - fieldName: audioLinkUI
     typeFullName: UnityEngine.Material
@@ -20798,7 +20730,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -22347,7 +22279,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -23819,7 +23751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &757604739
+--- !u!114 &757604737
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -23834,7 +23766,7 @@ MonoBehaviour:
   proxies: []
   ID: 13
   OwnerID: 0
---- !u!114 &757604740
+--- !u!114 &757604738
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -23848,7 +23780,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 757604739}
+  pSharpNetworkedObject: {fileID: 757604737}
   pSharpBehaviour: {fileID: 757604734}
   pSharpProxy: {fileID: 0}
   variables: []
@@ -23903,7 +23835,7 @@ MonoBehaviour:
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &760546726
+--- !u!114 &760546727
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -23918,7 +23850,7 @@ MonoBehaviour:
   proxies: []
   ID: 1
   OwnerID: 0
---- !u!114 &760546727
+--- !u!114 &760546728
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -23932,7 +23864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 70a2bea70f3c732439bb0fcd90685a93, type: 2}
   type: AudioLink.AudioLinkDataAPI
-  pSharpNetworkedObject: {fileID: 760546726}
+  pSharpNetworkedObject: {fileID: 760546727}
   pSharpBehaviour: {fileID: 760546724}
   pSharpProxy: {fileID: 0}
   variables: []
@@ -24729,10 +24661,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7192475881897018203, guid: a4a202fa1fe3e8545b997989851c9002, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1345347997}
+      addedObject: {fileID: 1345347991}
     - targetCorrespondingSourceObject: {fileID: 7192475881897018203, guid: a4a202fa1fe3e8545b997989851c9002, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1345347996}
+      addedObject: {fileID: 1345347990}
   m_SourcePrefab: {fileID: 100100000, guid: a4a202fa1fe3e8545b997989851c9002, type: 3}
 --- !u!4 &812143189 stripped
 Transform:
@@ -24766,7 +24698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &824438479
+--- !u!114 &824438477
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -24781,7 +24713,7 @@ MonoBehaviour:
   proxies: []
   ID: 12
   OwnerID: 0
---- !u!114 &824438480
+--- !u!114 &824438478
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -24795,7 +24727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 824438479}
+  pSharpNetworkedObject: {fileID: 824438477}
   pSharpBehaviour: {fileID: 824438474}
   pSharpProxy: {fileID: 0}
   variables: []
@@ -26720,10 +26652,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3844225528926831349, guid: a8d95ffbd8dc8cf458d83d53be54c6e5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 929561731}
+      addedObject: {fileID: 929561727}
     - targetCorrespondingSourceObject: {fileID: 3844225528926831349, guid: a8d95ffbd8dc8cf458d83d53be54c6e5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 929561730}
+      addedObject: {fileID: 929561726}
   m_SourcePrefab: {fileID: 100100000, guid: a8d95ffbd8dc8cf458d83d53be54c6e5, type: 3}
 --- !u!4 &929561722 stripped
 Transform:
@@ -26741,7 +26673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 022a3d4ea0790ab4f96c8396ee532434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &929561730
+--- !u!114 &929561726
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -26756,7 +26688,7 @@ MonoBehaviour:
   proxies: []
   ID: 34
   OwnerID: 0
---- !u!114 &929561731
+--- !u!114 &929561727
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -26770,7 +26702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9177bc7eb795b1b4f853131d1f2f726d, type: 2}
   type: AudioLink.AudioReactiveLight
-  pSharpNetworkedObject: {fileID: 929561730}
+  pSharpNetworkedObject: {fileID: 929561726}
   pSharpBehaviour: {fileID: 929561725}
   pSharpProxy: {fileID: 0}
   variables:
@@ -26888,7 +26820,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -27941,7 +27873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111324e7f26747b458f38aee49327eb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &970514052
+--- !u!114 &970514050
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -27956,7 +27888,7 @@ MonoBehaviour:
   proxies: []
   ID: 5
   OwnerID: 0
---- !u!114 &970514053
+--- !u!114 &970514051
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -27970,7 +27902,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: aef018a8a5223724c8f174644cca89f8, type: 2}
   type: AudioLink.ThemeColorController
-  pSharpNetworkedObject: {fileID: 970514052}
+  pSharpNetworkedObject: {fileID: 970514050}
   pSharpBehaviour: {fileID: 970514048}
   pSharpProxy: {fileID: 0}
   variables:
@@ -28552,7 +28484,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: audioLinkUI
     typeFullName: UnityEngine.Material
@@ -29587,6 +29519,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &981423410
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4546112747667867505, guid: fe6d48943d3ac654f98bfef65566499a, type: 3}
+      propertyPath: m_Name
+      value: PVR_World
+      objectReference: {fileID: 0}
+    - target: {fileID: 4546112747667867506, guid: fe6d48943d3ac654f98bfef65566499a, type: 3}
+      propertyPath: isShowingStats
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4546112747667867506, guid: fe6d48943d3ac654f98bfef65566499a, type: 3}
+      propertyPath: uploadNewImage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4546112747667867506, guid: fe6d48943d3ac654f98bfef65566499a, type: 3}
+      propertyPath: referenceCamera
+      value: 
+      objectReference: {fileID: 673377024}
+    - target: {fileID: 4546112747667867507, guid: fe6d48943d3ac654f98bfef65566499a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4546112747667867507, guid: fe6d48943d3ac654f98bfef65566499a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4546112747667867507, guid: fe6d48943d3ac654f98bfef65566499a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.558
+      objectReference: {fileID: 0}
+    - target: {fileID: 4546112747667867507, guid: fe6d48943d3ac654f98bfef65566499a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4546112747667867507, guid: fe6d48943d3ac654f98bfef65566499a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4546112747667867507, guid: fe6d48943d3ac654f98bfef65566499a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4546112747667867507, guid: fe6d48943d3ac654f98bfef65566499a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4546112747667867507, guid: fe6d48943d3ac654f98bfef65566499a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4546112747667867507, guid: fe6d48943d3ac654f98bfef65566499a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4546112747667867507, guid: fe6d48943d3ac654f98bfef65566499a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe6d48943d3ac654f98bfef65566499a, type: 3}
 --- !u!1 &989064229
 GameObject:
   m_ObjectHideFlags: 0
@@ -30130,10 +30131,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3844225528926831349, guid: a8d95ffbd8dc8cf458d83d53be54c6e5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1535409333}
+      addedObject: {fileID: 1535409329}
     - targetCorrespondingSourceObject: {fileID: 3844225528926831349, guid: a8d95ffbd8dc8cf458d83d53be54c6e5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1535409332}
+      addedObject: {fileID: 1535409328}
   m_SourcePrefab: {fileID: 100100000, guid: a8d95ffbd8dc8cf458d83d53be54c6e5, type: 3}
 --- !u!1 &1027589653
 GameObject:
@@ -31305,7 +31306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1065666569
+--- !u!114 &1065666567
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -31320,7 +31321,7 @@ MonoBehaviour:
   proxies: []
   ID: 15
   OwnerID: 0
---- !u!114 &1065666570
+--- !u!114 &1065666568
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -31334,7 +31335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 1065666569}
+  pSharpNetworkedObject: {fileID: 1065666567}
   pSharpBehaviour: {fileID: 1065666564}
   pSharpProxy: {fileID: 0}
   variables: []
@@ -32812,7 +32813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1088275138
+--- !u!114 &1088275136
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -32827,7 +32828,7 @@ MonoBehaviour:
   proxies: []
   ID: 18
   OwnerID: 0
---- !u!114 &1088275139
+--- !u!114 &1088275137
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -32841,7 +32842,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: aabe4a63821b40041b9b082eea36650b, type: 2}
   type: AudioLink.GlobalToggle
-  pSharpNetworkedObject: {fileID: 1088275138}
+  pSharpNetworkedObject: {fileID: 1088275136}
   pSharpBehaviour: {fileID: 1088275133}
   pSharpProxy: {fileID: 0}
   variables: []
@@ -32861,7 +32862,6 @@ GameObject:
   - component: {fileID: 1088857139}
   - component: {fileID: 1088857138}
   - component: {fileID: 1088857142}
-  - component: {fileID: 1088857141}
   - component: {fileID: 1088857144}
   - component: {fileID: 1088857143}
   m_Layer: 0
@@ -32957,18 +32957,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088857136}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1088857141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1088857136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1088857142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33138,7 +33126,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -35602,7 +35590,6 @@ GameObject:
   - component: {fileID: 1193404519}
   - component: {fileID: 1193404518}
   - component: {fileID: 1193404522}
-  - component: {fileID: 1193404521}
   - component: {fileID: 1193404524}
   - component: {fileID: 1193404523}
   m_Layer: 0
@@ -35698,18 +35685,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1193404516}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1193404521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1193404516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1193404522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35879,7 +35854,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -36794,10 +36769,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3844225528926831349, guid: a8d95ffbd8dc8cf458d83d53be54c6e5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2085540186}
+      addedObject: {fileID: 2085540182}
     - targetCorrespondingSourceObject: {fileID: 3844225528926831349, guid: a8d95ffbd8dc8cf458d83d53be54c6e5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2085540185}
+      addedObject: {fileID: 2085540181}
   m_SourcePrefab: {fileID: 100100000, guid: a8d95ffbd8dc8cf458d83d53be54c6e5, type: 3}
 --- !u!4 &1199374750 stripped
 Transform:
@@ -37105,10 +37080,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3844225528926831349, guid: a8d95ffbd8dc8cf458d83d53be54c6e5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1214483255}
+      addedObject: {fileID: 1214483251}
     - targetCorrespondingSourceObject: {fileID: 3844225528926831349, guid: a8d95ffbd8dc8cf458d83d53be54c6e5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1214483254}
+      addedObject: {fileID: 1214483250}
   m_SourcePrefab: {fileID: 100100000, guid: a8d95ffbd8dc8cf458d83d53be54c6e5, type: 3}
 --- !u!4 &1214483246 stripped
 Transform:
@@ -37126,7 +37101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 022a3d4ea0790ab4f96c8396ee532434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1214483254
+--- !u!114 &1214483250
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -37141,7 +37116,7 @@ MonoBehaviour:
   proxies: []
   ID: 35
   OwnerID: 0
---- !u!114 &1214483255
+--- !u!114 &1214483251
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -37155,7 +37130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9177bc7eb795b1b4f853131d1f2f726d, type: 2}
   type: AudioLink.AudioReactiveLight
-  pSharpNetworkedObject: {fileID: 1214483254}
+  pSharpNetworkedObject: {fileID: 1214483250}
   pSharpBehaviour: {fileID: 1214483249}
   pSharpProxy: {fileID: 0}
   variables:
@@ -37273,7 +37248,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -38196,10 +38171,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7192475881897018203, guid: a4a202fa1fe3e8545b997989851c9002, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1256715627}
+      addedObject: {fileID: 1256715621}
     - targetCorrespondingSourceObject: {fileID: 7192475881897018203, guid: a4a202fa1fe3e8545b997989851c9002, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1256715626}
+      addedObject: {fileID: 1256715620}
   m_SourcePrefab: {fileID: 100100000, guid: a4a202fa1fe3e8545b997989851c9002, type: 3}
 --- !u!1 &1227152293
 GameObject:
@@ -39021,7 +38996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 725337c2aa124bc4682c6ce012696c4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1256715626
+--- !u!114 &1256715620
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -39036,7 +39011,7 @@ MonoBehaviour:
   proxies: []
   ID: 24
   OwnerID: 0
---- !u!114 &1256715627
+--- !u!114 &1256715621
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -39050,7 +39025,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: b08efc330049f8e4da70ed20aab1f9fe, type: 2}
   type: AudioLink.AudioReactiveSurface
-  pSharpNetworkedObject: {fileID: 1256715626}
+  pSharpNetworkedObject: {fileID: 1256715620}
   pSharpBehaviour: {fileID: 1256715619}
   pSharpProxy: {fileID: 0}
   variables:
@@ -39979,7 +39954,6 @@ GameObject:
   - component: {fileID: 1267158872}
   - component: {fileID: 1267158871}
   - component: {fileID: 1267158875}
-  - component: {fileID: 1267158874}
   - component: {fileID: 1267158877}
   - component: {fileID: 1267158876}
   m_Layer: 0
@@ -40075,18 +40049,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1267158869}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1267158874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1267158869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1267158875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40256,7 +40218,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -41550,10 +41512,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7192475881897018203, guid: a4a202fa1fe3e8545b997989851c9002, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1759927907}
+      addedObject: {fileID: 1759927901}
     - targetCorrespondingSourceObject: {fileID: 7192475881897018203, guid: a4a202fa1fe3e8545b997989851c9002, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1759927906}
+      addedObject: {fileID: 1759927900}
   m_SourcePrefab: {fileID: 100100000, guid: a4a202fa1fe3e8545b997989851c9002, type: 3}
 --- !u!4 &1321170868 stripped
 Transform:
@@ -41718,7 +41680,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -42450,7 +42412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 725337c2aa124bc4682c6ce012696c4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1345347996
+--- !u!114 &1345347990
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42465,7 +42427,7 @@ MonoBehaviour:
   proxies: []
   ID: 22
   OwnerID: 0
---- !u!114 &1345347997
+--- !u!114 &1345347991
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42479,7 +42441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: b08efc330049f8e4da70ed20aab1f9fe, type: 2}
   type: AudioLink.AudioReactiveSurface
-  pSharpNetworkedObject: {fileID: 1345347996}
+  pSharpNetworkedObject: {fileID: 1345347990}
   pSharpBehaviour: {fileID: 1345347989}
   pSharpProxy: {fileID: 0}
   variables:
@@ -44606,7 +44568,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -45207,7 +45169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 022a3d4ea0790ab4f96c8396ee532434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1417881580
+--- !u!114 &1417881576
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45222,7 +45184,7 @@ MonoBehaviour:
   proxies: []
   ID: 33
   OwnerID: 0
---- !u!114 &1417881581
+--- !u!114 &1417881577
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45236,7 +45198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9177bc7eb795b1b4f853131d1f2f726d, type: 2}
   type: AudioLink.AudioReactiveLight
-  pSharpNetworkedObject: {fileID: 1417881580}
+  pSharpNetworkedObject: {fileID: 1417881576}
   pSharpBehaviour: {fileID: 1417881575}
   pSharpProxy: {fileID: 0}
   variables:
@@ -45354,7 +45316,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -45966,7 +45928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1420927263
+--- !u!114 &1420927261
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45981,7 +45943,7 @@ MonoBehaviour:
   proxies: []
   ID: 10
   OwnerID: 0
---- !u!114 &1420927264
+--- !u!114 &1420927262
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45995,7 +45957,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 1420927263}
+  pSharpNetworkedObject: {fileID: 1420927261}
   pSharpBehaviour: {fileID: 1420927258}
   pSharpProxy: {fileID: 0}
   variables: []
@@ -46370,7 +46332,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -47574,7 +47536,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7372164371172877839, guid: 6f8a13df523f44f4ebab0253db8adacb, type: 3}
   m_PrefabInstance: {fileID: 1947364916}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1449330714
+--- !u!114 &1449330712
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47588,7 +47550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: dd9e1c1682c609547ab173388c12d3b8, type: 2}
   type: AudioLink.AudioLink
-  pSharpNetworkedObject: {fileID: 1449330715}
+  pSharpNetworkedObject: {fileID: 1449330714}
   pSharpBehaviour: {fileID: 725423128}
   pSharpProxy: {fileID: 0}
   variables:
@@ -61587,7 +61549,7 @@ MonoBehaviour:
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &1449330715
+--- !u!114 &1449330714
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64415,10 +64377,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3844225528926831349, guid: a8d95ffbd8dc8cf458d83d53be54c6e5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 479514249}
+      addedObject: {fileID: 479514245}
     - targetCorrespondingSourceObject: {fileID: 3844225528926831349, guid: a8d95ffbd8dc8cf458d83d53be54c6e5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 479514248}
+      addedObject: {fileID: 479514244}
   m_SourcePrefab: {fileID: 100100000, guid: a8d95ffbd8dc8cf458d83d53be54c6e5, type: 3}
 --- !u!1773428102 &1521639660 stripped
 ParentConstraint:
@@ -64741,7 +64703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 022a3d4ea0790ab4f96c8396ee532434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1535409332
+--- !u!114 &1535409328
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64756,7 +64718,7 @@ MonoBehaviour:
   proxies: []
   ID: 37
   OwnerID: 0
---- !u!114 &1535409333
+--- !u!114 &1535409329
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64770,7 +64732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9177bc7eb795b1b4f853131d1f2f726d, type: 2}
   type: AudioLink.AudioReactiveLight
-  pSharpNetworkedObject: {fileID: 1535409332}
+  pSharpNetworkedObject: {fileID: 1535409328}
   pSharpBehaviour: {fileID: 1535409327}
   pSharpProxy: {fileID: 0}
   variables:
@@ -64888,7 +64850,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -66372,7 +66334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1589195090
+--- !u!114 &1589195088
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -66387,7 +66349,7 @@ MonoBehaviour:
   proxies: []
   ID: 17
   OwnerID: 0
---- !u!114 &1589195091
+--- !u!114 &1589195089
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -66401,7 +66363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 1589195090}
+  pSharpNetworkedObject: {fileID: 1589195088}
   pSharpBehaviour: {fileID: 1589195085}
   pSharpProxy: {fileID: 0}
   variables: []
@@ -68240,7 +68202,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -69510,7 +69472,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -72022,10 +71984,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7192475881897018203, guid: a4a202fa1fe3e8545b997989851c9002, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1680062824}
+      addedObject: {fileID: 1680062818}
     - targetCorrespondingSourceObject: {fileID: 7192475881897018203, guid: a4a202fa1fe3e8545b997989851c9002, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1680062823}
+      addedObject: {fileID: 1680062817}
   m_SourcePrefab: {fileID: 100100000, guid: a4a202fa1fe3e8545b997989851c9002, type: 3}
 --- !u!4 &1680062813 stripped
 Transform:
@@ -72043,7 +72005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 725337c2aa124bc4682c6ce012696c4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1680062823
+--- !u!114 &1680062817
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72058,7 +72020,7 @@ MonoBehaviour:
   proxies: []
   ID: 21
   OwnerID: 0
---- !u!114 &1680062824
+--- !u!114 &1680062818
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72072,7 +72034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: b08efc330049f8e4da70ed20aab1f9fe, type: 2}
   type: AudioLink.AudioReactiveSurface
-  pSharpNetworkedObject: {fileID: 1680062823}
+  pSharpNetworkedObject: {fileID: 1680062817}
   pSharpBehaviour: {fileID: 1680062816}
   pSharpProxy: {fileID: 0}
   variables:
@@ -74493,7 +74455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 725337c2aa124bc4682c6ce012696c4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1759927906
+--- !u!114 &1759927900
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74508,7 +74470,7 @@ MonoBehaviour:
   proxies: []
   ID: 26
   OwnerID: 0
---- !u!114 &1759927907
+--- !u!114 &1759927901
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74522,7 +74484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: b08efc330049f8e4da70ed20aab1f9fe, type: 2}
   type: AudioLink.AudioReactiveSurface
-  pSharpNetworkedObject: {fileID: 1759927906}
+  pSharpNetworkedObject: {fileID: 1759927900}
   pSharpBehaviour: {fileID: 1759927899}
   pSharpProxy: {fileID: 0}
   variables:
@@ -76123,10 +76085,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7192475881897018203, guid: a4a202fa1fe3e8545b997989851c9002, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1810949211}
+      addedObject: {fileID: 1810949205}
     - targetCorrespondingSourceObject: {fileID: 7192475881897018203, guid: a4a202fa1fe3e8545b997989851c9002, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1810949210}
+      addedObject: {fileID: 1810949204}
   m_SourcePrefab: {fileID: 100100000, guid: a4a202fa1fe3e8545b997989851c9002, type: 3}
 --- !u!4 &1810949200 stripped
 Transform:
@@ -76144,7 +76106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 725337c2aa124bc4682c6ce012696c4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1810949210
+--- !u!114 &1810949204
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -76159,7 +76121,7 @@ MonoBehaviour:
   proxies: []
   ID: 25
   OwnerID: 0
---- !u!114 &1810949211
+--- !u!114 &1810949205
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -76173,7 +76135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: b08efc330049f8e4da70ed20aab1f9fe, type: 2}
   type: AudioLink.AudioReactiveSurface
-  pSharpNetworkedObject: {fileID: 1810949210}
+  pSharpNetworkedObject: {fileID: 1810949204}
   pSharpBehaviour: {fileID: 1810949203}
   pSharpProxy: {fileID: 0}
   variables:
@@ -77124,10 +77086,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7192475881897018203, guid: a4a202fa1fe3e8545b997989851c9002, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1822958577}
+      addedObject: {fileID: 1822958571}
     - targetCorrespondingSourceObject: {fileID: 7192475881897018203, guid: a4a202fa1fe3e8545b997989851c9002, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1822958576}
+      addedObject: {fileID: 1822958570}
   m_SourcePrefab: {fileID: 100100000, guid: a4a202fa1fe3e8545b997989851c9002, type: 3}
 --- !u!4 &1822958566 stripped
 Transform:
@@ -77145,7 +77107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 725337c2aa124bc4682c6ce012696c4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1822958576
+--- !u!114 &1822958570
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -77160,7 +77122,7 @@ MonoBehaviour:
   proxies: []
   ID: 23
   OwnerID: 0
---- !u!114 &1822958577
+--- !u!114 &1822958571
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -77174,7 +77136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: b08efc330049f8e4da70ed20aab1f9fe, type: 2}
   type: AudioLink.AudioReactiveSurface
-  pSharpNetworkedObject: {fileID: 1822958576}
+  pSharpNetworkedObject: {fileID: 1822958570}
   pSharpBehaviour: {fileID: 1822958569}
   pSharpProxy: {fileID: 0}
   variables:
@@ -78512,7 +78474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 022a3d4ea0790ab4f96c8396ee532434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1842948913
+--- !u!114 &1842948909
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -78527,7 +78489,7 @@ MonoBehaviour:
   proxies: []
   ID: 38
   OwnerID: 0
---- !u!114 &1842948914
+--- !u!114 &1842948910
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -78541,7 +78503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9177bc7eb795b1b4f853131d1f2f726d, type: 2}
   type: AudioLink.AudioReactiveLight
-  pSharpNetworkedObject: {fileID: 1842948913}
+  pSharpNetworkedObject: {fileID: 1842948909}
   pSharpBehaviour: {fileID: 1842948908}
   pSharpProxy: {fileID: 0}
   variables:
@@ -78659,7 +78621,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -79714,7 +79676,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -80462,7 +80424,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -81210,7 +81172,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -82063,7 +82025,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -83031,7 +82993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1913050902
+--- !u!114 &1913050900
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -83046,7 +83008,7 @@ MonoBehaviour:
   proxies: []
   ID: 8
   OwnerID: 0
---- !u!114 &1913050903
+--- !u!114 &1913050901
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -83060,7 +83022,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 1913050902}
+  pSharpNetworkedObject: {fileID: 1913050900}
   pSharpBehaviour: {fileID: 1913050897}
   pSharpProxy: {fileID: 0}
   variables: []
@@ -83412,7 +83374,6 @@ GameObject:
   - component: {fileID: 1939931430}
   - component: {fileID: 1939931429}
   - component: {fileID: 1939931433}
-  - component: {fileID: 1939931432}
   - component: {fileID: 1939931435}
   - component: {fileID: 1939931434}
   m_Layer: 0
@@ -83508,18 +83469,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1939931427}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1939931432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1939931427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1939931433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83689,7 +83638,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -84395,7 +84344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 725337c2aa124bc4682c6ce012696c4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1940971301
+--- !u!114 &1940971295
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84410,7 +84359,7 @@ MonoBehaviour:
   proxies: []
   ID: 20
   OwnerID: 0
---- !u!114 &1940971302
+--- !u!114 &1940971296
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84424,7 +84373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: b08efc330049f8e4da70ed20aab1f9fe, type: 2}
   type: AudioLink.AudioReactiveSurface
-  pSharpNetworkedObject: {fileID: 1940971301}
+  pSharpNetworkedObject: {fileID: 1940971295}
   pSharpBehaviour: {fileID: 1940971294}
   pSharpProxy: {fileID: 0}
   variables:
@@ -85405,21 +85354,26 @@ PrefabInstance:
     - {fileID: 9167437798232126864, guid: 6f8a13df523f44f4ebab0253db8adacb, type: 3}
     - {fileID: 2513124143269461683, guid: 6f8a13df523f44f4ebab0253db8adacb, type: 3}
     - {fileID: 3685002975556083551, guid: 6f8a13df523f44f4ebab0253db8adacb, type: 3}
+    - {fileID: 7040509123869358005, guid: 6f8a13df523f44f4ebab0253db8adacb, type: 3}
+    - {fileID: 7863481949107764645, guid: 6f8a13df523f44f4ebab0253db8adacb, type: 3}
+    - {fileID: 6382702581674854924, guid: 6f8a13df523f44f4ebab0253db8adacb, type: 3}
+    - {fileID: 1462800084325324543, guid: 6f8a13df523f44f4ebab0253db8adacb, type: 3}
+    - {fileID: 7042262577455476454, guid: 6f8a13df523f44f4ebab0253db8adacb, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7372164371172877839, guid: 6f8a13df523f44f4ebab0253db8adacb, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1449330714}
+      addedObject: {fileID: 1449330712}
     - targetCorrespondingSourceObject: {fileID: 7372164371172877839, guid: 6f8a13df523f44f4ebab0253db8adacb, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1449330715}
+      addedObject: {fileID: 1449330714}
+    - targetCorrespondingSourceObject: {fileID: 3565191672130424299, guid: 6f8a13df523f44f4ebab0253db8adacb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 760546728}
     - targetCorrespondingSourceObject: {fileID: 3565191672130424299, guid: 6f8a13df523f44f4ebab0253db8adacb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 760546727}
-    - targetCorrespondingSourceObject: {fileID: 3565191672130424299, guid: 6f8a13df523f44f4ebab0253db8adacb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 760546726}
     - targetCorrespondingSourceObject: {fileID: 3565191672130424299, guid: 6f8a13df523f44f4ebab0253db8adacb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 760546725}
@@ -87161,7 +87115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35ad02220e27d1d4ab6413ec7f2abc17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1967330977
+--- !u!114 &1967330971
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87176,7 +87130,7 @@ MonoBehaviour:
   proxies: []
   ID: 4
   OwnerID: 0
---- !u!114 &1967330978
+--- !u!114 &1967330972
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87190,7 +87144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 0677e858166927c4699ec539291774e1, type: 2}
   type: AudioLink.AudioLinkControllerHandle
-  pSharpNetworkedObject: {fileID: 1967330977}
+  pSharpNetworkedObject: {fileID: 1967330971}
   pSharpBehaviour: {fileID: 1967330969}
   pSharpProxy: {fileID: 0}
   variables:
@@ -87553,7 +87507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1971274165
+--- !u!114 &1971274163
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87568,7 +87522,7 @@ MonoBehaviour:
   proxies: []
   ID: 16
   OwnerID: 0
---- !u!114 &1971274166
+--- !u!114 &1971274164
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87582,7 +87536,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 1971274165}
+  pSharpNetworkedObject: {fileID: 1971274163}
   pSharpBehaviour: {fileID: 1971274160}
   pSharpProxy: {fileID: 0}
   variables: []
@@ -87752,7 +87706,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -88500,7 +88454,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -90122,7 +90076,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -91867,7 +91821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 022a3d4ea0790ab4f96c8396ee532434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2085540185
+--- !u!114 &2085540181
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91882,7 +91836,7 @@ MonoBehaviour:
   proxies: []
   ID: 36
   OwnerID: 0
---- !u!114 &2085540186
+--- !u!114 &2085540182
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91896,7 +91850,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9177bc7eb795b1b4f853131d1f2f726d, type: 2}
   type: AudioLink.AudioReactiveLight
-  pSharpNetworkedObject: {fileID: 2085540185}
+  pSharpNetworkedObject: {fileID: 2085540181}
   pSharpBehaviour: {fileID: 2085540180}
   pSharpProxy: {fileID: 0}
   variables:
@@ -92014,7 +91968,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 1449330714}
+    objectValue: {fileID: 1449330712}
     objectArrayValue: []
   - fieldName: band
     typeFullName: System.Int32
@@ -93023,7 +92977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2102725418
+--- !u!114 &2102725416
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93038,7 +92992,7 @@ MonoBehaviour:
   proxies: []
   ID: 11
   OwnerID: 0
---- !u!114 &2102725419
+--- !u!114 &2102725417
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93052,7 +93006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 2102725418}
+  pSharpNetworkedObject: {fileID: 2102725416}
   pSharpBehaviour: {fileID: 2102725413}
   pSharpProxy: {fileID: 0}
   variables: []
@@ -93581,117 +93535,153 @@ PrefabInstance:
     - {fileID: 2122862730095323753, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
     - {fileID: 3885663323343945410, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
     - {fileID: 9171425335272265732, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 8930880001595612413, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 2493406584404767817, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 8198201259371584593, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 5865574816039573790, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 8845881554606446791, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 7156342594867870305, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 3502190191144482988, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 1272216649104247693, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 1511561838389717578, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 7229977462435692488, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 5320897576792340394, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 7943792504990708667, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 1652247272372658990, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 8118448003460591706, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 954875552166832659, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 5346926660753795408, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 5282491664826179454, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 5723380262108756090, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 9065079717395678050, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 6936178787127095906, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 8376143161182435668, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 6156669644618408847, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 6471312327754649003, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 4519411621685592005, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 1740262942171220602, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 7675995514107637232, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 2302328691436429980, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 3306398442808684095, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 2798283406253512925, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 8126334267440786819, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 2462570959472633486, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 6426075879367374602, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 4761289069907418561, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 2880144012035650707, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 1147824207353345930, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
+    - {fileID: 3302291338185926126, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8508286501189896103, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 557470210}
+      addedObject: {fileID: 557470206}
     - targetCorrespondingSourceObject: {fileID: 8508286501189896103, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 557470209}
+      addedObject: {fileID: 557470205}
     - targetCorrespondingSourceObject: {fileID: 6131432003661014125, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 526539300}
+      addedObject: {fileID: 526539294}
     - targetCorrespondingSourceObject: {fileID: 6131432003661014125, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 526539299}
+      addedObject: {fileID: 526539293}
     - targetCorrespondingSourceObject: {fileID: 6131432003355997511, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1967330978}
+      addedObject: {fileID: 1967330972}
     - targetCorrespondingSourceObject: {fileID: 6131432003355997511, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1967330977}
+      addedObject: {fileID: 1967330971}
     - targetCorrespondingSourceObject: {fileID: 7104607123388876969, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 970514053}
+      addedObject: {fileID: 970514051}
     - targetCorrespondingSourceObject: {fileID: 7104607123388876969, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 970514052}
+      addedObject: {fileID: 970514050}
     - targetCorrespondingSourceObject: {fileID: 7104607123551869852, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 222197009}
+      addedObject: {fileID: 222196999}
     - targetCorrespondingSourceObject: {fileID: 7104607123551869852, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 222197008}
+      addedObject: {fileID: 222196998}
     - targetCorrespondingSourceObject: {fileID: 7104607121923804248, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 469147806}
+      addedObject: {fileID: 469147804}
     - targetCorrespondingSourceObject: {fileID: 7104607121923804248, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 469147805}
+      addedObject: {fileID: 469147803}
     - targetCorrespondingSourceObject: {fileID: 7104607122644235469, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1913050903}
+      addedObject: {fileID: 1913050901}
     - targetCorrespondingSourceObject: {fileID: 7104607122644235469, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1913050902}
+      addedObject: {fileID: 1913050900}
     - targetCorrespondingSourceObject: {fileID: 7104607122427914809, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2139428880}
+      addedObject: {fileID: 2139428878}
     - targetCorrespondingSourceObject: {fileID: 7104607122427914809, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2139428879}
+      addedObject: {fileID: 2139428877}
     - targetCorrespondingSourceObject: {fileID: 7104607121790838567, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1420927264}
+      addedObject: {fileID: 1420927262}
     - targetCorrespondingSourceObject: {fileID: 7104607121790838567, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1420927263}
+      addedObject: {fileID: 1420927261}
     - targetCorrespondingSourceObject: {fileID: 7104607122674034013, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2102725419}
+      addedObject: {fileID: 2102725417}
     - targetCorrespondingSourceObject: {fileID: 7104607122674034013, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2102725418}
+      addedObject: {fileID: 2102725416}
     - targetCorrespondingSourceObject: {fileID: 7104607121797167502, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 824438480}
+      addedObject: {fileID: 824438478}
     - targetCorrespondingSourceObject: {fileID: 7104607121797167502, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 824438479}
+      addedObject: {fileID: 824438477}
     - targetCorrespondingSourceObject: {fileID: 7104607121609475012, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 757604740}
+      addedObject: {fileID: 757604738}
     - targetCorrespondingSourceObject: {fileID: 7104607121609475012, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 757604739}
+      addedObject: {fileID: 757604737}
     - targetCorrespondingSourceObject: {fileID: 7104607123175652813, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 434152185}
+      addedObject: {fileID: 434152183}
     - targetCorrespondingSourceObject: {fileID: 7104607123175652813, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 434152184}
+      addedObject: {fileID: 434152182}
     - targetCorrespondingSourceObject: {fileID: 7104607121773305394, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1065666570}
+      addedObject: {fileID: 1065666568}
     - targetCorrespondingSourceObject: {fileID: 7104607121773305394, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1065666569}
+      addedObject: {fileID: 1065666567}
     - targetCorrespondingSourceObject: {fileID: 7104607122651323766, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1971274166}
+      addedObject: {fileID: 1971274164}
     - targetCorrespondingSourceObject: {fileID: 7104607122651323766, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1971274165}
+      addedObject: {fileID: 1971274163}
     - targetCorrespondingSourceObject: {fileID: 7104607122342863533, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1589195091}
+      addedObject: {fileID: 1589195089}
     - targetCorrespondingSourceObject: {fileID: 7104607122342863533, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1589195090}
+      addedObject: {fileID: 1589195088}
     - targetCorrespondingSourceObject: {fileID: 7104607122089372576, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1088275139}
+      addedObject: {fileID: 1088275137}
     - targetCorrespondingSourceObject: {fileID: 7104607122089372576, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1088275138}
+      addedObject: {fileID: 1088275136}
     - targetCorrespondingSourceObject: {fileID: 3421722666630043949, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 354183370}
+      addedObject: {fileID: 354183368}
     - targetCorrespondingSourceObject: {fileID: 3421722666630043949, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 354183369}
+      addedObject: {fileID: 354183367}
   m_SourcePrefab: {fileID: 100100000, guid: 97b6ae4734583b345a988fce4a9dc738, type: 3}
 --- !u!1001 &2118219853
 PrefabInstance:
@@ -94075,7 +94065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2139428879
+--- !u!114 &2139428877
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94090,7 +94080,7 @@ MonoBehaviour:
   proxies: []
   ID: 9
   OwnerID: 0
---- !u!114 &2139428880
+--- !u!114 &2139428878
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94104,71 +94094,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 2139428879}
+  pSharpNetworkedObject: {fileID: 2139428877}
   pSharpBehaviour: {fileID: 2139428874}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &1055321712076337554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094421958285228130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1427037861, guid: 4ecd63eff847044b68db9453ce219299, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1094421958285228130
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1094421958285482330}
-  - component: {fileID: 6759095420181247152}
-  - component: {fileID: 1055321712076337554}
-  - component: {fileID: 1415578911660866277}
-  m_Layer: 0
-  m_Name: VRCWorld
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1094421958285482330
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094421958285228130}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2.558}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1415578911660866277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094421958285228130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3844225527957795572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94297,10 +94229,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3844225528926831349, guid: a8d95ffbd8dc8cf458d83d53be54c6e5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1417881581}
+      addedObject: {fileID: 1417881577}
     - targetCorrespondingSourceObject: {fileID: 3844225528926831349, guid: a8d95ffbd8dc8cf458d83d53be54c6e5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1417881580}
+      addedObject: {fileID: 1417881576}
   m_SourcePrefab: {fileID: 100100000, guid: a8d95ffbd8dc8cf458d83d53be54c6e5, type: 3}
 --- !u!1 &6031207975860586408
 GameObject:
@@ -95330,18 +95262,6 @@ Transform:
   - {fileID: 853937498}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6759095420181247152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094421958285228130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -17141911, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &7192475883071888565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -95466,10 +95386,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7192475881897018203, guid: a4a202fa1fe3e8545b997989851c9002, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1940971302}
+      addedObject: {fileID: 1940971296}
     - targetCorrespondingSourceObject: {fileID: 7192475881897018203, guid: a4a202fa1fe3e8545b997989851c9002, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1940971301}
+      addedObject: {fileID: 1940971295}
   m_SourcePrefab: {fileID: 100100000, guid: a4a202fa1fe3e8545b997989851c9002, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -95478,7 +95398,7 @@ SceneRoots:
   - {fileID: 1947364916}
   - {fileID: 2105082474}
   - {fileID: 673377025}
-  - {fileID: 1094421958285482330}
+  - {fileID: 981423410}
   - {fileID: 1987351797}
   - {fileID: 713803995}
   - {fileID: 215224214}
@@ -95490,7 +95410,6 @@ SceneRoots:
   - {fileID: 6031207977827387594}
   - {fileID: 1539994009}
   - {fileID: 2069339485}
-  - {fileID: 219811615}
   - {fileID: 527185641}
   - {fileID: 313864743}
   - {fileID: 1691293}

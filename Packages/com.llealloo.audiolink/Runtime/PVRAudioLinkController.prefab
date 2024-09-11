@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7045250647499831162}
   - component: {fileID: 6536625268945525120}
   - component: {fileID: 8155462685647978720}
-  - component: {fileID: 5723380262108756090}
-  - component: {fileID: 3302291338185926126}
+  - component: {fileID: 5155402721670976967}
+  - component: {fileID: 39010457540076665}
   m_Layer: 13
   m_Name: Power Button
   m_TagString: Untagged
@@ -100,11 +100,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4049912ceef2cfd46b4119db70a9b88c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 5723380262108756090}
+  PSharpProgram: {fileID: 5155402721670976967}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &5723380262108756090
+--- !u!114 &5155402721670976967
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,14 +118,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: aabe4a63821b40041b9b082eea36650b, type: 2}
   type: AudioLink.GlobalToggle
-  pSharpNetworkedObject: {fileID: 3302291338185926126}
+  pSharpNetworkedObject: {fileID: 39010457540076665}
   pSharpBehaviour: {fileID: 8155462685647978720}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &3302291338185926126
+--- !u!114 &39010457540076665
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 23
+  ID: 21
   OwnerID: 0
 --- !u!1 &3558465463456219718
 GameObject:
@@ -493,8 +493,11 @@ GameObject:
   - component: {fileID: 6131432003355997518}
   - component: {fileID: 6131432003355997519}
   - component: {fileID: 6178071173099397459}
-  - component: {fileID: 8198201259371584593}
-  - component: {fileID: 8376143161182435668}
+  - component: {fileID: 449654362782044646}
+  - component: {fileID: 2020147034650386079}
+  - component: {fileID: 3983351405469063376}
+  - component: {fileID: 8528828915538396420}
+  - component: {fileID: 1068946443193167858}
   m_Layer: 13
   m_Name: RightHandle
   m_TagString: Untagged
@@ -556,12 +559,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35ad02220e27d1d4ab6413ec7f2abc17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 8198201259371584593}
+  PSharpProgram: {fileID: 3983351405469063376}
   interactText: 
   maxInteractDistance: 2
   hideHighlight: 0
   parentConstraint: {fileID: 6131432002089892314}
-  Body: {fileID: 0}
+  Body: {fileID: 7104607121971130790}
 --- !u!1773428102 &6131432003355997519
 ParentConstraint:
   m_ObjectHideFlags: 0
@@ -611,7 +614,46 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &8198201259371584593
+--- !u!114 &449654362782044646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6131432003355997511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2018708767, guid: 6182bd482e1b9a94e9148fd18381b8fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: 
+  maxDistance: 2
+  physicsBased: 0
+  hideHighlight: 0
+  pickupMode: 0
+  forcePosition: 1
+  maxForceDistance: 0.168
+  forceOrientation: 0
+  positionOffset: {x: 0, y: 0, z: 0}
+  rotationOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &2020147034650386079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6131432003355997511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91bf60e4ede056b4c84cfd662c412619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PSharpProgram: {fileID: 1068946443193167858}
+  interactText: Interact
+  maxInteractDistance: 2
+  hideHighlight: 0
+  allowTheft: 0
+--- !u!114 &3983351405469063376
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -625,7 +667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 0677e858166927c4699ec539291774e1, type: 2}
   type: AudioLink.AudioLinkControllerHandle
-  pSharpNetworkedObject: {fileID: 8376143161182435668}
+  pSharpNetworkedObject: {fileID: 8528828915538396420}
   pSharpBehaviour: {fileID: 6131432003355997518}
   pSharpProxy: {fileID: 0}
   variables:
@@ -859,12 +901,12 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 0}
+    objectValue: {fileID: 7104607121971130790}
     objectArrayValue: []
   interactText: 
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &8376143161182435668
+--- !u!114 &8528828915538396420
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -877,8 +919,145 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 8
+  ID: 5
   OwnerID: 0
+--- !u!114 &1068946443193167858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6131432003355997511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1394590517, guid: 5f20141248a4dc040a0060f5893b9b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  programAsset: {fileID: 11400000, guid: 933159afd71b1904bab7ff175ecd878c, type: 2}
+  type: PSharpExamples.PickupObjectSync
+  pSharpNetworkedObject: {fileID: 0}
+  pSharpBehaviour: {fileID: 2020147034650386079}
+  pSharpProxy: {fileID: 0}
+  variables:
+  - fieldName: allowTheft
+    typeFullName: System.Boolean
+    typeAsString: System.Boolean, mscorlib
+    isArray: 0
+    unknownVariableType: 0
+    stringValue: 
+    stringArrayValue: []
+    charValue: 0
+    charArrayValue: 
+    floatValue: 0
+    floatArrayValue: []
+    doubleValue: 0
+    doubleArrayValue: []
+    sbyteValue: 0
+    sbyteArrayValue: 
+    byteValue: 0
+    byteArrayValue: 
+    int16Value: 0
+    int16ArrayValue: 
+    int32Value: 0
+    int32ArrayValue: 
+    int64Value: 0
+    int64ArrayValue: 
+    uint16Value: 0
+    uint16ArrayValue: 
+    uint32Value: 0
+    uint32ArrayValue: 
+    uint64Value: 0
+    uint64ArrayValue: 
+    boolValue: 0
+    boolArrayValue: 
+    colorValue: {r: 0, g: 0, b: 0, a: 0}
+    colorArrayValue: []
+    color32Value:
+      serializedVersion: 2
+      rgba: 0
+    color32ArrayValue: []
+    vector2Value: {x: 0, y: 0}
+    vector2ArrayValue: []
+    vector2IntValue: {x: 0, y: 0}
+    vector2IntArrayValue: []
+    vector3Value: {x: 0, y: 0, z: 0}
+    vector3ArrayValue: []
+    vector3IntValue: {x: 0, y: 0, z: 0}
+    vector3IntArrayValue: []
+    vector4Value: {x: 0, y: 0, z: 0, w: 0}
+    vector4ArrayValue: []
+    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
+    quaternionArrayValue: []
+    animationCurveValue:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    animationCurveArrayValue: []
+    gradientValue:
+      serializedVersion: 2
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_ColorSpace: -1
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    gradientArrayValue: []
+    layerMaskValue:
+      serializedVersion: 2
+      m_Bits: 0
+    layerMaskArrayValue: []
+    boundsValue:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+    boundsArrayValue: []
+    boundsIntValue:
+      m_Position: {x: 0, y: 0, z: 0}
+      m_Size: {x: 0, y: 0, z: 0}
+    boundsIntArrayValue: []
+    rectValue:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    rectArrayValue: []
+    rectIntValue:
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    rectIntArrayValue: []
+    enumValue: 0
+    enumArrayValue: 
+    objectValue: {fileID: 0}
+    objectArrayValue: []
+  interactText: Interact
+  maxInteractDistance: 2
+  hideHighlight: 0
 --- !u!1 &6131432003661014125
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,8 +1071,11 @@ GameObject:
   - component: {fileID: 6131432003661014100}
   - component: {fileID: 6131432003661014101}
   - component: {fileID: 5209584612755662571}
-  - component: {fileID: 2493406584404767817}
-  - component: {fileID: 6936178787127095906}
+  - component: {fileID: 7932629569241526468}
+  - component: {fileID: 594743232855905201}
+  - component: {fileID: 7665033260421072444}
+  - component: {fileID: 3000091453238281686}
+  - component: {fileID: 352884100415051454}
   m_Layer: 13
   m_Name: LeftHandle
   m_TagString: Untagged
@@ -955,12 +1137,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35ad02220e27d1d4ab6413ec7f2abc17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 2493406584404767817}
+  PSharpProgram: {fileID: 7665033260421072444}
   interactText: 
   maxInteractDistance: 2
   hideHighlight: 0
   parentConstraint: {fileID: 6131432002089892314}
-  Body: {fileID: 0}
+  Body: {fileID: 7104607121971130790}
 --- !u!1773428102 &6131432003661014101
 ParentConstraint:
   m_ObjectHideFlags: 0
@@ -1010,7 +1192,46 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2493406584404767817
+--- !u!114 &7932629569241526468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6131432003661014125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2018708767, guid: 6182bd482e1b9a94e9148fd18381b8fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: Pickup
+  maxDistance: 2
+  physicsBased: 0
+  hideHighlight: 0
+  pickupMode: 0
+  forcePosition: 1
+  maxForceDistance: 0.163
+  forceOrientation: 0
+  positionOffset: {x: 0, y: 0, z: 0}
+  rotationOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &594743232855905201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6131432003661014125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91bf60e4ede056b4c84cfd662c412619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PSharpProgram: {fileID: 352884100415051454}
+  interactText: Interact
+  maxInteractDistance: 2
+  hideHighlight: 0
+  allowTheft: 0
+--- !u!114 &7665033260421072444
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1024,7 +1245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 0677e858166927c4699ec539291774e1, type: 2}
   type: AudioLink.AudioLinkControllerHandle
-  pSharpNetworkedObject: {fileID: 6936178787127095906}
+  pSharpNetworkedObject: {fileID: 3000091453238281686}
   pSharpBehaviour: {fileID: 6131432003661014100}
   pSharpProxy: {fileID: 0}
   variables:
@@ -1258,12 +1479,12 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 0}
+    objectValue: {fileID: 7104607121971130790}
     objectArrayValue: []
   interactText: 
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &6936178787127095906
+--- !u!114 &3000091453238281686
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1276,8 +1497,145 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 7
+  ID: 4
   OwnerID: 0
+--- !u!114 &352884100415051454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6131432003661014125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1394590517, guid: 5f20141248a4dc040a0060f5893b9b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  programAsset: {fileID: 11400000, guid: 933159afd71b1904bab7ff175ecd878c, type: 2}
+  type: PSharpExamples.PickupObjectSync
+  pSharpNetworkedObject: {fileID: 0}
+  pSharpBehaviour: {fileID: 594743232855905201}
+  pSharpProxy: {fileID: 0}
+  variables:
+  - fieldName: allowTheft
+    typeFullName: System.Boolean
+    typeAsString: System.Boolean, mscorlib
+    isArray: 0
+    unknownVariableType: 0
+    stringValue: 
+    stringArrayValue: []
+    charValue: 0
+    charArrayValue: 
+    floatValue: 0
+    floatArrayValue: []
+    doubleValue: 0
+    doubleArrayValue: []
+    sbyteValue: 0
+    sbyteArrayValue: 
+    byteValue: 0
+    byteArrayValue: 
+    int16Value: 0
+    int16ArrayValue: 
+    int32Value: 0
+    int32ArrayValue: 
+    int64Value: 0
+    int64ArrayValue: 
+    uint16Value: 0
+    uint16ArrayValue: 
+    uint32Value: 0
+    uint32ArrayValue: 
+    uint64Value: 0
+    uint64ArrayValue: 
+    boolValue: 0
+    boolArrayValue: 
+    colorValue: {r: 0, g: 0, b: 0, a: 0}
+    colorArrayValue: []
+    color32Value:
+      serializedVersion: 2
+      rgba: 0
+    color32ArrayValue: []
+    vector2Value: {x: 0, y: 0}
+    vector2ArrayValue: []
+    vector2IntValue: {x: 0, y: 0}
+    vector2IntArrayValue: []
+    vector3Value: {x: 0, y: 0, z: 0}
+    vector3ArrayValue: []
+    vector3IntValue: {x: 0, y: 0, z: 0}
+    vector3IntArrayValue: []
+    vector4Value: {x: 0, y: 0, z: 0, w: 0}
+    vector4ArrayValue: []
+    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
+    quaternionArrayValue: []
+    animationCurveValue:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    animationCurveArrayValue: []
+    gradientValue:
+      serializedVersion: 2
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_ColorSpace: -1
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    gradientArrayValue: []
+    layerMaskValue:
+      serializedVersion: 2
+      m_Bits: 0
+    layerMaskArrayValue: []
+    boundsValue:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+    boundsArrayValue: []
+    boundsIntValue:
+      m_Position: {x: 0, y: 0, z: 0}
+      m_Size: {x: 0, y: 0, z: 0}
+    boundsIntArrayValue: []
+    rectValue:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    rectArrayValue: []
+    rectIntValue:
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    rectIntArrayValue: []
+    enumValue: 0
+    enumArrayValue: 
+    objectValue: {fileID: 0}
+    objectArrayValue: []
+  interactText: Interact
+  maxInteractDistance: 2
+  hideHighlight: 0
 --- !u!1 &6678784338289342525
 GameObject:
   m_ObjectHideFlags: 0
@@ -1634,8 +1992,8 @@ GameObject:
   - component: {fileID: 7104607121609475013}
   - component: {fileID: 7104607121609475064}
   - component: {fileID: 7104607121609475015}
-  - component: {fileID: 7943792504990708667}
-  - component: {fileID: 8126334267440786819}
+  - component: {fileID: 7272696607067644383}
+  - component: {fileID: 4702618374599251376}
   m_Layer: 13
   m_Name: Slider_X3
   m_TagString: Untagged
@@ -1726,11 +2084,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 7943792504990708667}
+  PSharpProgram: {fileID: 7272696607067644383}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &7943792504990708667
+--- !u!114 &7272696607067644383
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1744,14 +2102,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 8126334267440786819}
+  pSharpNetworkedObject: {fileID: 4702618374599251376}
   pSharpBehaviour: {fileID: 7104607121609475015}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &8126334267440786819
+--- !u!114 &4702618374599251376
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1764,7 +2122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 17
+  ID: 15
   OwnerID: 0
 --- !u!1 &7104607121622939777
 GameObject:
@@ -2135,8 +2493,8 @@ GameObject:
   - component: {fileID: 7104607121773305395}
   - component: {fileID: 7104607121773305398}
   - component: {fileID: 7104607121773305397}
-  - component: {fileID: 8118448003460591706}
-  - component: {fileID: 6426075879367374602}
+  - component: {fileID: 2251015794899197512}
+  - component: {fileID: 631542142528752566}
   m_Layer: 13
   m_Name: Slider_Threshold1
   m_TagString: Untagged
@@ -2227,11 +2585,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 8118448003460591706}
+  PSharpProgram: {fileID: 2251015794899197512}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &8118448003460591706
+--- !u!114 &2251015794899197512
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2245,14 +2603,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 6426075879367374602}
+  pSharpNetworkedObject: {fileID: 631542142528752566}
   pSharpBehaviour: {fileID: 7104607121773305397}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &6426075879367374602
+--- !u!114 &631542142528752566
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2265,7 +2623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 19
+  ID: 17
   OwnerID: 0
 --- !u!1 &7104607121790838567
 GameObject:
@@ -2278,8 +2636,8 @@ GameObject:
   - component: {fileID: 7104607121790838616}
   - component: {fileID: 7104607121790838619}
   - component: {fileID: 7104607121790838618}
-  - component: {fileID: 1511561838389717578}
-  - component: {fileID: 2302328691436429980}
+  - component: {fileID: 5602080470901222631}
+  - component: {fileID: 7892637702560051546}
   m_Layer: 13
   m_Name: Slider_X0
   m_TagString: Untagged
@@ -2370,11 +2728,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 1511561838389717578}
+  PSharpProgram: {fileID: 5602080470901222631}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &1511561838389717578
+--- !u!114 &5602080470901222631
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2388,14 +2746,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 2302328691436429980}
+  pSharpNetworkedObject: {fileID: 7892637702560051546}
   pSharpBehaviour: {fileID: 7104607121790838618}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &2302328691436429980
+--- !u!114 &7892637702560051546
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2408,7 +2766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 14
+  ID: 12
   OwnerID: 0
 --- !u!1 &7104607121797167502
 GameObject:
@@ -2421,8 +2779,8 @@ GameObject:
   - component: {fileID: 7104607121797167503}
   - component: {fileID: 7104607121797167490}
   - component: {fileID: 7104607121797167489}
-  - component: {fileID: 5320897576792340394}
-  - component: {fileID: 2798283406253512925}
+  - component: {fileID: 5671004609374900426}
+  - component: {fileID: 6197266498292978644}
   m_Layer: 13
   m_Name: Slider_X2
   m_TagString: Untagged
@@ -2513,11 +2871,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 5320897576792340394}
+  PSharpProgram: {fileID: 5671004609374900426}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &5320897576792340394
+--- !u!114 &5671004609374900426
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2531,14 +2889,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 2798283406253512925}
+  pSharpNetworkedObject: {fileID: 6197266498292978644}
   pSharpBehaviour: {fileID: 7104607121797167489}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &2798283406253512925
+--- !u!114 &6197266498292978644
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2551,7 +2909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 16
+  ID: 14
   OwnerID: 0
 --- !u!1 &7104607121836850128
 GameObject:
@@ -2880,8 +3238,8 @@ GameObject:
   - component: {fileID: 7104607121923804249}
   - component: {fileID: 7104607121923804252}
   - component: {fileID: 7104607121923804251}
-  - component: {fileID: 7156342594867870305}
-  - component: {fileID: 4519411621685592005}
+  - component: {fileID: 1836374265108281409}
+  - component: {fileID: 931550818645467458}
   m_Layer: 13
   m_Name: Slider_Gain
   m_TagString: Untagged
@@ -2973,11 +3331,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 7156342594867870305}
+  PSharpProgram: {fileID: 1836374265108281409}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &7156342594867870305
+--- !u!114 &1836374265108281409
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2991,14 +3349,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 4519411621685592005}
+  pSharpNetworkedObject: {fileID: 931550818645467458}
   pSharpBehaviour: {fileID: 7104607121923804251}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &4519411621685592005
+--- !u!114 &931550818645467458
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3011,7 +3369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 11
+  ID: 9
   OwnerID: 0
 --- !u!1 &7104607121962760432
 GameObject:
@@ -3098,6 +3456,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7104607121971130841}
   - component: {fileID: 6131432002089892314}
+  - component: {fileID: 8313176821075409420}
+  - component: {fileID: 3209604612733565375}
+  - component: {fileID: 6529631158602861620}
   m_Layer: 13
   m_Name: AudioLinkControllerBody
   m_TagString: Untagged
@@ -3157,6 +3518,292 @@ ParentConstraint:
     weight: 0
   - sourceTransform: {fileID: 6131432003355997508}
     weight: 0
+--- !u!114 &8313176821075409420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7104607121971130790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 127baafcd560d114584c39d56179752a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PSharpProgram: {fileID: 3209604612733565375}
+  interactText: Interact
+  maxInteractDistance: 2
+  hideHighlight: 0
+  _pickup: {fileID: 7932629569241526468}
+  _pickup2: {fileID: 449654362782044646}
+--- !u!114 &3209604612733565375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7104607121971130790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1394590517, guid: 5f20141248a4dc040a0060f5893b9b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  programAsset: {fileID: 11400000, guid: 275473a9f4d5cb34f8684f8a36b030f3, type: 2}
+  type: AudioLink.AudioLinkControllerObjectSync
+  pSharpNetworkedObject: {fileID: 6529631158602861620}
+  pSharpBehaviour: {fileID: 8313176821075409420}
+  pSharpProxy: {fileID: 0}
+  variables:
+  - fieldName: _pickup
+    typeFullName: PVR.CCK.Worlds.Components.PVR_Pickup
+    typeAsString: PVR.CCK.Worlds.Components.PVR_Pickup, PVR.CCK.Worlds
+    isArray: 0
+    unknownVariableType: 0
+    stringValue: 
+    stringArrayValue: []
+    charValue: 0
+    charArrayValue: 
+    floatValue: 0
+    floatArrayValue: []
+    doubleValue: 0
+    doubleArrayValue: []
+    sbyteValue: 0
+    sbyteArrayValue: 
+    byteValue: 0
+    byteArrayValue: 
+    int16Value: 0
+    int16ArrayValue: 
+    int32Value: 0
+    int32ArrayValue: 
+    int64Value: 0
+    int64ArrayValue: 
+    uint16Value: 0
+    uint16ArrayValue: 
+    uint32Value: 0
+    uint32ArrayValue: 
+    uint64Value: 0
+    uint64ArrayValue: 
+    boolValue: 0
+    boolArrayValue: 
+    colorValue: {r: 0, g: 0, b: 0, a: 0}
+    colorArrayValue: []
+    color32Value:
+      serializedVersion: 2
+      rgba: 0
+    color32ArrayValue: []
+    vector2Value: {x: 0, y: 0}
+    vector2ArrayValue: []
+    vector2IntValue: {x: 0, y: 0}
+    vector2IntArrayValue: []
+    vector3Value: {x: 0, y: 0, z: 0}
+    vector3ArrayValue: []
+    vector3IntValue: {x: 0, y: 0, z: 0}
+    vector3IntArrayValue: []
+    vector4Value: {x: 0, y: 0, z: 0, w: 0}
+    vector4ArrayValue: []
+    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
+    quaternionArrayValue: []
+    animationCurveValue:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    animationCurveArrayValue: []
+    gradientValue:
+      serializedVersion: 2
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_ColorSpace: -1
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    gradientArrayValue: []
+    layerMaskValue:
+      serializedVersion: 2
+      m_Bits: 0
+    layerMaskArrayValue: []
+    boundsValue:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+    boundsArrayValue: []
+    boundsIntValue:
+      m_Position: {x: 0, y: 0, z: 0}
+      m_Size: {x: 0, y: 0, z: 0}
+    boundsIntArrayValue: []
+    rectValue:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    rectArrayValue: []
+    rectIntValue:
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    rectIntArrayValue: []
+    enumValue: 0
+    enumArrayValue: 
+    objectValue: {fileID: 7932629569241526468}
+    objectArrayValue: []
+  - fieldName: _pickup2
+    typeFullName: PVR.CCK.Worlds.Components.PVR_Pickup
+    typeAsString: PVR.CCK.Worlds.Components.PVR_Pickup, PVR.CCK.Worlds
+    isArray: 0
+    unknownVariableType: 0
+    stringValue: 
+    stringArrayValue: []
+    charValue: 0
+    charArrayValue: 
+    floatValue: 0
+    floatArrayValue: []
+    doubleValue: 0
+    doubleArrayValue: []
+    sbyteValue: 0
+    sbyteArrayValue: 
+    byteValue: 0
+    byteArrayValue: 
+    int16Value: 0
+    int16ArrayValue: 
+    int32Value: 0
+    int32ArrayValue: 
+    int64Value: 0
+    int64ArrayValue: 
+    uint16Value: 0
+    uint16ArrayValue: 
+    uint32Value: 0
+    uint32ArrayValue: 
+    uint64Value: 0
+    uint64ArrayValue: 
+    boolValue: 0
+    boolArrayValue: 
+    colorValue: {r: 0, g: 0, b: 0, a: 0}
+    colorArrayValue: []
+    color32Value:
+      serializedVersion: 2
+      rgba: 0
+    color32ArrayValue: []
+    vector2Value: {x: 0, y: 0}
+    vector2ArrayValue: []
+    vector2IntValue: {x: 0, y: 0}
+    vector2IntArrayValue: []
+    vector3Value: {x: 0, y: 0, z: 0}
+    vector3ArrayValue: []
+    vector3IntValue: {x: 0, y: 0, z: 0}
+    vector3IntArrayValue: []
+    vector4Value: {x: 0, y: 0, z: 0, w: 0}
+    vector4ArrayValue: []
+    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
+    quaternionArrayValue: []
+    animationCurveValue:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    animationCurveArrayValue: []
+    gradientValue:
+      serializedVersion: 2
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_ColorSpace: -1
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    gradientArrayValue: []
+    layerMaskValue:
+      serializedVersion: 2
+      m_Bits: 0
+    layerMaskArrayValue: []
+    boundsValue:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+    boundsArrayValue: []
+    boundsIntValue:
+      m_Position: {x: 0, y: 0, z: 0}
+      m_Size: {x: 0, y: 0, z: 0}
+    boundsIntArrayValue: []
+    rectValue:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    rectArrayValue: []
+    rectIntValue:
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    rectIntArrayValue: []
+    enumValue: 0
+    enumArrayValue: 
+    objectValue: {fileID: 449654362782044646}
+    objectArrayValue: []
+  interactText: Interact
+  maxInteractDistance: 2
+  hideHighlight: 0
+--- !u!114 &6529631158602861620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7104607121971130790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1000597861, guid: 5f20141248a4dc040a0060f5893b9b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  proxies: []
+  ID: 6
+  OwnerID: 0
 --- !u!1 &7104607122046802962
 GameObject:
   m_ObjectHideFlags: 0
@@ -3279,8 +3926,8 @@ GameObject:
   - component: {fileID: 7104607122089372577}
   - component: {fileID: 7104607122089372578}
   - component: {fileID: 7104607122089372580}
-  - component: {fileID: 5282491664826179454}
-  - component: {fileID: 1147824207353345930}
+  - component: {fileID: 9116032377620414165}
+  - component: {fileID: 3362679883483025999}
   m_Layer: 13
   m_Name: Auto Gain Toggle
   m_TagString: Untagged
@@ -3368,11 +4015,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4049912ceef2cfd46b4119db70a9b88c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 5282491664826179454}
+  PSharpProgram: {fileID: 9116032377620414165}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &5282491664826179454
+--- !u!114 &9116032377620414165
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3386,14 +4033,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: aabe4a63821b40041b9b082eea36650b, type: 2}
   type: AudioLink.GlobalToggle
-  pSharpNetworkedObject: {fileID: 1147824207353345930}
+  pSharpNetworkedObject: {fileID: 3362679883483025999}
   pSharpBehaviour: {fileID: 7104607122089372580}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &1147824207353345930
+--- !u!114 &3362679883483025999
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3406,7 +4053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 22
+  ID: 20
   OwnerID: 0
 --- !u!1 &7104607122145942675
 GameObject:
@@ -3975,8 +4622,8 @@ GameObject:
   - component: {fileID: 7104607122342863520}
   - component: {fileID: 7104607122342863534}
   - component: {fileID: 7104607122342863521}
-  - component: {fileID: 5346926660753795408}
-  - component: {fileID: 2880144012035650707}
+  - component: {fileID: 934481506305143106}
+  - component: {fileID: 2364508482055038804}
   m_Layer: 13
   m_Name: Slider_Threshold3
   m_TagString: Untagged
@@ -4067,11 +4714,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 5346926660753795408}
+  PSharpProgram: {fileID: 934481506305143106}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &5346926660753795408
+--- !u!114 &934481506305143106
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4085,14 +4732,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 2880144012035650707}
+  pSharpNetworkedObject: {fileID: 2364508482055038804}
   pSharpBehaviour: {fileID: 7104607122342863521}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &2880144012035650707
+--- !u!114 &2364508482055038804
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4105,7 +4752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 21
+  ID: 19
   OwnerID: 0
 --- !u!1 &7104607122379113359
 GameObject:
@@ -4193,8 +4840,8 @@ GameObject:
   - component: {fileID: 7104607122427914810}
   - component: {fileID: 7104607122427914813}
   - component: {fileID: 7104607122427914812}
-  - component: {fileID: 1272216649104247693}
-  - component: {fileID: 7675995514107637232}
+  - component: {fileID: 7114361825740787630}
+  - component: {fileID: 5273280413998920221}
   m_Layer: 13
   m_Name: Slider_FadeExpFalloff
   m_TagString: Untagged
@@ -4286,11 +4933,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 1272216649104247693}
+  PSharpProgram: {fileID: 7114361825740787630}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &1272216649104247693
+--- !u!114 &7114361825740787630
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4304,14 +4951,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 7675995514107637232}
+  pSharpNetworkedObject: {fileID: 5273280413998920221}
   pSharpBehaviour: {fileID: 7104607122427914812}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &7675995514107637232
+--- !u!114 &5273280413998920221
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4324,7 +4971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 13
+  ID: 11
   OwnerID: 0
 --- !u!1 &7104607122442746944
 GameObject:
@@ -5016,8 +5663,8 @@ GameObject:
   - component: {fileID: 7104607122644235470}
   - component: {fileID: 7104607122644235457}
   - component: {fileID: 7104607122644235456}
-  - component: {fileID: 3502190191144482988}
-  - component: {fileID: 1740262942171220602}
+  - component: {fileID: 5365655048169831273}
+  - component: {fileID: 2105667604237789971}
   m_Layer: 13
   m_Name: Slider_FadeLength
   m_TagString: Untagged
@@ -5109,11 +5756,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 3502190191144482988}
+  PSharpProgram: {fileID: 5365655048169831273}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &3502190191144482988
+--- !u!114 &5365655048169831273
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5127,14 +5774,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 1740262942171220602}
+  pSharpNetworkedObject: {fileID: 2105667604237789971}
   pSharpBehaviour: {fileID: 7104607122644235456}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &1740262942171220602
+--- !u!114 &2105667604237789971
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5147,7 +5794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 12
+  ID: 10
   OwnerID: 0
 --- !u!1 &7104607122651323766
 GameObject:
@@ -5160,8 +5807,8 @@ GameObject:
   - component: {fileID: 7104607122651323767}
   - component: {fileID: 7104607122651323754}
   - component: {fileID: 7104607122651323753}
-  - component: {fileID: 954875552166832659}
-  - component: {fileID: 4761289069907418561}
+  - component: {fileID: 8998656820585387961}
+  - component: {fileID: 2014353951143625933}
   m_Layer: 13
   m_Name: Slider_Threshold2
   m_TagString: Untagged
@@ -5252,11 +5899,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 954875552166832659}
+  PSharpProgram: {fileID: 8998656820585387961}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &954875552166832659
+--- !u!114 &8998656820585387961
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5270,14 +5917,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 4761289069907418561}
+  pSharpNetworkedObject: {fileID: 2014353951143625933}
   pSharpBehaviour: {fileID: 7104607122651323753}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &4761289069907418561
+--- !u!114 &2014353951143625933
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5290,7 +5937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 20
+  ID: 18
   OwnerID: 0
 --- !u!1 &7104607122674034013
 GameObject:
@@ -5303,8 +5950,8 @@ GameObject:
   - component: {fileID: 7104607122674034014}
   - component: {fileID: 7104607122674034001}
   - component: {fileID: 7104607122674034000}
-  - component: {fileID: 7229977462435692488}
-  - component: {fileID: 3306398442808684095}
+  - component: {fileID: 5819187809667967440}
+  - component: {fileID: 7776590953207219395}
   m_Layer: 13
   m_Name: Slider_X1
   m_TagString: Untagged
@@ -5395,11 +6042,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 7229977462435692488}
+  PSharpProgram: {fileID: 5819187809667967440}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &7229977462435692488
+--- !u!114 &5819187809667967440
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5413,14 +6060,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 3306398442808684095}
+  pSharpNetworkedObject: {fileID: 7776590953207219395}
   pSharpBehaviour: {fileID: 7104607122674034000}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &3306398442808684095
+--- !u!114 &7776590953207219395
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5433,7 +6080,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 15
+  ID: 13
   OwnerID: 0
 --- !u!1 &7104607122706479358
 GameObject:
@@ -6081,8 +6728,8 @@ GameObject:
   - component: {fileID: 7104607123175652814}
   - component: {fileID: 7104607123175652801}
   - component: {fileID: 7104607123175652800}
-  - component: {fileID: 1652247272372658990}
-  - component: {fileID: 2462570959472633486}
+  - component: {fileID: 1056533580993900002}
+  - component: {fileID: 7890444977668095731}
   m_Layer: 13
   m_Name: Slider_Threshold0
   m_TagString: Untagged
@@ -6173,11 +6820,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 1652247272372658990}
+  PSharpProgram: {fileID: 1056533580993900002}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &1652247272372658990
+--- !u!114 &1056533580993900002
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6191,14 +6838,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 2462570959472633486}
+  pSharpNetworkedObject: {fileID: 7890444977668095731}
   pSharpBehaviour: {fileID: 7104607123175652800}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &2462570959472633486
+--- !u!114 &7890444977668095731
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6211,7 +6858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 18
+  ID: 16
   OwnerID: 0
 --- !u!1 &7104607123187820153
 GameObject:
@@ -6640,8 +7287,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7104607123388876971}
   - component: {fileID: 955621439690216962}
-  - component: {fileID: 5865574816039573790}
-  - component: {fileID: 6156669644618408847}
+  - component: {fileID: 25804276672401647}
+  - component: {fileID: 7877113961648667099}
   m_Layer: 0
   m_Name: ThemeColorController
   m_TagString: Untagged
@@ -6676,7 +7323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111324e7f26747b458f38aee49327eb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 5865574816039573790}
+  PSharpProgram: {fileID: 25804276672401647}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
@@ -6692,7 +7339,7 @@ MonoBehaviour:
   themeColorToggle: {fileID: 7104607122174558914}
   customColorIndex: 0
   networkSynced: 1
---- !u!114 &5865574816039573790
+--- !u!114 &25804276672401647
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6706,7 +7353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: aef018a8a5223724c8f174644cca89f8, type: 2}
   type: AudioLink.ThemeColorController
-  pSharpNetworkedObject: {fileID: 6156669644618408847}
+  pSharpNetworkedObject: {fileID: 7877113961648667099}
   pSharpBehaviour: {fileID: 955621439690216962}
   pSharpProxy: {fileID: 0}
   variables:
@@ -8105,7 +8752,7 @@ MonoBehaviour:
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &6156669644618408847
+--- !u!114 &7877113961648667099
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8118,7 +8765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 9
+  ID: 7
   OwnerID: 0
 --- !u!1 &7104607123402397237
 GameObject:
@@ -8545,8 +9192,8 @@ GameObject:
   - component: {fileID: 7104607123551869855}
   - component: {fileID: 1884252948544784246}
   - component: {fileID: 2520504447260953618}
-  - component: {fileID: 8845881554606446791}
-  - component: {fileID: 6471312327754649003}
+  - component: {fileID: 1060283353424671430}
+  - component: {fileID: 5088246802631877867}
   m_Layer: 13
   m_Name: Canvas
   m_TagString: Untagged
@@ -8682,7 +9329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 238d41f5a089ab542815c1f455244d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 8845881554606446791}
+  PSharpProgram: {fileID: 1060283353424671430}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
@@ -8711,7 +9358,7 @@ MonoBehaviour:
   AutoGainToggle: {fileID: 7104607122089372578}
   ResetButton: {fileID: 1770287673149237578}
   PowerButton: {fileID: 6536625268945525120}
---- !u!114 &8845881554606446791
+--- !u!114 &1060283353424671430
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8725,7 +9372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: ca356c509fac7484a86f6c40fee6795e, type: 2}
   type: AudioLink.AudioLinkControllerInput
-  pSharpNetworkedObject: {fileID: 6471312327754649003}
+  pSharpNetworkedObject: {fileID: 5088246802631877867}
   pSharpBehaviour: {fileID: 2520504447260953618}
   pSharpProxy: {fileID: 0}
   variables:
@@ -8959,7 +9606,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 5865574816039573790}
+    objectValue: {fileID: 25804276672401647}
     objectArrayValue: []
   - fieldName: audioLinkController
     typeFullName: AudioLink.AudioLinkController
@@ -9075,7 +9722,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 8930880001595612413}
+    objectValue: {fileID: 7614576999991023232}
     objectArrayValue: []
   - fieldName: CustomColorButton3
     typeFullName: UnityEngine.UI.Button
@@ -11632,7 +12279,7 @@ MonoBehaviour:
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &6471312327754649003
+--- !u!114 &5088246802631877867
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11645,7 +12292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 10
+  ID: 8
   OwnerID: 0
 --- !u!1 &7104607123602366695
 GameObject:
@@ -11956,8 +12603,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3948365003382648139}
   - component: {fileID: 661032938411023833}
-  - component: {fileID: 8930880001595612413}
-  - component: {fileID: 9065079717395678050}
+  - component: {fileID: 7614576999991023232}
+  - component: {fileID: 2705128057932041878}
   m_Layer: 13
   m_Name: PVRAudioLinkController
   m_TagString: Untagged
@@ -11995,7 +12642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111447505f22b73428da6baa8bcd8bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 8930880001595612413}
+  PSharpProgram: {fileID: 7614576999991023232}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
@@ -12016,7 +12663,7 @@ MonoBehaviour:
   threshold3Slider: {fileID: 7104607122342863534}
   autoGainToggle: {fileID: 7104607122089372578}
   powerToggle: {fileID: 6536625268945525120}
---- !u!114 &8930880001595612413
+--- !u!114 &7614576999991023232
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12030,7 +12677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 10c4e32934389984281a5d35c87c2892, type: 2}
   type: AudioLink.AudioLinkController
-  pSharpNetworkedObject: {fileID: 9065079717395678050}
+  pSharpNetworkedObject: {fileID: 2705128057932041878}
   pSharpBehaviour: {fileID: 661032938411023833}
   pSharpProxy: {fileID: 0}
   variables:
@@ -12380,7 +13027,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 5865574816039573790}
+    objectValue: {fileID: 25804276672401647}
     objectArrayValue: []
   - fieldName: audioLinkUI
     typeFullName: UnityEngine.Material
@@ -14009,7 +14656,7 @@ MonoBehaviour:
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &9065079717395678050
+--- !u!114 &2705128057932041878
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14022,5 +14669,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 6
+  ID: 3
   OwnerID: 0

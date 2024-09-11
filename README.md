@@ -13,6 +13,10 @@ The per-frequency audio amplitude data is first read briefly into Udon using Uni
 ### [Frequently Asked Questions](FAQ.md)
 ### [Documentation for shader creators](https://github.com/llealloo/vrc-udon-audio-link/tree/master/Docs)
 
+## 2.0.1 - September 11th, 2024
+### Bugfixes
+- Fix the AudioLinkController pickups and object sync as i accidentally reverted it before release
+
 ## 2.0.0 - September 8th, 2024
 ### New features
 - Added the ability to adjust how the AudioLink controller is synced. You can sync every part of it, none of it, or everything except the gain and power controls. (fundale)
