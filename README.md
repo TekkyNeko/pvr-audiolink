@@ -13,9 +13,10 @@ The per-frequency audio amplitude data is first read briefly into Udon using Uni
 ### [Frequently Asked Questions](FAQ.md)
 ### [Documentation for shader creators](https://github.com/llealloo/vrc-udon-audio-link/tree/master/Docs)
 
-## 2.0.1 - September 11th, 2024
+## 2.0.1-2.0.2 - September 11th, 2024
 ### Bugfixes
 - Fix the AudioLinkController pickups and object sync as i accidentally reverted it before release
+- Fixed the Audio Link Controller UI where it wasnt Single Pass Stereo Instanced (rendered in one eye).
 
 ## 2.0.0 - September 8th, 2024
 ### New features

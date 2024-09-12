@@ -1,7 +1,12 @@
 # Changelog
+
+## 2.0.2 - September 11th, 2024
+### Bugfixes
+- Fixed the Audio Link Controller UI where it wasnt Single Pass Stereo Instanced (rendered in one eye).
+
 ## 2.0.1 - September 11th, 2024
 ### Bugfixes
-- Fix the AudioLinkController pickups and object sync as i accidentally reverted it before release
+- Fix the AudioLinkController pickups and object sync as i accidentally reverted it before release.
 
 ## 2.0.0 - September 8th, 2024
 ### New features
