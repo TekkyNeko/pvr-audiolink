@@ -2,8 +2,6 @@
 
 ## A repository of audio reactive prefabs for Unity, written in CSharp and HLSL, compatible with PoligonVR
 
-### This project only works on PVR Worlds CCK 0.3.3 and above
-
 AudioLink is a system that analyzes and processes in-world audio into many different highly reactive data streams and exposes the data to Scripts and Shaders. 
 
 The per-frequency audio amplitude data is first read briefly into P# using Unity's GetOutputData. It is then sent to the GPU for signal processing and buffered into a CustomRenderTexture. Then, the CustomRenderTexture is broadcast globally (called `_AudioTexture`) which can be picked up by shaders both in-world and across all avatars. 
