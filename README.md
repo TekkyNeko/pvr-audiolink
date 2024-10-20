@@ -9,6 +9,8 @@ The per-frequency audio amplitude data is first read briefly into P# using Unity
 ### [Frequently Asked Questions](FAQ.md)
 ### [Documentation for shader creators](https://github.com/llealloo/vrc-udon-audio-link/tree/master/Docs)
 
+## This fork is specifically for P# Worlds, if you are making an avatar for PVR, use the official AudioLink package, as this has not been tested for avatars.
+
 ## 2.0.1-2.0.2 - September 11th, 2024
 ### Bugfixes
 - Fix the AudioLinkController pickups and object sync as i accidentally reverted it before release
