@@ -1,6 +1,6 @@
 [![Discord - AudioLink Discord](https://img.shields.io/badge/Discord-AudioLink_Discord-7289da?logo=discord&logoColor=7289da)](https://discord.gg/d5wjNwZBR3) [![Website - AudioLink Website](https://img.shields.io/badge/Website-AudioLink_Website-7289da)](https://audiolink.dev/)
 
-# AudioLink
+# PVR AudioLink
 
 ## A repository of audio reactive prefabs for Unity, written in CSharp and HLSL, compatible with PoligonVR
 
@@ -8,10 +8,12 @@
 
 AudioLink is a system that analyzes and processes in-world audio into many different highly reactive data streams and exposes the data to Scripts and Shaders. 
 
-The per-frequency audio amplitude data is first read briefly into Udon using Unity's GetOutputData. It is then sent to the GPU for signal processing and buffered into a CustomRenderTexture. Then, the CustomRenderTexture is broadcast globally (called `_AudioTexture`) which can be picked up by shaders both in-world and across all avatars. 
+The per-frequency audio amplitude data is first read briefly into P# using Unity's GetOutputData. It is then sent to the GPU for signal processing and buffered into a CustomRenderTexture. Then, the CustomRenderTexture is broadcast globally (called `_AudioTexture`) which can be picked up by shaders both in-world and across all avatars. 
 
 ### [Frequently Asked Questions](FAQ.md)
 ### [Documentation for shader creators](https://github.com/llealloo/vrc-udon-audio-link/tree/master/Docs)
+
+## This unofficial fork is specifically for P# Worlds, if you are making an avatar for PVR, use the official AudioLink package, as this has not been tested for avatars.
 
 ## 2.0.0-1.0.3 - February 18th, 2025
 ### Changes
