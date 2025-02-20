@@ -1,6 +1,5 @@
 ﻿#if PVR_CCK_WORLDS
 using PVR.PSharp;
-
 using UnityEngine.UI;
 
 
@@ -22,7 +21,7 @@ namespace AudioLink
             syncedValue = slider.value;
             deserializing = false;
 
-            if (PSharpNetworking.IsOwner(localPlayer, gameObject))
+            if (IsOwner)
                 Sync("syncedValue");
         }
 
@@ -43,7 +42,7 @@ namespace AudioLink
                 return;
             if (deserializing)
                 return;
-            if (!PSharpNetworking.IsOwner(localPlayer, gameObject))
+            if (!IsOwner)
                 PSharpNetworking.SetOwner(localPlayer, gameObject);
 
             syncedValue = slider.value;

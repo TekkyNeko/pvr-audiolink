@@ -127,7 +127,7 @@ namespace AudioLink
                 return;
             }
 #if PVR_CCK_WORLDS
-            if (!PSharpNetworking.IsOwner(localPlayer, gameObject))
+            if (!IsOwner)
                 PSharpNetworking.SetOwner(localPlayer, gameObject);
 #endif
             bool modeChanged = _themeColorMode != themeColorDropdown.value;
@@ -209,7 +209,7 @@ namespace AudioLink
             UpdateGUI();
             UpdateAudioLinkThemeColors();
 #if PVR_CCK_WORLDS
-            if (PSharpNetworking.IsOwner(localPlayer, gameObject))
+            if (IsOwner)
                 Sync("_themeColorMode");
                 Sync("themeColor1");
                 Sync("themeColor2");
