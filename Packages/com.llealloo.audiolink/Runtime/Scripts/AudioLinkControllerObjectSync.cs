@@ -21,7 +21,7 @@ namespace AudioLink
 
 		public override void OnNetworkReady()
 		{
-			if (!IsObjectOwner)
+			if (!IsOwner)
 			{
 				transform.position = _position;
 				transform.rotation = _rotation;
@@ -30,7 +30,7 @@ namespace AudioLink
 
 		private void FixedUpdate()
 		{
-			if (IsObjectOwner)
+			if (IsOwner)
 			{
 				_position = transform.position;
 				_rotation = transform.rotation;

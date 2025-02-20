@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5453216728570425052}
   - component: {fileID: 316586662372299798}
   - component: {fileID: 8783629179043051357}
-  - component: {fileID: 7863481949107764645}
-  - component: {fileID: 7042262577455476454}
-  - component: {fileID: 6382702581674854924}
+  - component: {fileID: 6353455550681230188}
+  - component: {fileID: 4377427333836726745}
+  - component: {fileID: 1686883209374799645}
   m_Layer: 0
   m_Name: PVRWorkaround
   m_TagString: Untagged
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2da783f49becad44bb769a5d61c7d71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 7863481949107764645}
+  PSharpProgram: {fileID: 6353455550681230188}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
@@ -64,11 +64,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb8b1f7b70d62da41bcb350e5f3fb7d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 6382702581674854924}
+  PSharpProgram: {fileID: 1686883209374799645}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &7863481949107764645
+--- !u!114 &6353455550681230188
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -82,14 +82,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 70a2bea70f3c732439bb0fcd90685a93, type: 2}
   type: AudioLink.AudioLinkDataAPI
-  pSharpNetworkedObject: {fileID: 7042262577455476454}
+  pSharpNetworkedObject: {fileID: 4377427333836726745}
   pSharpBehaviour: {fileID: 316586662372299798}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &7042262577455476454
+--- !u!114 &4377427333836726745
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,7 +104,7 @@ MonoBehaviour:
   proxies: []
   ID: 1
   OwnerID: 0
---- !u!114 &6382702581674854924
+--- !u!114 &1686883209374799645
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -263,8 +263,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4016116325079817110}
   - component: {fileID: 7661750041344093898}
-  - component: {fileID: 7040509123869358005}
-  - component: {fileID: 1462800084325324543}
+  - component: {fileID: 4949582828388637258}
+  - component: {fileID: 7981244450737328161}
   m_Layer: 0
   m_Name: PVRAudioLink
   m_TagString: Untagged
@@ -301,13 +301,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa856f4528fc71343ae13d211071a669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 7040509123869358005}
+  PSharpProgram: {fileID: 4949582828388637258}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
-  audioSource: {fileID: 2627088015405890554}
+  audioSource: {fileID: 0}
   optionalRightAudioSource: {fileID: 0}
-  gain: 1
+  gain: 1.3
   bass: 1
   treble: 1
   x0: 0
@@ -318,7 +318,7 @@ MonoBehaviour:
   threshold1: 0.45
   threshold2: 0.45
   threshold3: 0.45
-  fadeLength: 0.25
+  fadeLength: 0.5
   fadeExpFalloff: 0.75
   autogain: 1
   autogainDerate: 0.1
@@ -327,14 +327,14 @@ MonoBehaviour:
   customThemeColor1: {r: 0.5137255, g: 0.2627451, b: 1, a: 1}
   customThemeColor2: {r: 1, g: 0.49803922, b: 0, a: 1}
   customThemeColor3: {r: 0.79607844, g: 1, b: 0.0627451, a: 1}
-  customString1: 
-  customString2: 
+  customString1: These Should Show Up
+  customString2: On This Panel
   audioMaterial: {fileID: 2100000, guid: 5189d837989b9144e8e43d3ce618e450, type: 2}
   audioRenderTexture: {fileID: 8600000, guid: f51fa799ef0abde489235f40fc0328ef, type: 2}
   autoSetMediaState: 1
-  audioDataToggle: 0
+  audioDataToggle: 1
   audioData2D: {fileID: 2800000, guid: b07c8466531ac5e4e852f3e276e4baca, type: 2}
---- !u!114 &7040509123869358005
+--- !u!114 &4949582828388637258
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -348,7 +348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: dd9e1c1682c609547ab173388c12d3b8, type: 2}
   type: AudioLink.AudioLink
-  pSharpNetworkedObject: {fileID: 1462800084325324543}
+  pSharpNetworkedObject: {fileID: 7981244450737328161}
   pSharpBehaviour: {fileID: 7661750041344093898}
   pSharpProxy: {fileID: 0}
   variables:
@@ -466,7 +466,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 2627088015405890554}
+    objectValue: {fileID: 0}
     objectArrayValue: []
   - fieldName: optionalRightAudioSource
     typeFullName: UnityEngine.AudioSource
@@ -593,7 +593,7 @@ MonoBehaviour:
     stringArrayValue: []
     charValue: 0
     charArrayValue: 
-    floatValue: 1
+    floatValue: 1.3
     floatArrayValue: []
     doubleValue: 0
     doubleArrayValue: []
@@ -1869,7 +1869,7 @@ MonoBehaviour:
     stringArrayValue: []
     charValue: 0
     charArrayValue: 
-    floatValue: 0.25
+    floatValue: 0.5
     floatArrayValue: []
     doubleValue: 0
     doubleArrayValue: []
@@ -2909,7 +2909,7 @@ MonoBehaviour:
     typeAsString: System.String, mscorlib
     isArray: 0
     unknownVariableType: 0
-    stringValue: 
+    stringValue: These Should Show Up
     stringArrayValue: []
     charValue: 0
     charArrayValue: 
@@ -3025,7 +3025,7 @@ MonoBehaviour:
     typeAsString: System.String, mscorlib
     isArray: 0
     unknownVariableType: 0
-    stringValue: 
+    stringValue: On This Panel
     stringArrayValue: []
     charValue: 0
     charArrayValue: 
@@ -14347,7 +14347,7 @@ MonoBehaviour:
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &1462800084325324543
+--- !u!114 &7981244450737328161
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

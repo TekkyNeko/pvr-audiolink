@@ -781,7 +781,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 959983786005386559}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1842860305506803316}
+        m_TargetAssemblyTypeName: AudioLink.AudioLinkControllerV0, AudioLink
+        m_MethodName: ResetSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &541565955083033032
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,8 +922,8 @@ GameObject:
   - component: {fileID: 456831618420727895}
   - component: {fileID: 9005346688788593226}
   - component: {fileID: 5869274636948220046}
-  - component: {fileID: 1323497598488098701}
-  - component: {fileID: 2813394158864094179}
+  - component: {fileID: 2913785431350894650}
+  - component: {fileID: 6303062251455438992}
   m_Layer: 13
   m_Name: Slider_Treble
   m_TagString: Untagged
@@ -991,7 +1003,31 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5869274636948220046}
+        m_TargetAssemblyTypeName: AudioLink.GlobalSlider, AudioLink
+        m_MethodName: SlideUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1842860305506803316}
+        m_TargetAssemblyTypeName: AudioLink.AudioLinkControllerV0, AudioLink
+        m_MethodName: UpdateSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5869274636948220046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1004,11 +1040,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 1323497598488098701}
+  PSharpProgram: {fileID: 2913785431350894650}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &1323497598488098701
+--- !u!114 &2913785431350894650
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1022,14 +1058,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 2813394158864094179}
+  pSharpNetworkedObject: {fileID: 6303062251455438992}
   pSharpBehaviour: {fileID: 5869274636948220046}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &2813394158864094179
+--- !u!114 &6303062251455438992
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1042,7 +1078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 7
+  ID: 26
   OwnerID: 0
 --- !u!1 &834815031498643558
 GameObject:
@@ -1892,8 +1928,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1530987961411748171}
   - component: {fileID: 1842860305506803316}
-  - component: {fileID: 4510594191306770420}
-  - component: {fileID: 7927537754006216444}
+  - component: {fileID: 215607898458953025}
+  - component: {fileID: 4753916656866601728}
   m_Layer: 0
   m_Name: PVRAudioLinkControllerV0
   m_TagString: Untagged
@@ -1931,7 +1967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58e447505f22b73428da6baa8bcd8bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 4510594191306770420}
+  PSharpProgram: {fileID: 215607898458953025}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
@@ -1956,7 +1992,7 @@ MonoBehaviour:
   threshold1Slider: {fileID: 360184872314157542}
   threshold2Slider: {fileID: 4420869330937076427}
   threshold3Slider: {fileID: 1657498937293238454}
---- !u!114 &4510594191306770420
+--- !u!114 &215607898458953025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1970,7 +2006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 158df6f9d507b8249ad7a1b1f5416215, type: 2}
   type: AudioLink.AudioLinkControllerV0
-  pSharpNetworkedObject: {fileID: 7927537754006216444}
+  pSharpNetworkedObject: {fileID: 4753916656866601728}
   pSharpBehaviour: {fileID: 1842860305506803316}
   pSharpProxy: {fileID: 0}
   variables:
@@ -2204,7 +2240,7 @@ MonoBehaviour:
     rectIntArrayValue: []
     enumValue: 0
     enumArrayValue: 
-    objectValue: {fileID: 6554865922546462950}
+    objectValue: {fileID: 8624383461653319433}
     objectArrayValue: []
   - fieldName: audioSpectrumDisplay
     typeFullName: UnityEngine.Material
@@ -4413,7 +4449,7 @@ MonoBehaviour:
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &7927537754006216444
+--- !u!114 &4753916656866601728
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4426,7 +4462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 3
+  ID: 23
   OwnerID: 0
 --- !u!1 &2082285347197247106
 GameObject:
@@ -4853,8 +4889,8 @@ GameObject:
   - component: {fileID: 6360826065560269130}
   - component: {fileID: 5549235478077053648}
   - component: {fileID: 5540620626952309869}
-  - component: {fileID: 1873113102767872445}
-  - component: {fileID: 5614878948105204314}
+  - component: {fileID: 4874955933620394031}
+  - component: {fileID: 1741374196577808289}
   m_Layer: 13
   m_Name: Slider_ThemeHue
   m_TagString: Untagged
@@ -4934,7 +4970,19 @@ MonoBehaviour:
   m_Value: 0.75
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4850063339682102178}
+        m_TargetAssemblyTypeName: AudioLink.ThemeColorControllerV0, AudioLink
+        m_MethodName: OnGUIchange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5540620626952309869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4947,11 +4995,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 1873113102767872445}
+  PSharpProgram: {fileID: 4874955933620394031}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &1873113102767872445
+--- !u!114 &4874955933620394031
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4965,14 +5013,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 5614878948105204314}
+  pSharpNetworkedObject: {fileID: 1741374196577808289}
   pSharpBehaviour: {fileID: 5540620626952309869}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &5614878948105204314
+--- !u!114 &1741374196577808289
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4985,7 +5033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 19
+  ID: 38
   OwnerID: 0
 --- !u!1 &2604350214568186614
 GameObject:
@@ -5184,8 +5232,8 @@ GameObject:
   - component: {fileID: 7630816929079060415}
   - component: {fileID: 2155328973024673097}
   - component: {fileID: 5358604247946753607}
-  - component: {fileID: 4534258462173232899}
-  - component: {fileID: 4839403862033696865}
+  - component: {fileID: 2978783211179710380}
+  - component: {fileID: 5613192152559800777}
   m_Layer: 13
   m_Name: Slider_Bass
   m_TagString: Untagged
@@ -5265,7 +5313,31 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5358604247946753607}
+        m_TargetAssemblyTypeName: AudioLink.GlobalSlider, AudioLink
+        m_MethodName: SlideUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1842860305506803316}
+        m_TargetAssemblyTypeName: AudioLink.AudioLinkControllerV0, AudioLink
+        m_MethodName: UpdateSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5358604247946753607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5278,11 +5350,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 4534258462173232899}
+  PSharpProgram: {fileID: 2978783211179710380}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &4534258462173232899
+--- !u!114 &2978783211179710380
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5296,14 +5368,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 4839403862033696865}
+  pSharpNetworkedObject: {fileID: 5613192152559800777}
   pSharpBehaviour: {fileID: 5358604247946753607}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &4839403862033696865
+--- !u!114 &5613192152559800777
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5316,7 +5388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 8
+  ID: 27
   OwnerID: 0
 --- !u!1 &2836504456991680506
 GameObject:
@@ -5448,8 +5520,8 @@ GameObject:
   - component: {fileID: 7547771517845739058}
   - component: {fileID: 3560916421228805043}
   - component: {fileID: 5371717329616339734}
-  - component: {fileID: 2307307062765029875}
-  - component: {fileID: 3471716723444086286}
+  - component: {fileID: 5069477806423595810}
+  - component: {fileID: 4691678500955127401}
   m_Layer: 13
   m_Name: Slider_FadeExpFalloff
   m_TagString: Untagged
@@ -5529,7 +5601,31 @@ MonoBehaviour:
   m_Value: 0.75
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5371717329616339734}
+        m_TargetAssemblyTypeName: AudioLink.GlobalSlider, AudioLink
+        m_MethodName: SlideUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1842860305506803316}
+        m_TargetAssemblyTypeName: AudioLink.AudioLinkControllerV0, AudioLink
+        m_MethodName: UpdateSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5371717329616339734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5542,11 +5638,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 2307307062765029875}
+  PSharpProgram: {fileID: 5069477806423595810}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &2307307062765029875
+--- !u!114 &5069477806423595810
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5560,14 +5656,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 3471716723444086286}
+  pSharpNetworkedObject: {fileID: 4691678500955127401}
   pSharpBehaviour: {fileID: 5371717329616339734}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &3471716723444086286
+--- !u!114 &4691678500955127401
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5580,7 +5676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 10
+  ID: 29
   OwnerID: 0
 --- !u!1 &2959489829978795667
 GameObject:
@@ -5752,7 +5848,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4850063339682102178}
+        m_TargetAssemblyTypeName: AudioLink.ThemeColorControllerV0, AudioLink
+        m_MethodName: OnGUIchange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!1 &3061282787449208507
 GameObject:
@@ -6326,8 +6434,8 @@ GameObject:
   - component: {fileID: 7305620186054066698}
   - component: {fileID: 1657498937293238454}
   - component: {fileID: 2293528359834276678}
-  - component: {fileID: 2708868364386907821}
-  - component: {fileID: 3442743482695363571}
+  - component: {fileID: 6028744269295329733}
+  - component: {fileID: 3057863155775074750}
   m_Layer: 13
   m_Name: Slider_Threshold3
   m_TagString: Untagged
@@ -6405,7 +6513,31 @@ MonoBehaviour:
   m_Value: 0.45
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2293528359834276678}
+        m_TargetAssemblyTypeName: AudioLink.GlobalSlider, AudioLink
+        m_MethodName: SlideUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1842860305506803316}
+        m_TargetAssemblyTypeName: AudioLink.AudioLinkControllerV0, AudioLink
+        m_MethodName: UpdateSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2293528359834276678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6418,11 +6550,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 2708868364386907821}
+  PSharpProgram: {fileID: 6028744269295329733}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &2708868364386907821
+--- !u!114 &6028744269295329733
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6436,14 +6568,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 3442743482695363571}
+  pSharpNetworkedObject: {fileID: 3057863155775074750}
   pSharpBehaviour: {fileID: 2293528359834276678}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &3442743482695363571
+--- !u!114 &3057863155775074750
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6456,7 +6588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 18
+  ID: 37
   OwnerID: 0
 --- !u!1 &3761634946099116070
 GameObject:
@@ -6745,8 +6877,8 @@ GameObject:
   - component: {fileID: 8096034954277467255}
   - component: {fileID: 360184872314157542}
   - component: {fileID: 43800382086183263}
-  - component: {fileID: 1781959106411825960}
-  - component: {fileID: 8757003055968114231}
+  - component: {fileID: 645253084388826012}
+  - component: {fileID: 5038159561681784418}
   m_Layer: 13
   m_Name: Slider_Threshold1
   m_TagString: Untagged
@@ -6824,7 +6956,31 @@ MonoBehaviour:
   m_Value: 0.45
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 43800382086183263}
+        m_TargetAssemblyTypeName: AudioLink.GlobalSlider, AudioLink
+        m_MethodName: SlideUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1842860305506803316}
+        m_TargetAssemblyTypeName: AudioLink.AudioLinkControllerV0, AudioLink
+        m_MethodName: UpdateSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &43800382086183263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6837,11 +6993,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 1781959106411825960}
+  PSharpProgram: {fileID: 645253084388826012}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &1781959106411825960
+--- !u!114 &645253084388826012
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6855,14 +7011,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 8757003055968114231}
+  pSharpNetworkedObject: {fileID: 5038159561681784418}
   pSharpBehaviour: {fileID: 43800382086183263}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &8757003055968114231
+--- !u!114 &5038159561681784418
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6875,7 +7031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 16
+  ID: 35
   OwnerID: 0
 --- !u!1 &4345612572825941378
 GameObject:
@@ -6988,8 +7144,8 @@ GameObject:
   - component: {fileID: 7058230599557116381}
   - component: {fileID: 953534832166289797}
   - component: {fileID: 5137948156877423501}
-  - component: {fileID: 4681786225592350783}
-  - component: {fileID: 5853798947028118118}
+  - component: {fileID: 5369313628245500487}
+  - component: {fileID: 8512922173661001353}
   m_Layer: 13
   m_Name: Slider_FadeLength
   m_TagString: Untagged
@@ -7069,7 +7225,31 @@ MonoBehaviour:
   m_Value: 0.25
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5137948156877423501}
+        m_TargetAssemblyTypeName: AudioLink.GlobalSlider, AudioLink
+        m_MethodName: SlideUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1842860305506803316}
+        m_TargetAssemblyTypeName: AudioLink.AudioLinkControllerV0, AudioLink
+        m_MethodName: UpdateSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5137948156877423501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7082,11 +7262,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 4681786225592350783}
+  PSharpProgram: {fileID: 5369313628245500487}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &4681786225592350783
+--- !u!114 &5369313628245500487
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7100,14 +7280,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 5853798947028118118}
+  pSharpNetworkedObject: {fileID: 8512922173661001353}
   pSharpBehaviour: {fileID: 5137948156877423501}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &5853798947028118118
+--- !u!114 &8512922173661001353
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7120,7 +7300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 9
+  ID: 28
   OwnerID: 0
 --- !u!1 &4623434818193067223
 GameObject:
@@ -7133,8 +7313,8 @@ GameObject:
   - component: {fileID: 2202671016534621315}
   - component: {fileID: 312880007505494620}
   - component: {fileID: 2091758553297793109}
-  - component: {fileID: 1427613537140872916}
-  - component: {fileID: 4192520085135317596}
+  - component: {fileID: 8377313909171664285}
+  - component: {fileID: 5372615770398750637}
   m_Layer: 13
   m_Name: Slider_Threshold0
   m_TagString: Untagged
@@ -7212,7 +7392,31 @@ MonoBehaviour:
   m_Value: 0.45
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2091758553297793109}
+        m_TargetAssemblyTypeName: AudioLink.GlobalSlider, AudioLink
+        m_MethodName: SlideUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1842860305506803316}
+        m_TargetAssemblyTypeName: AudioLink.AudioLinkControllerV0, AudioLink
+        m_MethodName: UpdateSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2091758553297793109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7225,11 +7429,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 1427613537140872916}
+  PSharpProgram: {fileID: 8377313909171664285}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &1427613537140872916
+--- !u!114 &8377313909171664285
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7243,14 +7447,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 4192520085135317596}
+  pSharpNetworkedObject: {fileID: 5372615770398750637}
   pSharpBehaviour: {fileID: 2091758553297793109}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &4192520085135317596
+--- !u!114 &5372615770398750637
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7263,7 +7467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 15
+  ID: 34
   OwnerID: 0
 --- !u!1 &4644394391696744222
 GameObject:
@@ -7466,8 +7670,8 @@ GameObject:
   - component: {fileID: 5483131522703130463}
   - component: {fileID: 1645085390930470211}
   - component: {fileID: 2055032134251964830}
-  - component: {fileID: 4916300647442038657}
-  - component: {fileID: 7151630124121534811}
+  - component: {fileID: 2608389726202183885}
+  - component: {fileID: 8842284510320198880}
   m_Layer: 13
   m_Name: Slider_X0
   m_TagString: Untagged
@@ -7546,7 +7750,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2055032134251964830}
+        m_TargetAssemblyTypeName: AudioLink.GlobalSlider, AudioLink
+        m_MethodName: SlideUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1842860305506803316}
+        m_TargetAssemblyTypeName: AudioLink.AudioLinkControllerV0, AudioLink
+        m_MethodName: UpdateSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2055032134251964830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7559,11 +7787,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 4916300647442038657}
+  PSharpProgram: {fileID: 2608389726202183885}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &4916300647442038657
+--- !u!114 &2608389726202183885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7577,14 +7805,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 7151630124121534811}
+  pSharpNetworkedObject: {fileID: 8842284510320198880}
   pSharpBehaviour: {fileID: 2055032134251964830}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &7151630124121534811
+--- !u!114 &8842284510320198880
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7597,7 +7825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 11
+  ID: 30
   OwnerID: 0
 --- !u!1 &4904789559345966993
 GameObject:
@@ -8528,8 +8756,8 @@ GameObject:
   - component: {fileID: 7659503822718537578}
   - component: {fileID: 8855381985268987115}
   - component: {fileID: 7254923155364376587}
-  - component: {fileID: 2421035017181976412}
-  - component: {fileID: 2969945688184648206}
+  - component: {fileID: 6881270193150390581}
+  - component: {fileID: 454530680144038534}
   m_Layer: 13
   m_Name: Slider_ThemeValue
   m_TagString: Untagged
@@ -8609,7 +8837,19 @@ MonoBehaviour:
   m_Value: 0.75
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4850063339682102178}
+        m_TargetAssemblyTypeName: AudioLink.ThemeColorControllerV0, AudioLink
+        m_MethodName: OnGUIchange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7254923155364376587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8622,11 +8862,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 2421035017181976412}
+  PSharpProgram: {fileID: 6881270193150390581}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &2421035017181976412
+--- !u!114 &6881270193150390581
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8640,14 +8880,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 2969945688184648206}
+  pSharpNetworkedObject: {fileID: 454530680144038534}
   pSharpBehaviour: {fileID: 7254923155364376587}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &2969945688184648206
+--- !u!114 &454530680144038534
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8660,7 +8900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 21
+  ID: 40
   OwnerID: 0
 --- !u!1 &5878535339933581095
 GameObject:
@@ -9149,8 +9389,8 @@ GameObject:
   - component: {fileID: 6377308435382898759}
   - component: {fileID: 4420869330937076427}
   - component: {fileID: 771199057949289420}
-  - component: {fileID: 3556581155373085951}
-  - component: {fileID: 6765823441720095223}
+  - component: {fileID: 4047166162285356236}
+  - component: {fileID: 1518644177029183179}
   m_Layer: 13
   m_Name: Slider_Threshold2
   m_TagString: Untagged
@@ -9228,7 +9468,31 @@ MonoBehaviour:
   m_Value: 0.45
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 771199057949289420}
+        m_TargetAssemblyTypeName: AudioLink.GlobalSlider, AudioLink
+        m_MethodName: SlideUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1842860305506803316}
+        m_TargetAssemblyTypeName: AudioLink.AudioLinkControllerV0, AudioLink
+        m_MethodName: UpdateSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &771199057949289420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9241,11 +9505,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 3556581155373085951}
+  PSharpProgram: {fileID: 4047166162285356236}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &3556581155373085951
+--- !u!114 &4047166162285356236
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9259,14 +9523,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 6765823441720095223}
+  pSharpNetworkedObject: {fileID: 1518644177029183179}
   pSharpBehaviour: {fileID: 771199057949289420}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &6765823441720095223
+--- !u!114 &1518644177029183179
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9279,7 +9543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 17
+  ID: 36
   OwnerID: 0
 --- !u!1 &6053180277464488111
 GameObject:
@@ -9626,7 +9890,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4619046956282423185}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4850063339682102178}
+        m_TargetAssemblyTypeName: AudioLink.ThemeColorControllerV0, AudioLink
+        m_MethodName: SelectCustomColor3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6248130537747176015
 GameObject:
   m_ObjectHideFlags: 0
@@ -9638,8 +9914,8 @@ GameObject:
   - component: {fileID: 7906848557497652203}
   - component: {fileID: 1311697695222318257}
   - component: {fileID: 1390338321621965471}
-  - component: {fileID: 1061886290267189534}
-  - component: {fileID: 8971012727086971141}
+  - component: {fileID: 1694129056153264826}
+  - component: {fileID: 1484439926103229619}
   m_Layer: 13
   m_Name: Slider_X3
   m_TagString: Untagged
@@ -9718,7 +9994,31 @@ MonoBehaviour:
   m_Value: 0.75
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1390338321621965471}
+        m_TargetAssemblyTypeName: AudioLink.GlobalSlider, AudioLink
+        m_MethodName: SlideUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1842860305506803316}
+        m_TargetAssemblyTypeName: AudioLink.AudioLinkControllerV0, AudioLink
+        m_MethodName: UpdateSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1390338321621965471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9731,11 +10031,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 1061886290267189534}
+  PSharpProgram: {fileID: 1694129056153264826}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &1061886290267189534
+--- !u!114 &1694129056153264826
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9749,14 +10049,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 8971012727086971141}
+  pSharpNetworkedObject: {fileID: 1484439926103229619}
   pSharpBehaviour: {fileID: 1390338321621965471}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &8971012727086971141
+--- !u!114 &1484439926103229619
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9769,7 +10069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 14
+  ID: 33
   OwnerID: 0
 --- !u!1 &6273889030915487248
 GameObject:
@@ -10047,8 +10347,8 @@ GameObject:
   - component: {fileID: 632669208732992234}
   - component: {fileID: 6383152073809149693}
   - component: {fileID: 6289705730451673816}
-  - component: {fileID: 1268030723159353716}
-  - component: {fileID: 7668703237799391979}
+  - component: {fileID: 3042245687881605541}
+  - component: {fileID: 4172544351295219249}
   m_Layer: 13
   m_Name: Slider_X2
   m_TagString: Untagged
@@ -10127,7 +10427,31 @@ MonoBehaviour:
   m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6289705730451673816}
+        m_TargetAssemblyTypeName: AudioLink.GlobalSlider, AudioLink
+        m_MethodName: SlideUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1842860305506803316}
+        m_TargetAssemblyTypeName: AudioLink.AudioLinkControllerV0, AudioLink
+        m_MethodName: UpdateSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6289705730451673816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10140,11 +10464,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 1268030723159353716}
+  PSharpProgram: {fileID: 3042245687881605541}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &1268030723159353716
+--- !u!114 &3042245687881605541
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10158,14 +10482,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 7668703237799391979}
+  pSharpNetworkedObject: {fileID: 4172544351295219249}
   pSharpBehaviour: {fileID: 6289705730451673816}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &7668703237799391979
+--- !u!114 &4172544351295219249
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10178,7 +10502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 13
+  ID: 32
   OwnerID: 0
 --- !u!1 &6424337259197555450
 GameObject:
@@ -11233,8 +11557,8 @@ GameObject:
   - component: {fileID: 2195226738872605642}
   - component: {fileID: 3090703545926682418}
   - component: {fileID: 6325804542511442447}
-  - component: {fileID: 7683393671285346061}
-  - component: {fileID: 4883658269609620626}
+  - component: {fileID: 8162765381353289978}
+  - component: {fileID: 8131692980173593139}
   m_Layer: 13
   m_Name: Slider_ThemeSaturation
   m_TagString: Untagged
@@ -11314,7 +11638,19 @@ MonoBehaviour:
   m_Value: 0.75
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4850063339682102178}
+        m_TargetAssemblyTypeName: AudioLink.ThemeColorControllerV0, AudioLink
+        m_MethodName: OnGUIchange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6325804542511442447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11327,11 +11663,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 7683393671285346061}
+  PSharpProgram: {fileID: 8162765381353289978}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &7683393671285346061
+--- !u!114 &8162765381353289978
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11345,14 +11681,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 4883658269609620626}
+  pSharpNetworkedObject: {fileID: 8131692980173593139}
   pSharpBehaviour: {fileID: 6325804542511442447}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &4883658269609620626
+--- !u!114 &8131692980173593139
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11365,7 +11701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 20
+  ID: 39
   OwnerID: 0
 --- !u!1 &7141288542572119795
 GameObject:
@@ -11417,8 +11753,8 @@ GameObject:
   - component: {fileID: 7711251164240412061}
   - component: {fileID: 7628195828084764416}
   - component: {fileID: 7430174221616144509}
-  - component: {fileID: 2532545678076404503}
-  - component: {fileID: 276179217991794481}
+  - component: {fileID: 8446978430434501083}
+  - component: {fileID: 7560878446158550101}
   m_Layer: 13
   m_Name: Handle
   m_TagString: Untagged
@@ -11504,8 +11840,7 @@ MonoBehaviour:
   m_Script: {fileID: 2018708767, guid: 6182bd482e1b9a94e9148fd18381b8fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: 
-  maxDistance: 2
+  _title: Pickup
   physicsBased: 0
   hideHighlight: 0
   pickupMode: 0
@@ -11526,12 +11861,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91bf60e4ede056b4c84cfd662c412619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 2532545678076404503}
+  PSharpProgram: {fileID: 8446978430434501083}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
   allowTheft: 0
---- !u!114 &2532545678076404503
+--- !u!114 &8446978430434501083
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11545,7 +11880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 933159afd71b1904bab7ff175ecd878c, type: 2}
   type: PSharpExamples.PickupObjectSync
-  pSharpNetworkedObject: {fileID: 276179217991794481}
+  pSharpNetworkedObject: {fileID: 7560878446158550101}
   pSharpBehaviour: {fileID: 7430174221616144509}
   pSharpProxy: {fileID: 0}
   variables:
@@ -11668,7 +12003,7 @@ MonoBehaviour:
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &276179217991794481
+--- !u!114 &7560878446158550101
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11681,7 +12016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 4
+  ID: 24
   OwnerID: 0
 --- !u!1 &7206606948201433217
 GameObject:
@@ -12799,8 +13134,8 @@ GameObject:
   - component: {fileID: 8829320242595920812}
   - component: {fileID: 2593429969964627024}
   - component: {fileID: 1691934861324986770}
-  - component: {fileID: 7799014153579635260}
-  - component: {fileID: 2375374278259531518}
+  - component: {fileID: 6518400381764974647}
+  - component: {fileID: 3527449730679353901}
   m_Layer: 13
   m_Name: Slider_X1
   m_TagString: Untagged
@@ -12879,7 +13214,31 @@ MonoBehaviour:
   m_Value: 0.25
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1691934861324986770}
+        m_TargetAssemblyTypeName: AudioLink.GlobalSlider, AudioLink
+        m_MethodName: SlideUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1842860305506803316}
+        m_TargetAssemblyTypeName: AudioLink.AudioLinkControllerV0, AudioLink
+        m_MethodName: UpdateSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1691934861324986770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12892,11 +13251,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 7799014153579635260}
+  PSharpProgram: {fileID: 6518400381764974647}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &7799014153579635260
+--- !u!114 &6518400381764974647
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12910,14 +13269,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 2375374278259531518}
+  pSharpNetworkedObject: {fileID: 3527449730679353901}
   pSharpBehaviour: {fileID: 1691934861324986770}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &2375374278259531518
+--- !u!114 &3527449730679353901
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12930,7 +13289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 12
+  ID: 31
   OwnerID: 0
 --- !u!1 &8226450635720938747
 GameObject:
@@ -13051,7 +13410,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4619046956282423185}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4850063339682102178}
+        m_TargetAssemblyTypeName: AudioLink.ThemeColorControllerV0, AudioLink
+        m_MethodName: SelectCustomColor1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8359480346300422776
 GameObject:
   m_ObjectHideFlags: 0
@@ -13062,8 +13433,8 @@ GameObject:
   m_Component:
   - component: {fileID: 383378284011205537}
   - component: {fileID: 4850063339682102178}
-  - component: {fileID: 6554865922546462950}
-  - component: {fileID: 6664093124186138208}
+  - component: {fileID: 8624383461653319433}
+  - component: {fileID: 1021867165431564604}
   m_Layer: 0
   m_Name: ThemeColorController
   m_TagString: Untagged
@@ -13098,7 +13469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04c324e7f26747b458f38aeec9327eb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 6554865922546462950}
+  PSharpProgram: {fileID: 8624383461653319433}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
@@ -13118,7 +13489,7 @@ MonoBehaviour:
   - {fileID: 8358225712455590831}
   - {fileID: 1645862079781337451}
   customColorIndex: 0
---- !u!114 &6554865922546462950
+--- !u!114 &8624383461653319433
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13132,7 +13503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 0c9df6ab814eafb429c0f40ab101642d, type: 2}
   type: AudioLink.ThemeColorControllerV0
-  pSharpNetworkedObject: {fileID: 6664093124186138208}
+  pSharpNetworkedObject: {fileID: 1021867165431564604}
   pSharpBehaviour: {fileID: 4850063339682102178}
   pSharpProxy: {fileID: 0}
   variables:
@@ -14535,7 +14906,7 @@ MonoBehaviour:
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &6664093124186138208
+--- !u!114 &1021867165431564604
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14548,7 +14919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 22
+  ID: 41
   OwnerID: 0
 --- !u!1 &8488801579688652025
 GameObject:
@@ -14828,8 +15199,8 @@ GameObject:
   - component: {fileID: 6836042097146758094}
   - component: {fileID: 2453450508475184834}
   - component: {fileID: 2728866013112046760}
-  - component: {fileID: 3192514792966774525}
-  - component: {fileID: 1788111750553839822}
+  - component: {fileID: 945765134819246503}
+  - component: {fileID: 1199790683746058168}
   m_Layer: 13
   m_Name: Slider_Gain
   m_TagString: Untagged
@@ -14909,7 +15280,31 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2728866013112046760}
+        m_TargetAssemblyTypeName: AudioLink.GlobalSlider, AudioLink
+        m_MethodName: SlideUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1842860305506803316}
+        m_TargetAssemblyTypeName: AudioLink.AudioLinkControllerV0, AudioLink
+        m_MethodName: UpdateSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2728866013112046760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14922,11 +15317,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b58f3ae8453c2342b32cacd16591e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 3192514792966774525}
+  PSharpProgram: {fileID: 945765134819246503}
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &3192514792966774525
+--- !u!114 &945765134819246503
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14940,14 +15335,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   programAsset: {fileID: 11400000, guid: 9b990aaed34c1984ebbce7d3af1d4281, type: 2}
   type: AudioLink.GlobalSlider
-  pSharpNetworkedObject: {fileID: 1788111750553839822}
+  pSharpNetworkedObject: {fileID: 1199790683746058168}
   pSharpBehaviour: {fileID: 2728866013112046760}
   pSharpProxy: {fileID: 0}
   variables: []
   interactText: Interact
   maxInteractDistance: 2
   hideHighlight: 0
---- !u!114 &1788111750553839822
+--- !u!114 &1199790683746058168
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14960,7 +15355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxies: []
-  ID: 6
+  ID: 25
   OwnerID: 0
 --- !u!1 &8800176782653081193
 GameObject:
@@ -15545,7 +15940,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4619046956282423185}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4850063339682102178}
+        m_TargetAssemblyTypeName: AudioLink.ThemeColorControllerV0, AudioLink
+        m_MethodName: SelectCustomColor2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9168963936852672339
 GameObject:
   m_ObjectHideFlags: 0
@@ -15665,7 +16072,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6415048877293645231}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4850063339682102178}
+        m_TargetAssemblyTypeName: AudioLink.ThemeColorControllerV0, AudioLink
+        m_MethodName: SelectCustomColor0
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9217140859692962009
 GameObject:
   m_ObjectHideFlags: 0
@@ -15679,9 +16098,6 @@ GameObject:
   - component: {fileID: 1517590324470855955}
   - component: {fileID: 6027767746014684908}
   - component: {fileID: 8081666617101621454}
-  - component: {fileID: 2723849271697324136}
-  - component: {fileID: 2185643772589479656}
-  - component: {fileID: 8376224516578766096}
   m_Layer: 13
   m_Name: Canvas
   m_TagString: Untagged
@@ -15807,2980 +16223,3 @@ MonoBehaviour:
   m_Script: {fileID: -1608259531, guid: 6182bd482e1b9a94e9148fd18381b8fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2723849271697324136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9217140859692962009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c74c0ff16970f8c4589616cf2695b1c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PSharpProgram: {fileID: 2185643772589479656}
-  interactText: Interact
-  maxInteractDistance: 2
-  hideHighlight: 0
-  audioLink: {fileID: 0}
-  themeColorController: {fileID: 4850063339682102178}
-  audioLinkController: {fileID: 1842860305506803316}
-  ThemeColorDropdown: {fileID: 1826808307273101929}
-  CustomColorButton0: {fileID: 8452688644114016115}
-  CustomColorButton1: {fileID: 8975426336227822192}
-  CustomColorButton2: {fileID: 7402338092369703429}
-  CustomColorButton3: {fileID: 3463418603904111174}
-  Gain: {fileID: 2453450508475184834}
-  Treble: {fileID: 9005346688788593226}
-  Bass: {fileID: 2155328973024673097}
-  FadeLength: {fileID: 953534832166289797}
-  FadeExpFalloff: {fileID: 3560916421228805043}
-  SliderX0: {fileID: 1645085390930470211}
-  SliderX1: {fileID: 2593429969964627024}
-  SliderX2: {fileID: 6383152073809149693}
-  SliderX3: {fileID: 1311697695222318257}
-  Threshold0: {fileID: 312880007505494620}
-  Threshold1: {fileID: 360184872314157542}
-  Threshold2: {fileID: 4420869330937076427}
-  Threshold3: {fileID: 1657498937293238454}
-  Reset: {fileID: 7165322248087553991}
-  ThemeHue: {fileID: 5549235478077053648}
-  ThemeSaturation: {fileID: 3090703545926682418}
-  ThemeValue: {fileID: 8855381985268987115}
---- !u!114 &2185643772589479656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9217140859692962009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1394590517, guid: 5f20141248a4dc040a0060f5893b9b74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  programAsset: {fileID: 11400000, guid: 741aad352dbc63643b7d92dca3156569, type: 2}
-  type: AudioLink.AudioLinkControllerInputV0
-  pSharpNetworkedObject: {fileID: 8376224516578766096}
-  pSharpBehaviour: {fileID: 2723849271697324136}
-  pSharpProxy: {fileID: 0}
-  variables:
-  - fieldName: audioLink
-    typeFullName: AudioLink.AudioLink
-    typeAsString: AudioLink.AudioLink, AudioLink
-    isArray: 0
-    unknownVariableType: 1
-    stringValue: 
-    stringArrayValue: []
-    charValue: 0
-    charArrayValue: 
-    floatValue: 0
-    floatArrayValue: []
-    doubleValue: 0
-    doubleArrayValue: []
-    sbyteValue: 0
-    sbyteArrayValue: 
-    byteValue: 0
-    byteArrayValue: 
-    int16Value: 0
-    int16ArrayValue: 
-    int32Value: 0
-    int32ArrayValue: 
-    int64Value: 0
-    int64ArrayValue: 
-    uint16Value: 0
-    uint16ArrayValue: 
-    uint32Value: 0
-    uint32ArrayValue: 
-    uint64Value: 0
-    uint64ArrayValue: 
-    boolValue: 0
-    boolArrayValue: 
-    colorValue: {r: 0, g: 0, b: 0, a: 0}
-    colorArrayValue: []
-    color32Value:
-      serializedVersion: 2
-      rgba: 0
-    color32ArrayValue: []
-    vector2Value: {x: 0, y: 0}
-    vector2ArrayValue: []
-    vector2IntValue: {x: 0, y: 0}
-    vector2IntArrayValue: []
-    vector3Value: {x: 0, y: 0, z: 0}
-    vector3ArrayValue: []
-    vector3IntValue: {x: 0, y: 0, z: 0}
-    vector3IntArrayValue: []
-    vector4Value: {x: 0, y: 0, z: 0, w: 0}
-    vector4ArrayValue: []
-    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
-    quaternionArrayValue: []
-    animationCurveValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    animationCurveArrayValue: []
-    gradientValue:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    gradientArrayValue: []
-    layerMaskValue:
-      serializedVersion: 2
-      m_Bits: 0
-    layerMaskArrayValue: []
-    boundsValue:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-    boundsArrayValue: []
-    boundsIntValue:
-      m_Position: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0, z: 0}
-    boundsIntArrayValue: []
-    rectValue:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectArrayValue: []
-    rectIntValue:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectIntArrayValue: []
-    enumValue: 0
-    enumArrayValue: 
-    objectValue: {fileID: 0}
-    objectArrayValue: []
-  - fieldName: themeColorController
-    typeFullName: AudioLink.ThemeColorControllerV0
-    typeAsString: AudioLink.ThemeColorControllerV0, AudioLink
-    isArray: 0
-    unknownVariableType: 1
-    stringValue: 
-    stringArrayValue: []
-    charValue: 0
-    charArrayValue: 
-    floatValue: 0
-    floatArrayValue: []
-    doubleValue: 0
-    doubleArrayValue: []
-    sbyteValue: 0
-    sbyteArrayValue: 
-    byteValue: 0
-    byteArrayValue: 
-    int16Value: 0
-    int16ArrayValue: 
-    int32Value: 0
-    int32ArrayValue: 
-    int64Value: 0
-    int64ArrayValue: 
-    uint16Value: 0
-    uint16ArrayValue: 
-    uint32Value: 0
-    uint32ArrayValue: 
-    uint64Value: 0
-    uint64ArrayValue: 
-    boolValue: 0
-    boolArrayValue: 
-    colorValue: {r: 0, g: 0, b: 0, a: 0}
-    colorArrayValue: []
-    color32Value:
-      serializedVersion: 2
-      rgba: 0
-    color32ArrayValue: []
-    vector2Value: {x: 0, y: 0}
-    vector2ArrayValue: []
-    vector2IntValue: {x: 0, y: 0}
-    vector2IntArrayValue: []
-    vector3Value: {x: 0, y: 0, z: 0}
-    vector3ArrayValue: []
-    vector3IntValue: {x: 0, y: 0, z: 0}
-    vector3IntArrayValue: []
-    vector4Value: {x: 0, y: 0, z: 0, w: 0}
-    vector4ArrayValue: []
-    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
-    quaternionArrayValue: []
-    animationCurveValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    animationCurveArrayValue: []
-    gradientValue:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    gradientArrayValue: []
-    layerMaskValue:
-      serializedVersion: 2
-      m_Bits: 0
-    layerMaskArrayValue: []
-    boundsValue:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-    boundsArrayValue: []
-    boundsIntValue:
-      m_Position: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0, z: 0}
-    boundsIntArrayValue: []
-    rectValue:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectArrayValue: []
-    rectIntValue:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectIntArrayValue: []
-    enumValue: 0
-    enumArrayValue: 
-    objectValue: {fileID: 6554865922546462950}
-    objectArrayValue: []
-  - fieldName: audioLinkController
-    typeFullName: AudioLink.AudioLinkControllerV0
-    typeAsString: AudioLink.AudioLinkControllerV0, AudioLink
-    isArray: 0
-    unknownVariableType: 1
-    stringValue: 
-    stringArrayValue: []
-    charValue: 0
-    charArrayValue: 
-    floatValue: 0
-    floatArrayValue: []
-    doubleValue: 0
-    doubleArrayValue: []
-    sbyteValue: 0
-    sbyteArrayValue: 
-    byteValue: 0
-    byteArrayValue: 
-    int16Value: 0
-    int16ArrayValue: 
-    int32Value: 0
-    int32ArrayValue: 
-    int64Value: 0
-    int64ArrayValue: 
-    uint16Value: 0
-    uint16ArrayValue: 
-    uint32Value: 0
-    uint32ArrayValue: 
-    uint64Value: 0
-    uint64ArrayValue: 
-    boolValue: 0
-    boolArrayValue: 
-    colorValue: {r: 0, g: 0, b: 0, a: 0}
-    colorArrayValue: []
-    color32Value:
-      serializedVersion: 2
-      rgba: 0
-    color32ArrayValue: []
-    vector2Value: {x: 0, y: 0}
-    vector2ArrayValue: []
-    vector2IntValue: {x: 0, y: 0}
-    vector2IntArrayValue: []
-    vector3Value: {x: 0, y: 0, z: 0}
-    vector3ArrayValue: []
-    vector3IntValue: {x: 0, y: 0, z: 0}
-    vector3IntArrayValue: []
-    vector4Value: {x: 0, y: 0, z: 0, w: 0}
-    vector4ArrayValue: []
-    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
-    quaternionArrayValue: []
-    animationCurveValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    animationCurveArrayValue: []
-    gradientValue:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    gradientArrayValue: []
-    layerMaskValue:
-      serializedVersion: 2
-      m_Bits: 0
-    layerMaskArrayValue: []
-    boundsValue:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-    boundsArrayValue: []
-    boundsIntValue:
-      m_Position: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0, z: 0}
-    boundsIntArrayValue: []
-    rectValue:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectArrayValue: []
-    rectIntValue:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectIntArrayValue: []
-    enumValue: 0
-    enumArrayValue: 
-    objectValue: {fileID: 4510594191306770420}
-    objectArrayValue: []
-  - fieldName: ThemeColorDropdown
-    typeFullName: UnityEngine.UI.Dropdown
-    typeAsString: UnityEngine.UI.Dropdown, UnityEngine.UI
-    isArray: 0
-    unknownVariableType: 0
-    stringValue: 
-    stringArrayValue: []
-    charValue: 0
-    charArrayValue: 
-    floatValue: 0
-    floatArrayValue: []
-    doubleValue: 0
-    doubleArrayValue: []
-    sbyteValue: 0
-    sbyteArrayValue: 
-    byteValue: 0
-    byteArrayValue: 
-    int16Value: 0
-    int16ArrayValue: 
-    int32Value: 0
-    int32ArrayValue: 
-    int64Value: 0
-    int64ArrayValue: 
-    uint16Value: 0
-    uint16ArrayValue: 
-    uint32Value: 0
-    uint32ArrayValue: 
-    uint64Value: 0
-    uint64ArrayValue: 
-    boolValue: 0
-    boolArrayValue: 
-    colorValue: {r: 0, g: 0, b: 0, a: 0}
-    colorArrayValue: []
-    color32Value:
-      serializedVersion: 2
-      rgba: 0
-    color32ArrayValue: []
-    vector2Value: {x: 0, y: 0}
-    vector2ArrayValue: []
-    vector2IntValue: {x: 0, y: 0}
-    vector2IntArrayValue: []
-    vector3Value: {x: 0, y: 0, z: 0}
-    vector3ArrayValue: []
-    vector3IntValue: {x: 0, y: 0, z: 0}
-    vector3IntArrayValue: []
-    vector4Value: {x: 0, y: 0, z: 0, w: 0}
-    vector4ArrayValue: []
-    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
-    quaternionArrayValue: []
-    animationCurveValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    animationCurveArrayValue: []
-    gradientValue:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    gradientArrayValue: []
-    layerMaskValue:
-      serializedVersion: 2
-      m_Bits: 0
-    layerMaskArrayValue: []
-    boundsValue:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-    boundsArrayValue: []
-    boundsIntValue:
-      m_Position: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0, z: 0}
-    boundsIntArrayValue: []
-    rectValue:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectArrayValue: []
-    rectIntValue:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectIntArrayValue: []
-    enumValue: 0
-    enumArrayValue: 
-    objectValue: {fileID: 1826808307273101929}
-    objectArrayValue: []
-  - fieldName: CustomColorButton0
-    typeFullName: UnityEngine.UI.Button
-    typeAsString: UnityEngine.UI.Button, UnityEngine.UI
-    isArray: 0
-    unknownVariableType: 0
-    stringValue: 
-    stringArrayValue: []
-    charValue: 0
-    charArrayValue: 
-    floatValue: 0
-    floatArrayValue: []
-    doubleValue: 0
-    doubleArrayValue: []
-    sbyteValue: 0
-    sbyteArrayValue: 
-    byteValue: 0
-    byteArrayValue: 
-    int16Value: 0
-    int16ArrayValue: 
-    int32Value: 0
-    int32ArrayValue: 
-    int64Value: 0
-    int64ArrayValue: 
-    uint16Value: 0
-    uint16ArrayValue: 
-    uint32Value: 0
-    uint32ArrayValue: 
-    uint64Value: 0
-    uint64ArrayValue: 
-    boolValue: 0
-    boolArrayValue: 
-    colorValue: {r: 0, g: 0, b: 0, a: 0}
-    colorArrayValue: []
-    color32Value:
-      serializedVersion: 2
-      rgba: 0
-    color32ArrayValue: []
-    vector2Value: {x: 0, y: 0}
-    vector2ArrayValue: []
-    vector2IntValue: {x: 0, y: 0}
-    vector2IntArrayValue: []
-    vector3Value: {x: 0, y: 0, z: 0}
-    vector3ArrayValue: []
-    vector3IntValue: {x: 0, y: 0, z: 0}
-    vector3IntArrayValue: []
-    vector4Value: {x: 0, y: 0, z: 0, w: 0}
-    vector4ArrayValue: []
-    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
-    quaternionArrayValue: []
-    animationCurveValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    animationCurveArrayValue: []
-    gradientValue:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    gradientArrayValue: []
-    layerMaskValue:
-      serializedVersion: 2
-      m_Bits: 0
-    layerMaskArrayValue: []
-    boundsValue:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-    boundsArrayValue: []
-    boundsIntValue:
-      m_Position: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0, z: 0}
-    boundsIntArrayValue: []
-    rectValue:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectArrayValue: []
-    rectIntValue:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectIntArrayValue: []
-    enumValue: 0
-    enumArrayValue: 
-    objectValue: {fileID: 8452688644114016115}
-    objectArrayValue: []
-  - fieldName: CustomColorButton1
-    typeFullName: UnityEngine.UI.Button
-    typeAsString: UnityEngine.UI.Button, UnityEngine.UI
-    isArray: 0
-    unknownVariableType: 0
-    stringValue: 
-    stringArrayValue: []
-    charValue: 0
-    charArrayValue: 
-    floatValue: 0
-    floatArrayValue: []
-    doubleValue: 0
-    doubleArrayValue: []
-    sbyteValue: 0
-    sbyteArrayValue: 
-    byteValue: 0
-    byteArrayValue: 
-    int16Value: 0
-    int16ArrayValue: 
-    int32Value: 0
-    int32ArrayValue: 
-    int64Value: 0
-    int64ArrayValue: 
-    uint16Value: 0
-    uint16ArrayValue: 
-    uint32Value: 0
-    uint32ArrayValue: 
-    uint64Value: 0
-    uint64ArrayValue: 
-    boolValue: 0
-    boolArrayValue: 
-    colorValue: {r: 0, g: 0, b: 0, a: 0}
-    colorArrayValue: []
-    color32Value:
-      serializedVersion: 2
-      rgba: 0
-    color32ArrayValue: []
-    vector2Value: {x: 0, y: 0}
-    vector2ArrayValue: []
-    vector2IntValue: {x: 0, y: 0}
-    vector2IntArrayValue: []
-    vector3Value: {x: 0, y: 0, z: 0}
-    vector3ArrayValue: []
-    vector3IntValue: {x: 0, y: 0, z: 0}
-    vector3IntArrayValue: []
-    vector4Value: {x: 0, y: 0, z: 0, w: 0}
-    vector4ArrayValue: []
-    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
-    quaternionArrayValue: []
-    animationCurveValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    animationCurveArrayValue: []
-    gradientValue:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    gradientArrayValue: []
-    layerMaskValue:
-      serializedVersion: 2
-      m_Bits: 0
-    layerMaskArrayValue: []
-    boundsValue:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-    boundsArrayValue: []
-    boundsIntValue:
-      m_Position: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0, z: 0}
-    boundsIntArrayValue: []
-    rectValue:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectArrayValue: []
-    rectIntValue:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectIntArrayValue: []
-    enumValue: 0
-    enumArrayValue: 
-    objectValue: {fileID: 8975426336227822192}
-    objectArrayValue: []
-  - fieldName: CustomColorButton2
-    typeFullName: UnityEngine.UI.Button
-    typeAsString: UnityEngine.UI.Button, UnityEngine.UI
-    isArray: 0
-    unknownVariableType: 0
-    stringValue: 
-    stringArrayValue: []
-    charValue: 0
-    charArrayValue: 
-    floatValue: 0
-    floatArrayValue: []
-    doubleValue: 0
-    doubleArrayValue: []
-    sbyteValue: 0
-    sbyteArrayValue: 
-    byteValue: 0
-    byteArrayValue: 
-    int16Value: 0
-    int16ArrayValue: 
-    int32Value: 0
-    int32ArrayValue: 
-    int64Value: 0
-    int64ArrayValue: 
-    uint16Value: 0
-    uint16ArrayValue: 
-    uint32Value: 0
-    uint32ArrayValue: 
-    uint64Value: 0
-    uint64ArrayValue: 
-    boolValue: 0
-    boolArrayValue: 
-    colorValue: {r: 0, g: 0, b: 0, a: 0}
-    colorArrayValue: []
-    color32Value:
-      serializedVersion: 2
-      rgba: 0
-    color32ArrayValue: []
-    vector2Value: {x: 0, y: 0}
-    vector2ArrayValue: []
-    vector2IntValue: {x: 0, y: 0}
-    vector2IntArrayValue: []
-    vector3Value: {x: 0, y: 0, z: 0}
-    vector3ArrayValue: []
-    vector3IntValue: {x: 0, y: 0, z: 0}
-    vector3IntArrayValue: []
-    vector4Value: {x: 0, y: 0, z: 0, w: 0}
-    vector4ArrayValue: []
-    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
-    quaternionArrayValue: []
-    animationCurveValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    animationCurveArrayValue: []
-    gradientValue:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    gradientArrayValue: []
-    layerMaskValue:
-      serializedVersion: 2
-      m_Bits: 0
-    layerMaskArrayValue: []
-    boundsValue:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-    boundsArrayValue: []
-    boundsIntValue:
-      m_Position: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0, z: 0}
-    boundsIntArrayValue: []
-    rectValue:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectArrayValue: []
-    rectIntValue:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectIntArrayValue: []
-    enumValue: 0
-    enumArrayValue: 
-    objectValue: {fileID: 7402338092369703429}
-    objectArrayValue: []
-  - fieldName: CustomColorButton3
-    typeFullName: UnityEngine.UI.Button
-    typeAsString: UnityEngine.UI.Button, UnityEngine.UI
-    isArray: 0
-    unknownVariableType: 0
-    stringValue: 
-    stringArrayValue: []
-    charValue: 0
-    charArrayValue: 
-    floatValue: 0
-    floatArrayValue: []
-    doubleValue: 0
-    doubleArrayValue: []
-    sbyteValue: 0
-    sbyteArrayValue: 
-    byteValue: 0
-    byteArrayValue: 
-    int16Value: 0
-    int16ArrayValue: 
-    int32Value: 0
-    int32ArrayValue: 
-    int64Value: 0
-    int64ArrayValue: 
-    uint16Value: 0
-    uint16ArrayValue: 
-    uint32Value: 0
-    uint32ArrayValue: 
-    uint64Value: 0
-    uint64ArrayValue: 
-    boolValue: 0
-    boolArrayValue: 
-    colorValue: {r: 0, g: 0, b: 0, a: 0}
-    colorArrayValue: []
-    color32Value:
-      serializedVersion: 2
-      rgba: 0
-    color32ArrayValue: []
-    vector2Value: {x: 0, y: 0}
-    vector2ArrayValue: []
-    vector2IntValue: {x: 0, y: 0}
-    vector2IntArrayValue: []
-    vector3Value: {x: 0, y: 0, z: 0}
-    vector3ArrayValue: []
-    vector3IntValue: {x: 0, y: 0, z: 0}
-    vector3IntArrayValue: []
-    vector4Value: {x: 0, y: 0, z: 0, w: 0}
-    vector4ArrayValue: []
-    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
-    quaternionArrayValue: []
-    animationCurveValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    animationCurveArrayValue: []
-    gradientValue:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    gradientArrayValue: []
-    layerMaskValue:
-      serializedVersion: 2
-      m_Bits: 0
-    layerMaskArrayValue: []
-    boundsValue:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-    boundsArrayValue: []
-    boundsIntValue:
-      m_Position: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0, z: 0}
-    boundsIntArrayValue: []
-    rectValue:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectArrayValue: []
-    rectIntValue:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectIntArrayValue: []
-    enumValue: 0
-    enumArrayValue: 
-    objectValue: {fileID: 3463418603904111174}
-    objectArrayValue: []
-  - fieldName: Gain
-    typeFullName: UnityEngine.UI.Slider
-    typeAsString: UnityEngine.UI.Slider, UnityEngine.UI
-    isArray: 0
-    unknownVariableType: 0
-    stringValue: 
-    stringArrayValue: []
-    charValue: 0
-    charArrayValue: 
-    floatValue: 0
-    floatArrayValue: []
-    doubleValue: 0
-    doubleArrayValue: []
-    sbyteValue: 0
-    sbyteArrayValue: 
-    byteValue: 0
-    byteArrayValue: 
-    int16Value: 0
-    int16ArrayValue: 
-    int32Value: 0
-    int32ArrayValue: 
-    int64Value: 0
-    int64ArrayValue: 
-    uint16Value: 0
-    uint16ArrayValue: 
-    uint32Value: 0
-    uint32ArrayValue: 
-    uint64Value: 0
-    uint64ArrayValue: 
-    boolValue: 0
-    boolArrayValue: 
-    colorValue: {r: 0, g: 0, b: 0, a: 0}
-    colorArrayValue: []
-    color32Value:
-      serializedVersion: 2
-      rgba: 0
-    color32ArrayValue: []
-    vector2Value: {x: 0, y: 0}
-    vector2ArrayValue: []
-    vector2IntValue: {x: 0, y: 0}
-    vector2IntArrayValue: []
-    vector3Value: {x: 0, y: 0, z: 0}
-    vector3ArrayValue: []
-    vector3IntValue: {x: 0, y: 0, z: 0}
-    vector3IntArrayValue: []
-    vector4Value: {x: 0, y: 0, z: 0, w: 0}
-    vector4ArrayValue: []
-    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
-    quaternionArrayValue: []
-    animationCurveValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    animationCurveArrayValue: []
-    gradientValue:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    gradientArrayValue: []
-    layerMaskValue:
-      serializedVersion: 2
-      m_Bits: 0
-    layerMaskArrayValue: []
-    boundsValue:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-    boundsArrayValue: []
-    boundsIntValue:
-      m_Position: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0, z: 0}
-    boundsIntArrayValue: []
-    rectValue:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectArrayValue: []
-    rectIntValue:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectIntArrayValue: []
-    enumValue: 0
-    enumArrayValue: 
-    objectValue: {fileID: 2453450508475184834}
-    objectArrayValue: []
-  - fieldName: Treble
-    typeFullName: UnityEngine.UI.Slider
-    typeAsString: UnityEngine.UI.Slider, UnityEngine.UI
-    isArray: 0
-    unknownVariableType: 0
-    stringValue: 
-    stringArrayValue: []
-    charValue: 0
-    charArrayValue: 
-    floatValue: 0
-    floatArrayValue: []
-    doubleValue: 0
-    doubleArrayValue: []
-    sbyteValue: 0
-    sbyteArrayValue: 
-    byteValue: 0
-    byteArrayValue: 
-    int16Value: 0
-    int16ArrayValue: 
-    int32Value: 0
-    int32ArrayValue: 
-    int64Value: 0
-    int64ArrayValue: 
-    uint16Value: 0
-    uint16ArrayValue: 
-    uint32Value: 0
-    uint32ArrayValue: 
-    uint64Value: 0
-    uint64ArrayValue: 
-    boolValue: 0
-    boolArrayValue: 
-    colorValue: {r: 0, g: 0, b: 0, a: 0}
-    colorArrayValue: []
-    color32Value:
-      serializedVersion: 2
-      rgba: 0
-    color32ArrayValue: []
-    vector2Value: {x: 0, y: 0}
-    vector2ArrayValue: []
-    vector2IntValue: {x: 0, y: 0}
-    vector2IntArrayValue: []
-    vector3Value: {x: 0, y: 0, z: 0}
-    vector3ArrayValue: []
-    vector3IntValue: {x: 0, y: 0, z: 0}
-    vector3IntArrayValue: []
-    vector4Value: {x: 0, y: 0, z: 0, w: 0}
-    vector4ArrayValue: []
-    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
-    quaternionArrayValue: []
-    animationCurveValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    animationCurveArrayValue: []
-    gradientValue:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    gradientArrayValue: []
-    layerMaskValue:
-      serializedVersion: 2
-      m_Bits: 0
-    layerMaskArrayValue: []
-    boundsValue:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-    boundsArrayValue: []
-    boundsIntValue:
-      m_Position: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0, z: 0}
-    boundsIntArrayValue: []
-    rectValue:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectArrayValue: []
-    rectIntValue:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectIntArrayValue: []
-    enumValue: 0
-    enumArrayValue: 
-    objectValue: {fileID: 9005346688788593226}
-    objectArrayValue: []
-  - fieldName: Bass
-    typeFullName: UnityEngine.UI.Slider
-    typeAsString: UnityEngine.UI.Slider, UnityEngine.UI
-    isArray: 0
-    unknownVariableType: 0
-    stringValue: 
-    stringArrayValue: []
-    charValue: 0
-    charArrayValue: 
-    floatValue: 0
-    floatArrayValue: []
-    doubleValue: 0
-    doubleArrayValue: []
-    sbyteValue: 0
-    sbyteArrayValue: 
-    byteValue: 0
-    byteArrayValue: 
-    int16Value: 0
-    int16ArrayValue: 
-    int32Value: 0
-    int32ArrayValue: 
-    int64Value: 0
-    int64ArrayValue: 
-    uint16Value: 0
-    uint16ArrayValue: 
-    uint32Value: 0
-    uint32ArrayValue: 
-    uint64Value: 0
-    uint64ArrayValue: 
-    boolValue: 0
-    boolArrayValue: 
-    colorValue: {r: 0, g: 0, b: 0, a: 0}
-    colorArrayValue: []
-    color32Value:
-      serializedVersion: 2
-      rgba: 0
-    color32ArrayValue: []
-    vector2Value: {x: 0, y: 0}
-    vector2ArrayValue: []
-    vector2IntValue: {x: 0, y: 0}
-    vector2IntArrayValue: []
-    vector3Value: {x: 0, y: 0, z: 0}
-    vector3ArrayValue: []
-    vector3IntValue: {x: 0, y: 0, z: 0}
-    vector3IntArrayValue: []
-    vector4Value: {x: 0, y: 0, z: 0, w: 0}
-    vector4ArrayValue: []
-    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
-    quaternionArrayValue: []
-    animationCurveValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    animationCurveArrayValue: []
-    gradientValue:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    gradientArrayValue: []
-    layerMaskValue:
-      serializedVersion: 2
-      m_Bits: 0
-    layerMaskArrayValue: []
-    boundsValue:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-    boundsArrayValue: []
-    boundsIntValue:
-      m_Position: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0, z: 0}
-    boundsIntArrayValue: []
-    rectValue:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectArrayValue: []
-    rectIntValue:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectIntArrayValue: []
-    enumValue: 0
-    enumArrayValue: 
-    objectValue: {fileID: 2155328973024673097}
-    objectArrayValue: []
-  - fieldName: FadeLength
-    typeFullName: UnityEngine.UI.Slider
-    typeAsString: UnityEngine.UI.Slider, UnityEngine.UI
-    isArray: 0
-    unknownVariableType: 0
-    stringValue: 
-    stringArrayValue: []
-    charValue: 0
-    charArrayValue: 
-    floatValue: 0
-    floatArrayValue: []
-    doubleValue: 0
-    doubleArrayValue: []
-    sbyteValue: 0
-    sbyteArrayValue: 
-    byteValue: 0
-    byteArrayValue: 
-    int16Value: 0
-    int16ArrayValue: 
-    int32Value: 0
-    int32ArrayValue: 
-    int64Value: 0
-    int64ArrayValue: 
-    uint16Value: 0
-    uint16ArrayValue: 
-    uint32Value: 0
-    uint32ArrayValue: 
-    uint64Value: 0
-    uint64ArrayValue: 
-    boolValue: 0
-    boolArrayValue: 
-    colorValue: {r: 0, g: 0, b: 0, a: 0}
-    colorArrayValue: []
-    color32Value:
-      serializedVersion: 2
-      rgba: 0
-    color32ArrayValue: []
-    vector2Value: {x: 0, y: 0}
-    vector2ArrayValue: []
-    vector2IntValue: {x: 0, y: 0}
-    vector2IntArrayValue: []
-    vector3Value: {x: 0, y: 0, z: 0}
-    vector3ArrayValue: []
-    vector3IntValue: {x: 0, y: 0, z: 0}
-    vector3IntArrayValue: []
-    vector4Value: {x: 0, y: 0, z: 0, w: 0}
-    vector4ArrayValue: []
-    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
-    quaternionArrayValue: []
-    animationCurveValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    animationCurveArrayValue: []
-    gradientValue:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    gradientArrayValue: []
-    layerMaskValue:
-      serializedVersion: 2
-      m_Bits: 0
-    layerMaskArrayValue: []
-    boundsValue:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-    boundsArrayValue: []
-    boundsIntValue:
-      m_Position: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0, z: 0}
-    boundsIntArrayValue: []
-    rectValue:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectArrayValue: []
-    rectIntValue:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectIntArrayValue: []
-    enumValue: 0
-    enumArrayValue: 
-    objectValue: {fileID: 953534832166289797}
-    objectArrayValue: []
-  - fieldName: FadeExpFalloff
-    typeFullName: UnityEngine.UI.Slider
-    typeAsString: UnityEngine.UI.Slider, UnityEngine.UI
-    isArray: 0
-    unknownVariableType: 0
-    stringValue: 
-    stringArrayValue: []
-    charValue: 0
-    charArrayValue: 
-    floatValue: 0
-    floatArrayValue: []
-    doubleValue: 0
-    doubleArrayValue: []
-    sbyteValue: 0
-    sbyteArrayValue: 
-    byteValue: 0
-    byteArrayValue: 
-    int16Value: 0
-    int16ArrayValue: 
-    int32Value: 0
-    int32ArrayValue: 
-    int64Value: 0
-    int64ArrayValue: 
-    uint16Value: 0
-    uint16ArrayValue: 
-    uint32Value: 0
-    uint32ArrayValue: 
-    uint64Value: 0
-    uint64ArrayValue: 
-    boolValue: 0
-    boolArrayValue: 
-    colorValue: {r: 0, g: 0, b: 0, a: 0}
-    colorArrayValue: []
-    color32Value:
-      serializedVersion: 2
-      rgba: 0
-    color32ArrayValue: []
-    vector2Value: {x: 0, y: 0}
-    vector2ArrayValue: []
-    vector2IntValue: {x: 0, y: 0}
-    vector2IntArrayValue: []
-    vector3Value: {x: 0, y: 0, z: 0}
-    vector3ArrayValue: []
-    vector3IntValue: {x: 0, y: 0, z: 0}
-    vector3IntArrayValue: []
-    vector4Value: {x: 0, y: 0, z: 0, w: 0}
-    vector4ArrayValue: []
-    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
-    quaternionArrayValue: []
-    animationCurveValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    animationCurveArrayValue: []
-    gradientValue:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    gradientArrayValue: []
-    layerMaskValue:
-      serializedVersion: 2
-      m_Bits: 0
-    layerMaskArrayValue: []
-    boundsValue:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-    boundsArrayValue: []
-    boundsIntValue:
-      m_Position: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0, z: 0}
-    boundsIntArrayValue: []
-    rectValue:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectArrayValue: []
-    rectIntValue:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectIntArrayValue: []
-    enumValue: 0
-    enumArrayValue: 
-    objectValue: {fileID: 3560916421228805043}
-    objectArrayValue: []
-  - fieldName: SliderX0
-    typeFullName: UnityEngine.UI.Slider
-    typeAsString: UnityEngine.UI.Slider, UnityEngine.UI
-    isArray: 0
-    unknownVariableType: 0
-    stringValue: 
-    stringArrayValue: []
-    charValue: 0
-    charArrayValue: 
-    floatValue: 0
-    floatArrayValue: []
-    doubleValue: 0
-    doubleArrayValue: []
-    sbyteValue: 0
-    sbyteArrayValue: 
-    byteValue: 0
-    byteArrayValue: 
-    int16Value: 0
-    int16ArrayValue: 
-    int32Value: 0
-    int32ArrayValue: 
-    int64Value: 0
-    int64ArrayValue: 
-    uint16Value: 0
-    uint16ArrayValue: 
-    uint32Value: 0
-    uint32ArrayValue: 
-    uint64Value: 0
-    uint64ArrayValue: 
-    boolValue: 0
-    boolArrayValue: 
-    colorValue: {r: 0, g: 0, b: 0, a: 0}
-    colorArrayValue: []
-    color32Value:
-      serializedVersion: 2
-      rgba: 0
-    color32ArrayValue: []
-    vector2Value: {x: 0, y: 0}
-    vector2ArrayValue: []
-    vector2IntValue: {x: 0, y: 0}
-    vector2IntArrayValue: []
-    vector3Value: {x: 0, y: 0, z: 0}
-    vector3ArrayValue: []
-    vector3IntValue: {x: 0, y: 0, z: 0}
-    vector3IntArrayValue: []
-    vector4Value: {x: 0, y: 0, z: 0, w: 0}
-    vector4ArrayValue: []
-    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
-    quaternionArrayValue: []
-    animationCurveValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    animationCurveArrayValue: []
-    gradientValue:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    gradientArrayValue: []
-    layerMaskValue:
-      serializedVersion: 2
-      m_Bits: 0
-    layerMaskArrayValue: []
-    boundsValue:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-    boundsArrayValue: []
-    boundsIntValue:
-      m_Position: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0, z: 0}
-    boundsIntArrayValue: []
-    rectValue:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectArrayValue: []
-    rectIntValue:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectIntArrayValue: []
-    enumValue: 0
-    enumArrayValue: 
-    objectValue: {fileID: 1645085390930470211}
-    objectArrayValue: []
-  - fieldName: SliderX1
-    typeFullName: UnityEngine.UI.Slider
-    typeAsString: UnityEngine.UI.Slider, UnityEngine.UI
-    isArray: 0
-    unknownVariableType: 0
-    stringValue: 
-    stringArrayValue: []
-    charValue: 0
-    charArrayValue: 
-    floatValue: 0
-    floatArrayValue: []
-    doubleValue: 0
-    doubleArrayValue: []
-    sbyteValue: 0
-    sbyteArrayValue: 
-    byteValue: 0
-    byteArrayValue: 
-    int16Value: 0
-    int16ArrayValue: 
-    int32Value: 0
-    int32ArrayValue: 
-    int64Value: 0
-    int64ArrayValue: 
-    uint16Value: 0
-    uint16ArrayValue: 
-    uint32Value: 0
-    uint32ArrayValue: 
-    uint64Value: 0
-    uint64ArrayValue: 
-    boolValue: 0
-    boolArrayValue: 
-    colorValue: {r: 0, g: 0, b: 0, a: 0}
-    colorArrayValue: []
-    color32Value:
-      serializedVersion: 2
-      rgba: 0
-    color32ArrayValue: []
-    vector2Value: {x: 0, y: 0}
-    vector2ArrayValue: []
-    vector2IntValue: {x: 0, y: 0}
-    vector2IntArrayValue: []
-    vector3Value: {x: 0, y: 0, z: 0}
-    vector3ArrayValue: []
-    vector3IntValue: {x: 0, y: 0, z: 0}
-    vector3IntArrayValue: []
-    vector4Value: {x: 0, y: 0, z: 0, w: 0}
-    vector4ArrayValue: []
-    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
-    quaternionArrayValue: []
-    animationCurveValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    animationCurveArrayValue: []
-    gradientValue:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    gradientArrayValue: []
-    layerMaskValue:
-      serializedVersion: 2
-      m_Bits: 0
-    layerMaskArrayValue: []
-    boundsValue:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-    boundsArrayValue: []
-    boundsIntValue:
-      m_Position: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0, z: 0}
-    boundsIntArrayValue: []
-    rectValue:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectArrayValue: []
-    rectIntValue:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectIntArrayValue: []
-    enumValue: 0
-    enumArrayValue: 
-    objectValue: {fileID: 2593429969964627024}
-    objectArrayValue: []
-  - fieldName: SliderX2
-    typeFullName: UnityEngine.UI.Slider
-    typeAsString: UnityEngine.UI.Slider, UnityEngine.UI
-    isArray: 0
-    unknownVariableType: 0
-    stringValue: 
-    stringArrayValue: []
-    charValue: 0
-    charArrayValue: 
-    floatValue: 0
-    floatArrayValue: []
-    doubleValue: 0
-    doubleArrayValue: []
-    sbyteValue: 0
-    sbyteArrayValue: 
-    byteValue: 0
-    byteArrayValue: 
-    int16Value: 0
-    int16ArrayValue: 
-    int32Value: 0
-    int32ArrayValue: 
-    int64Value: 0
-    int64ArrayValue: 
-    uint16Value: 0
-    uint16ArrayValue: 
-    uint32Value: 0
-    uint32ArrayValue: 
-    uint64Value: 0
-    uint64ArrayValue: 
-    boolValue: 0
-    boolArrayValue: 
-    colorValue: {r: 0, g: 0, b: 0, a: 0}
-    colorArrayValue: []
-    color32Value:
-      serializedVersion: 2
-      rgba: 0
-    color32ArrayValue: []
-    vector2Value: {x: 0, y: 0}
-    vector2ArrayValue: []
-    vector2IntValue: {x: 0, y: 0}
-    vector2IntArrayValue: []
-    vector3Value: {x: 0, y: 0, z: 0}
-    vector3ArrayValue: []
-    vector3IntValue: {x: 0, y: 0, z: 0}
-    vector3IntArrayValue: []
-    vector4Value: {x: 0, y: 0, z: 0, w: 0}
-    vector4ArrayValue: []
-    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
-    quaternionArrayValue: []
-    animationCurveValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    animationCurveArrayValue: []
-    gradientValue:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    gradientArrayValue: []
-    layerMaskValue:
-      serializedVersion: 2
-      m_Bits: 0
-    layerMaskArrayValue: []
-    boundsValue:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-    boundsArrayValue: []
-    boundsIntValue:
-      m_Position: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0, z: 0}
-    boundsIntArrayValue: []
-    rectValue:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectArrayValue: []
-    rectIntValue:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectIntArrayValue: []
-    enumValue: 0
-    enumArrayValue: 
-    objectValue: {fileID: 6383152073809149693}
-    objectArrayValue: []
-  - fieldName: SliderX3
-    typeFullName: UnityEngine.UI.Slider
-    typeAsString: UnityEngine.UI.Slider, UnityEngine.UI
-    isArray: 0
-    unknownVariableType: 0
-    stringValue: 
-    stringArrayValue: []
-    charValue: 0
-    charArrayValue: 
-    floatValue: 0
-    floatArrayValue: []
-    doubleValue: 0
-    doubleArrayValue: []
-    sbyteValue: 0
-    sbyteArrayValue: 
-    byteValue: 0
-    byteArrayValue: 
-    int16Value: 0
-    int16ArrayValue: 
-    int32Value: 0
-    int32ArrayValue: 
-    int64Value: 0
-    int64ArrayValue: 
-    uint16Value: 0
-    uint16ArrayValue: 
-    uint32Value: 0
-    uint32ArrayValue: 
-    uint64Value: 0
-    uint64ArrayValue: 
-    boolValue: 0
-    boolArrayValue: 
-    colorValue: {r: 0, g: 0, b: 0, a: 0}
-    colorArrayValue: []
-    color32Value:
-      serializedVersion: 2
-      rgba: 0
-    color32ArrayValue: []
-    vector2Value: {x: 0, y: 0}
-    vector2ArrayValue: []
-    vector2IntValue: {x: 0, y: 0}
-    vector2IntArrayValue: []
-    vector3Value: {x: 0, y: 0, z: 0}
-    vector3ArrayValue: []
-    vector3IntValue: {x: 0, y: 0, z: 0}
-    vector3IntArrayValue: []
-    vector4Value: {x: 0, y: 0, z: 0, w: 0}
-    vector4ArrayValue: []
-    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
-    quaternionArrayValue: []
-    animationCurveValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    animationCurveArrayValue: []
-    gradientValue:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    gradientArrayValue: []
-    layerMaskValue:
-      serializedVersion: 2
-      m_Bits: 0
-    layerMaskArrayValue: []
-    boundsValue:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-    boundsArrayValue: []
-    boundsIntValue:
-      m_Position: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0, z: 0}
-    boundsIntArrayValue: []
-    rectValue:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectArrayValue: []
-    rectIntValue:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectIntArrayValue: []
-    enumValue: 0
-    enumArrayValue: 
-    objectValue: {fileID: 1311697695222318257}
-    objectArrayValue: []
-  - fieldName: Threshold0
-    typeFullName: UnityEngine.UI.Slider
-    typeAsString: UnityEngine.UI.Slider, UnityEngine.UI
-    isArray: 0
-    unknownVariableType: 0
-    stringValue: 
-    stringArrayValue: []
-    charValue: 0
-    charArrayValue: 
-    floatValue: 0
-    floatArrayValue: []
-    doubleValue: 0
-    doubleArrayValue: []
-    sbyteValue: 0
-    sbyteArrayValue: 
-    byteValue: 0
-    byteArrayValue: 
-    int16Value: 0
-    int16ArrayValue: 
-    int32Value: 0
-    int32ArrayValue: 
-    int64Value: 0
-    int64ArrayValue: 
-    uint16Value: 0
-    uint16ArrayValue: 
-    uint32Value: 0
-    uint32ArrayValue: 
-    uint64Value: 0
-    uint64ArrayValue: 
-    boolValue: 0
-    boolArrayValue: 
-    colorValue: {r: 0, g: 0, b: 0, a: 0}
-    colorArrayValue: []
-    color32Value:
-      serializedVersion: 2
-      rgba: 0
-    color32ArrayValue: []
-    vector2Value: {x: 0, y: 0}
-    vector2ArrayValue: []
-    vector2IntValue: {x: 0, y: 0}
-    vector2IntArrayValue: []
-    vector3Value: {x: 0, y: 0, z: 0}
-    vector3ArrayValue: []
-    vector3IntValue: {x: 0, y: 0, z: 0}
-    vector3IntArrayValue: []
-    vector4Value: {x: 0, y: 0, z: 0, w: 0}
-    vector4ArrayValue: []
-    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
-    quaternionArrayValue: []
-    animationCurveValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    animationCurveArrayValue: []
-    gradientValue:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    gradientArrayValue: []
-    layerMaskValue:
-      serializedVersion: 2
-      m_Bits: 0
-    layerMaskArrayValue: []
-    boundsValue:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-    boundsArrayValue: []
-    boundsIntValue:
-      m_Position: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0, z: 0}
-    boundsIntArrayValue: []
-    rectValue:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectArrayValue: []
-    rectIntValue:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectIntArrayValue: []
-    enumValue: 0
-    enumArrayValue: 
-    objectValue: {fileID: 312880007505494620}
-    objectArrayValue: []
-  - fieldName: Threshold1
-    typeFullName: UnityEngine.UI.Slider
-    typeAsString: UnityEngine.UI.Slider, UnityEngine.UI
-    isArray: 0
-    unknownVariableType: 0
-    stringValue: 
-    stringArrayValue: []
-    charValue: 0
-    charArrayValue: 
-    floatValue: 0
-    floatArrayValue: []
-    doubleValue: 0
-    doubleArrayValue: []
-    sbyteValue: 0
-    sbyteArrayValue: 
-    byteValue: 0
-    byteArrayValue: 
-    int16Value: 0
-    int16ArrayValue: 
-    int32Value: 0
-    int32ArrayValue: 
-    int64Value: 0
-    int64ArrayValue: 
-    uint16Value: 0
-    uint16ArrayValue: 
-    uint32Value: 0
-    uint32ArrayValue: 
-    uint64Value: 0
-    uint64ArrayValue: 
-    boolValue: 0
-    boolArrayValue: 
-    colorValue: {r: 0, g: 0, b: 0, a: 0}
-    colorArrayValue: []
-    color32Value:
-      serializedVersion: 2
-      rgba: 0
-    color32ArrayValue: []
-    vector2Value: {x: 0, y: 0}
-    vector2ArrayValue: []
-    vector2IntValue: {x: 0, y: 0}
-    vector2IntArrayValue: []
-    vector3Value: {x: 0, y: 0, z: 0}
-    vector3ArrayValue: []
-    vector3IntValue: {x: 0, y: 0, z: 0}
-    vector3IntArrayValue: []
-    vector4Value: {x: 0, y: 0, z: 0, w: 0}
-    vector4ArrayValue: []
-    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
-    quaternionArrayValue: []
-    animationCurveValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    animationCurveArrayValue: []
-    gradientValue:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    gradientArrayValue: []
-    layerMaskValue:
-      serializedVersion: 2
-      m_Bits: 0
-    layerMaskArrayValue: []
-    boundsValue:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-    boundsArrayValue: []
-    boundsIntValue:
-      m_Position: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0, z: 0}
-    boundsIntArrayValue: []
-    rectValue:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectArrayValue: []
-    rectIntValue:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectIntArrayValue: []
-    enumValue: 0
-    enumArrayValue: 
-    objectValue: {fileID: 360184872314157542}
-    objectArrayValue: []
-  - fieldName: Threshold2
-    typeFullName: UnityEngine.UI.Slider
-    typeAsString: UnityEngine.UI.Slider, UnityEngine.UI
-    isArray: 0
-    unknownVariableType: 0
-    stringValue: 
-    stringArrayValue: []
-    charValue: 0
-    charArrayValue: 
-    floatValue: 0
-    floatArrayValue: []
-    doubleValue: 0
-    doubleArrayValue: []
-    sbyteValue: 0
-    sbyteArrayValue: 
-    byteValue: 0
-    byteArrayValue: 
-    int16Value: 0
-    int16ArrayValue: 
-    int32Value: 0
-    int32ArrayValue: 
-    int64Value: 0
-    int64ArrayValue: 
-    uint16Value: 0
-    uint16ArrayValue: 
-    uint32Value: 0
-    uint32ArrayValue: 
-    uint64Value: 0
-    uint64ArrayValue: 
-    boolValue: 0
-    boolArrayValue: 
-    colorValue: {r: 0, g: 0, b: 0, a: 0}
-    colorArrayValue: []
-    color32Value:
-      serializedVersion: 2
-      rgba: 0
-    color32ArrayValue: []
-    vector2Value: {x: 0, y: 0}
-    vector2ArrayValue: []
-    vector2IntValue: {x: 0, y: 0}
-    vector2IntArrayValue: []
-    vector3Value: {x: 0, y: 0, z: 0}
-    vector3ArrayValue: []
-    vector3IntValue: {x: 0, y: 0, z: 0}
-    vector3IntArrayValue: []
-    vector4Value: {x: 0, y: 0, z: 0, w: 0}
-    vector4ArrayValue: []
-    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
-    quaternionArrayValue: []
-    animationCurveValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    animationCurveArrayValue: []
-    gradientValue:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    gradientArrayValue: []
-    layerMaskValue:
-      serializedVersion: 2
-      m_Bits: 0
-    layerMaskArrayValue: []
-    boundsValue:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-    boundsArrayValue: []
-    boundsIntValue:
-      m_Position: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0, z: 0}
-    boundsIntArrayValue: []
-    rectValue:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectArrayValue: []
-    rectIntValue:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectIntArrayValue: []
-    enumValue: 0
-    enumArrayValue: 
-    objectValue: {fileID: 4420869330937076427}
-    objectArrayValue: []
-  - fieldName: Threshold3
-    typeFullName: UnityEngine.UI.Slider
-    typeAsString: UnityEngine.UI.Slider, UnityEngine.UI
-    isArray: 0
-    unknownVariableType: 0
-    stringValue: 
-    stringArrayValue: []
-    charValue: 0
-    charArrayValue: 
-    floatValue: 0
-    floatArrayValue: []
-    doubleValue: 0
-    doubleArrayValue: []
-    sbyteValue: 0
-    sbyteArrayValue: 
-    byteValue: 0
-    byteArrayValue: 
-    int16Value: 0
-    int16ArrayValue: 
-    int32Value: 0
-    int32ArrayValue: 
-    int64Value: 0
-    int64ArrayValue: 
-    uint16Value: 0
-    uint16ArrayValue: 
-    uint32Value: 0
-    uint32ArrayValue: 
-    uint64Value: 0
-    uint64ArrayValue: 
-    boolValue: 0
-    boolArrayValue: 
-    colorValue: {r: 0, g: 0, b: 0, a: 0}
-    colorArrayValue: []
-    color32Value:
-      serializedVersion: 2
-      rgba: 0
-    color32ArrayValue: []
-    vector2Value: {x: 0, y: 0}
-    vector2ArrayValue: []
-    vector2IntValue: {x: 0, y: 0}
-    vector2IntArrayValue: []
-    vector3Value: {x: 0, y: 0, z: 0}
-    vector3ArrayValue: []
-    vector3IntValue: {x: 0, y: 0, z: 0}
-    vector3IntArrayValue: []
-    vector4Value: {x: 0, y: 0, z: 0, w: 0}
-    vector4ArrayValue: []
-    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
-    quaternionArrayValue: []
-    animationCurveValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    animationCurveArrayValue: []
-    gradientValue:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    gradientArrayValue: []
-    layerMaskValue:
-      serializedVersion: 2
-      m_Bits: 0
-    layerMaskArrayValue: []
-    boundsValue:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-    boundsArrayValue: []
-    boundsIntValue:
-      m_Position: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0, z: 0}
-    boundsIntArrayValue: []
-    rectValue:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectArrayValue: []
-    rectIntValue:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectIntArrayValue: []
-    enumValue: 0
-    enumArrayValue: 
-    objectValue: {fileID: 1657498937293238454}
-    objectArrayValue: []
-  - fieldName: Reset
-    typeFullName: UnityEngine.UI.Button
-    typeAsString: UnityEngine.UI.Button, UnityEngine.UI
-    isArray: 0
-    unknownVariableType: 0
-    stringValue: 
-    stringArrayValue: []
-    charValue: 0
-    charArrayValue: 
-    floatValue: 0
-    floatArrayValue: []
-    doubleValue: 0
-    doubleArrayValue: []
-    sbyteValue: 0
-    sbyteArrayValue: 
-    byteValue: 0
-    byteArrayValue: 
-    int16Value: 0
-    int16ArrayValue: 
-    int32Value: 0
-    int32ArrayValue: 
-    int64Value: 0
-    int64ArrayValue: 
-    uint16Value: 0
-    uint16ArrayValue: 
-    uint32Value: 0
-    uint32ArrayValue: 
-    uint64Value: 0
-    uint64ArrayValue: 
-    boolValue: 0
-    boolArrayValue: 
-    colorValue: {r: 0, g: 0, b: 0, a: 0}
-    colorArrayValue: []
-    color32Value:
-      serializedVersion: 2
-      rgba: 0
-    color32ArrayValue: []
-    vector2Value: {x: 0, y: 0}
-    vector2ArrayValue: []
-    vector2IntValue: {x: 0, y: 0}
-    vector2IntArrayValue: []
-    vector3Value: {x: 0, y: 0, z: 0}
-    vector3ArrayValue: []
-    vector3IntValue: {x: 0, y: 0, z: 0}
-    vector3IntArrayValue: []
-    vector4Value: {x: 0, y: 0, z: 0, w: 0}
-    vector4ArrayValue: []
-    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
-    quaternionArrayValue: []
-    animationCurveValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    animationCurveArrayValue: []
-    gradientValue:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    gradientArrayValue: []
-    layerMaskValue:
-      serializedVersion: 2
-      m_Bits: 0
-    layerMaskArrayValue: []
-    boundsValue:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-    boundsArrayValue: []
-    boundsIntValue:
-      m_Position: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0, z: 0}
-    boundsIntArrayValue: []
-    rectValue:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectArrayValue: []
-    rectIntValue:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectIntArrayValue: []
-    enumValue: 0
-    enumArrayValue: 
-    objectValue: {fileID: 7165322248087553991}
-    objectArrayValue: []
-  - fieldName: ThemeHue
-    typeFullName: UnityEngine.UI.Slider
-    typeAsString: UnityEngine.UI.Slider, UnityEngine.UI
-    isArray: 0
-    unknownVariableType: 0
-    stringValue: 
-    stringArrayValue: []
-    charValue: 0
-    charArrayValue: 
-    floatValue: 0
-    floatArrayValue: []
-    doubleValue: 0
-    doubleArrayValue: []
-    sbyteValue: 0
-    sbyteArrayValue: 
-    byteValue: 0
-    byteArrayValue: 
-    int16Value: 0
-    int16ArrayValue: 
-    int32Value: 0
-    int32ArrayValue: 
-    int64Value: 0
-    int64ArrayValue: 
-    uint16Value: 0
-    uint16ArrayValue: 
-    uint32Value: 0
-    uint32ArrayValue: 
-    uint64Value: 0
-    uint64ArrayValue: 
-    boolValue: 0
-    boolArrayValue: 
-    colorValue: {r: 0, g: 0, b: 0, a: 0}
-    colorArrayValue: []
-    color32Value:
-      serializedVersion: 2
-      rgba: 0
-    color32ArrayValue: []
-    vector2Value: {x: 0, y: 0}
-    vector2ArrayValue: []
-    vector2IntValue: {x: 0, y: 0}
-    vector2IntArrayValue: []
-    vector3Value: {x: 0, y: 0, z: 0}
-    vector3ArrayValue: []
-    vector3IntValue: {x: 0, y: 0, z: 0}
-    vector3IntArrayValue: []
-    vector4Value: {x: 0, y: 0, z: 0, w: 0}
-    vector4ArrayValue: []
-    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
-    quaternionArrayValue: []
-    animationCurveValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    animationCurveArrayValue: []
-    gradientValue:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    gradientArrayValue: []
-    layerMaskValue:
-      serializedVersion: 2
-      m_Bits: 0
-    layerMaskArrayValue: []
-    boundsValue:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-    boundsArrayValue: []
-    boundsIntValue:
-      m_Position: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0, z: 0}
-    boundsIntArrayValue: []
-    rectValue:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectArrayValue: []
-    rectIntValue:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectIntArrayValue: []
-    enumValue: 0
-    enumArrayValue: 
-    objectValue: {fileID: 5549235478077053648}
-    objectArrayValue: []
-  - fieldName: ThemeSaturation
-    typeFullName: UnityEngine.UI.Slider
-    typeAsString: UnityEngine.UI.Slider, UnityEngine.UI
-    isArray: 0
-    unknownVariableType: 0
-    stringValue: 
-    stringArrayValue: []
-    charValue: 0
-    charArrayValue: 
-    floatValue: 0
-    floatArrayValue: []
-    doubleValue: 0
-    doubleArrayValue: []
-    sbyteValue: 0
-    sbyteArrayValue: 
-    byteValue: 0
-    byteArrayValue: 
-    int16Value: 0
-    int16ArrayValue: 
-    int32Value: 0
-    int32ArrayValue: 
-    int64Value: 0
-    int64ArrayValue: 
-    uint16Value: 0
-    uint16ArrayValue: 
-    uint32Value: 0
-    uint32ArrayValue: 
-    uint64Value: 0
-    uint64ArrayValue: 
-    boolValue: 0
-    boolArrayValue: 
-    colorValue: {r: 0, g: 0, b: 0, a: 0}
-    colorArrayValue: []
-    color32Value:
-      serializedVersion: 2
-      rgba: 0
-    color32ArrayValue: []
-    vector2Value: {x: 0, y: 0}
-    vector2ArrayValue: []
-    vector2IntValue: {x: 0, y: 0}
-    vector2IntArrayValue: []
-    vector3Value: {x: 0, y: 0, z: 0}
-    vector3ArrayValue: []
-    vector3IntValue: {x: 0, y: 0, z: 0}
-    vector3IntArrayValue: []
-    vector4Value: {x: 0, y: 0, z: 0, w: 0}
-    vector4ArrayValue: []
-    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
-    quaternionArrayValue: []
-    animationCurveValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    animationCurveArrayValue: []
-    gradientValue:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    gradientArrayValue: []
-    layerMaskValue:
-      serializedVersion: 2
-      m_Bits: 0
-    layerMaskArrayValue: []
-    boundsValue:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-    boundsArrayValue: []
-    boundsIntValue:
-      m_Position: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0, z: 0}
-    boundsIntArrayValue: []
-    rectValue:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectArrayValue: []
-    rectIntValue:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectIntArrayValue: []
-    enumValue: 0
-    enumArrayValue: 
-    objectValue: {fileID: 3090703545926682418}
-    objectArrayValue: []
-  - fieldName: ThemeValue
-    typeFullName: UnityEngine.UI.Slider
-    typeAsString: UnityEngine.UI.Slider, UnityEngine.UI
-    isArray: 0
-    unknownVariableType: 0
-    stringValue: 
-    stringArrayValue: []
-    charValue: 0
-    charArrayValue: 
-    floatValue: 0
-    floatArrayValue: []
-    doubleValue: 0
-    doubleArrayValue: []
-    sbyteValue: 0
-    sbyteArrayValue: 
-    byteValue: 0
-    byteArrayValue: 
-    int16Value: 0
-    int16ArrayValue: 
-    int32Value: 0
-    int32ArrayValue: 
-    int64Value: 0
-    int64ArrayValue: 
-    uint16Value: 0
-    uint16ArrayValue: 
-    uint32Value: 0
-    uint32ArrayValue: 
-    uint64Value: 0
-    uint64ArrayValue: 
-    boolValue: 0
-    boolArrayValue: 
-    colorValue: {r: 0, g: 0, b: 0, a: 0}
-    colorArrayValue: []
-    color32Value:
-      serializedVersion: 2
-      rgba: 0
-    color32ArrayValue: []
-    vector2Value: {x: 0, y: 0}
-    vector2ArrayValue: []
-    vector2IntValue: {x: 0, y: 0}
-    vector2IntArrayValue: []
-    vector3Value: {x: 0, y: 0, z: 0}
-    vector3ArrayValue: []
-    vector3IntValue: {x: 0, y: 0, z: 0}
-    vector3IntArrayValue: []
-    vector4Value: {x: 0, y: 0, z: 0, w: 0}
-    vector4ArrayValue: []
-    quaternionValue: {x: 0, y: 0, z: 0, w: 0}
-    quaternionArrayValue: []
-    animationCurveValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    animationCurveArrayValue: []
-    gradientValue:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    gradientArrayValue: []
-    layerMaskValue:
-      serializedVersion: 2
-      m_Bits: 0
-    layerMaskArrayValue: []
-    boundsValue:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-    boundsArrayValue: []
-    boundsIntValue:
-      m_Position: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0, z: 0}
-    boundsIntArrayValue: []
-    rectValue:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectArrayValue: []
-    rectIntValue:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    rectIntArrayValue: []
-    enumValue: 0
-    enumArrayValue: 
-    objectValue: {fileID: 8855381985268987115}
-    objectArrayValue: []
-  interactText: Interact
-  maxInteractDistance: 2
-  hideHighlight: 0
---- !u!114 &8376224516578766096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9217140859692962009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1000597861, guid: 5f20141248a4dc040a0060f5893b9b74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  proxies: []
-  ID: 5
-  OwnerID: 0

@@ -639,7 +639,7 @@ namespace AudioLink
         public void UpdateCustomStrings()
         {
 #if PVR_CCK_WORLDS
-            if (!PSharpNetworking.IsOwner(_localPlayer, gameObject))
+            if (!IsOwner)
                 PSharpNetworking.SetOwner(_localPlayer, gameObject);
 #endif
 
@@ -655,7 +655,7 @@ namespace AudioLink
 #if PVR_CCK_WORLDS
         public override void OnDeserialization()
         {
-            if (!PSharpNetworking.IsOwner(_localPlayer, gameObject))
+            if (!IsOwner)
             {
                 UpdateGlobalString(_StringCustom1, customString1);
                 UpdateGlobalString(_StringCustom2, customString2);
