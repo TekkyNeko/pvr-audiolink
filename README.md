@@ -1,6 +1,4 @@
-
-[![Discord - AudioLink Discord](https://img.shields.io/badge/Discord-AudioLink_Discord-7289da?logo=discord&logoColor=7289da)](https://discord.gg/d5wjNwZBR3) [![Website - AudioLink Website](https://img.shields.io/badge/Website-AudioLink_Website-7289da)](https://audiolink.dev/)
-
+[![Discord - AudioLink Discord](https://img.shields.io/badge/Discord-AudioLink_Discord-7289da?logo=discord&logoColor=7289da)](https://discord.gg/V6yN8dzEad) [![Website - AudioLink Website](https://img.shields.io/badge/Website-AudioLink_Website-7289da)](https://audiolink.dev/)
 # PVR AudioLink
 
 ## A repository of audio reactive prefabs for Unity, written in CSharp and HLSL, compatible with PoligonVR
@@ -85,9 +83,14 @@ After installation, to use AudioLink:
 - [Silent Cel Shading Shader](https://gitlab.com/s-ilent/SCSS) by Silent
 - [Mochies Unity Shaders](https://github.com/MochiesCode/Mochies-Unity-Shaders/releases) by Mochie
 - [Fire Lite](https://discord.gg/24W435s) by Rollthered
+- [VR Stage Lighting](https://github.com/AcChosen/VR-Stage-Lighting) by AcChosen
 - [Poiyomi Shader](https://poiyomi.com/) by Poiyomi
 - [orels1 AudioLink Shader](https://github.com/orels1/orels1-AudioLink-Shader) by orels1
+- [VRC Things](https://github.com/PiMaker/VRChatUnityThings) by \_pi\_
+- [June Screen FX](https://www.luka.moe/june) by luka
 - [ShaderForge-AudioLink](https://github.com/lethanan/ShaderForge-AudioLink) by lethanan
+- [AudioLink-USharpVideo-Adapter](https://github.com/Blabzillaweasel/AudioLink-USharpVideo-Adapter/) by Blabz
+- [ProTV](https://gitlab.com/techanon/protv) by ArchiTechAnon
 
 ## Thank you
 - phosphenolic for the math wizardry, conceptual programming, debugging, design help and emotional support!!!

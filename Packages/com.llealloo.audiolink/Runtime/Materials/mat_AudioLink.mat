@@ -29,11 +29,11 @@ Material:
     - _AutogainDerate: 0.1
     - _Bass: 1
     - _FadeExpFalloff: 0.75
-    - _FadeLength: 0.25
+    - _FadeLength: 0.5
     - _Gain: 1.3
     - _MediaLoop: 1
     - _MediaPlaying: 1
-    - _MediaTime: 0.013409129
+    - _MediaTime: 0.28149524
     - _MediaVolume: 0.35
     - _SourceDistance: 0
     - _SourceSpatialBlend: 0

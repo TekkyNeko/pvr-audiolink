@@ -47,7 +47,7 @@ Material:
     - _Gain: 1.3
     - _HighMidThreshold: 0.5
     - _HighThreshold: 0.5
-    - _HitFade: 0.25
+    - _HitFade: 0.5
     - _Hue: 0.15338646
     - _LowMidThreshold: 0.5
     - _LowThreshold: 0.5
