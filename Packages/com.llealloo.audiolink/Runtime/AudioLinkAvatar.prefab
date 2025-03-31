@@ -84,7 +84,7 @@ MonoBehaviour:
   ytdlpURL: https://www.youtube.com/watch?v=vGXyAKy-X6s
   showVideoPreviewInComponent: 0
   videoPlayer: {fileID: 5208934818770322006}
-  resolution: 720
+  resolution: 360
   enableGlobalVideoTexture: 0
   globalTextureName: _Udon_VideoTex
   textureTransformMode: 1
@@ -146,6 +146,7 @@ MonoBehaviour:
   maxInteractDistance: 2
   hideHighlight: 0
   audioSource: {fileID: 8800328340110197116}
+  optionalRightAudioSource: {fileID: 0}
   gain: 1
   bass: 1
   treble: 1
