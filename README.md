@@ -3,7 +3,7 @@
 
 ## A repository of audio reactive prefabs for Unity, written in CSharp and HLSL, compatible with PoligonVR
 
-### This project only works on PVR Worlds CCK 0.6.2 and above
+### This project only works on PVR Worlds CCK 0.6.5 and above
 
 AudioLink is a system that analyzes and processes in-world audio into many different highly reactive data streams and exposes the data to Scripts and Shaders. 
 
