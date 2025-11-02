@@ -3,7 +3,7 @@
 
 ## A repository of audio reactive prefabs for Unity, written in CSharp and HLSL, compatible with PoligonVR
 
-### This project only works on PVR Worlds CCK 0.6.5 and above
+### This project only works on PVR Worlds CCK 0.8.0 and above
 
 AudioLink is a system that analyzes and processes in-world audio into many different highly reactive data streams and exposes the data to Scripts and Shaders. 
 
@@ -14,18 +14,26 @@ The per-frequency audio amplitude data is first read briefly into P# using Unity
 
 ## This unofficial fork is specifically for P# Worlds, if you are making an avatar for PVR, use the official AudioLink package, as this has not been tested for avatars.
 
-## 2.0.0-1.0.3 - February 18th, 2025
+## 2.1.0-1.1.0 - November 2nd, 2025
 ### Changes
-- New versioning theme, AudioLinkVersion-PSharpPortVersion
-- Replaced obsolete networking methods with their new counterparts
-   - You must use CCK Worlds 0.6.2 or higher for this to work!
-- Removed the event listener scripts in favor of the event triggers in the Audio Link Controllers
-   - You must use CCK Worlds 0.6.2 or higher for this to work! Earlier CCKs will cause errors!
+- Replace some obsolete methods
+- Remove PVRWorkaround in place for P# Includes
+   - Please update your CCKs to the latest one found here [Download](https://poligonvr.com/home/download)
+   - Note: You now need to hit the `Add scripts to P# Includes` button on the AudioLink script or in `Tools > AudioLink > Add Scripts to P# Includes`
 
-## 2.0.1-2.0.2 - September 11th, 2024
+## 2.1.0-1.0.4 - March 31st, 2025
+### Changes
+- Update PVR port to AudioLink 2.1.0
+
+## 2.1.0 - March 10th, 2025
+### New features
+- Added support for getting phase information from AudioLink, via the alpha channel of the `ALPASS_DFT` section. There is an example shader using this feature included at `com.llealloo.audiolink/Runtime/Shaders/AudioLinkDocs_Demo10.shader`. (tt0fu)
+
+### Changes
+- Made some optimizations to handling of global strings. Should result in less allocations. (techanon)
+
 ### Bugfixes
-- Fix the AudioLinkController pickups and object sync as i accidentally reverted it before release
-- Fixed the Audio Link Controller UI where it wasnt Single Pass Stereo Instanced (rendered in one eye).
+- Fixed some issues preventing the use of AudioLink on Unity 6.x. (techanon, float3)
 
 ## 2.0.0 - September 8th, 2024
 ### New features
@@ -41,32 +49,15 @@ The per-frequency audio amplitude data is first read briefly into P# using Unity
 ### Bugfixes
 - Fixed a bug where the color chord theme color toggle on the controller wasn't properly synced. (pema)
 
-## Updating projects from version 0.2.8 or lower? (...first time setup? please see next section)
-1. Before upgrading your project, **MAKE A BACKUP**! The latest version of AudioLink changes many things - better safe than sorry.
-2. Take note of which AudioSource you are using to feed AudioLink, this reference may be lost during upgrade.
-3. Open the Projects tab and select your project.
-4. On the right side, find the AudioLink package and add it. If it doesn't show up, make sure you have the "Curated" toggle enabled in the top-right drop-down.
-5. In a file browser, **without Unity open**, navigate to your projects Assets folder and delete the "AudioLink" folder and "AudioLink.meta" file.
-6. Open the Project in Unity.
-7. You may be prompted by the AudioLink shader upgrader to upgrade old shaders. You should do so if your project uses any custom AudioLink-enabled shaders.
-8. If you were using assets from the AudioLink example scene, you'll have to import it, as it isn't imported by default. To do so, use the "AudioLink -> Open AudioLink Example Scene" in top menu of the editor.
-9. If you were using AudioReactiveObject or AudioReactiveLight
-   components, you may need to manually re-enable the "Audio Data" under AudioLink "experimental" settings. This feature is now considered experimental.
-10. In scene(s) containing old versions of AudioLink:
-   - Delete both AudioLink and AudioLinkController prefabs from the scene.
-   - Re-add AudioLink and AudioLinkController to the scene by dragging the prefabs from the Packages/com.llealloo.audiolink/Runtime folder.
-   - Click the "Link all sound reactive objects to this AudioLink" button on AudioLink inspector panel.
-   - Drag the AudioSource you were using previously into the AudioLink audio source parameter.
-      - NOTE: If you previously used AudioLinkInput, you are welcome to continue doing so, however now in 0.2.5+ AudioLink is much smarter about inputs. Try dragging it straight into the AudioLink / audio source parameter!
-
 ## Upgrading avatar projects
 1. In a file browser, delete the "Assets/AudioLink" folder and the "AudioLink.meta" file.
 2. Follow the "First time setup" steps for avatar projects described below.
 
 ## Installation
 1. Download and Import the latest **UnityPackage** PVR AudioLink Release at https://github.com/TekkyNeko/pvr-audiolink/releases.
-2. Use the "Tools/AudioLink/Add AudioLink Prefab to Scene" menu item.
-3. Save the scene. If that doesn't work, restart Unity, theres a bug with namespace references until you save or restart. Afterwards, it should work out of the box.
+2. Use the `Tools/AudioLink/Add AudioLink Prefab to Scene` menu item.
+3. WORLDS ONLY! Click on `Add scripts to P# Includes` on the AudioLink script or in `Tools > AudioLink > Add Scripts to P# Includes`
+4. Save the scene. If that doesn't work, restart Unity, theres a bug with namespace references until you save or restart. Afterwards, it should work out of the box.
 
 ## Getting started
 After installation, to use AudioLink:

@@ -1,12 +1,11 @@
 ﻿using System;
+#if PVR_CCK_WORLDS
 using PVR.PSharp;
+#endif
 using UnityEngine;
 
 namespace AudioLink
 {
-    public class AudioLinkDataAPI : PSharpBehaviour {
-        // Stub to attach to AudioLink due to a PVR limitation
-    }
     public partial class AudioLink
     {
         #region Passes

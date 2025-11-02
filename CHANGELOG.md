@@ -1,6 +1,13 @@
 # Changelog
 
-# 2.1.0-1.0.4 - March 31st, 2025
+## 2.1.0-1.1.0 - November 2nd, 2025
+### Changes
+- Replace some obsolete methods
+- Remove PVRWorkaround in place for P# Includes
+   - Please update your CCKs to the latest one found here [Download](https://poligonvr.com/home/download)
+   - Note: You now need to hit the `Add scripts to P# Includes` button on the AudioLink script or in `Tools > AudioLink > Add Scripts to P# Includes`
+
+## 2.1.0-1.0.4 - March 31st, 2025
 ### Changes
 - Update PVR port to AudioLink 2.1.0
 
