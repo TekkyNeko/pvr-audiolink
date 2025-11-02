@@ -5,11 +5,16 @@ using System.Reflection;
 using PVR.PSharp.Editor;
 using PVR.PSharp;
 using BehaviourType = PVR.PSharp.PSharpBehaviour;
+using PVR.CCK.Worlds.Components;
 #else
 using BehaviourType = UnityEngine.MonoBehaviour;
 #endif
 using UnityEditor;
 using UnityEngine;
+using UnityEditor.SceneManagement;
+using System.Collections.Generic;
+using System.Linq;
+
 
 namespace AudioLink.Editor
 {
@@ -37,7 +42,10 @@ namespace AudioLink.Editor
 #if UDONSHARP
 			if (UdonSharpGUI.DrawDefaultUdonSharpBehaviourHeader(target)) return;
 #endif
-
+#if PVR_CCK_WORLDS
+			PVR_PSharpBehaviour_Editor.DrawPSharpHeaderUI();
+			PVR_PSharpBehaviour_Editor.DrawPSharpLine();
+#endif
 			if (Camera.main == null)
 			{
 				EditorGUILayout.HelpBox("The current scene might be missing a main camera, this could cause issues with the AudioLink camera.", MessageType.Warning);
@@ -48,13 +56,21 @@ namespace AudioLink.Editor
 				EditorGUILayout.HelpBox("No audio source assigned. AudioLink will not work.", MessageType.Warning);
 			}
 
+#if PVR_CCK_WORLDS
+			EditorGUILayout.Space();
+			GUI.backgroundColor = Color.red;
+			if (GUILayout.Button(new GUIContent("Required: Add scripts to P# Includes", "In order for AudioLink to work on P#, you need to add the scripts to the world descriptor. Click this button to add them.")))
+			{
+				AddIncludes();
+			}
+			GUI.backgroundColor = Color.white;
+#endif
 			EditorGUILayout.Space();
 			if (GUILayout.Button(new GUIContent("Link all sound reactive objects to this AudioLink instance",
 					"Links all scripts with 'audioLink' parameter to this object.")))
 			{
 				LinkAll();
 			}
-
 			EditorGUILayout.Space();
 			base.OnInspectorGUI();
 			EditorGUILayout.Space();
@@ -79,6 +95,34 @@ namespace AudioLink.Editor
 			}
 		}
 
+#if PVR_CCK_WORLDS
+		public void AddIncludes()
+		{
+			AddIncludes(GetComponentsInScene<PVR_WorldDescriptor>().FirstOrDefault());
+		}
+
+		public static void AddIncludes(PVR_WorldDescriptor worldDescriptor)
+		{
+			if (worldDescriptor != null)
+			{
+				List<string> includes = new List<string>(worldDescriptor.psharpIncludes);
+
+				if (!worldDescriptor.psharpIncludes.Contains("Packages/com.llealloo.audiolink/Runtime/Scripts/AudioLink.PlayerAPI.cs"))
+					worldDescriptor.psharpIncludes.Add("Packages/com.llealloo.audiolink/Runtime/Scripts/AudioLink.PlayerAPI.cs");
+
+				if (!worldDescriptor.psharpIncludes.Contains("Packages/com.llealloo.audiolink/Runtime/Scripts/AudioLink.DataAPI.cs"))
+					worldDescriptor.psharpIncludes.Add("Packages/com.llealloo.audiolink/Runtime/Scripts/AudioLink.DataAPI.cs");
+
+				EditorUtility.SetDirty(worldDescriptor);
+				Debug.Log("AudioLink added to P# Includes.");
+			}
+			else
+			{
+				Debug.LogWarning("No World Descriptor found in the current scene. Please add one to include AudioLink scripts.");
+
+			}
+		}
+#endif
 		public void LinkAll()
 		{
 			LinkAll(target as AudioLink);
@@ -122,6 +166,14 @@ namespace AudioLink.Editor
 					}
 				}
 			}
+		}
+		private static T[] GetComponentsInScene<T>(bool includeInactive = true) where T : Component
+		{
+			var stage = PrefabStageUtility.GetCurrentPrefabStage();
+			GameObject[] roots = stage == null ? UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects() : new[] { stage.prefabContentsRoot };
+			List<T> objects = new List<T>();
+			foreach (GameObject root in roots) objects.AddRange(root.GetComponentsInChildren<T>(includeInactive));
+			return objects.ToArray();
 		}
 	}
 }

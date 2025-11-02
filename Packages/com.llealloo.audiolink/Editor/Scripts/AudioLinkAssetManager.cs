@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿#if PVR_CCK_WORLDS
+using PVR.CCK.Worlds.Components;
+#endif
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEditor;
@@ -86,6 +89,31 @@ namespace AudioLink.Editor
                 EditorGUIUtility.PingObject(audiolink);
             }
         }
+#if PVR_CCK_WORLDS
+		[MenuItem("Tools/AudioLink/Add Scripts to P# Includes", false)]
+        public static void IncludeScriptsInWorldDescriptor()
+        {
+            var worldDescriptor = GetComponentsInScene<PVR_WorldDescriptor>().FirstOrDefault();
+            if (worldDescriptor != null)
+            {
+                List<string> includes = new List<string>(worldDescriptor.psharpIncludes);
+                
+                if (!worldDescriptor.psharpIncludes.Contains("Packages/com.llealloo.audiolink/Runtime/Scripts/AudioLink.PlayerAPI.cs"))
+					worldDescriptor.psharpIncludes.Add("Packages/com.llealloo.audiolink/Runtime/Scripts/AudioLink.PlayerAPI.cs");
+
+				if (!worldDescriptor.psharpIncludes.Contains("Packages/com.llealloo.audiolink/Runtime/Scripts/AudioLink.DataAPI.cs"))
+                    worldDescriptor.psharpIncludes.Add("Packages/com.llealloo.audiolink/Runtime/Scripts/AudioLink.DataAPI.cs");
+                
+                EditorUtility.SetDirty(worldDescriptor);
+                Debug.Log("AudioLink added to P# Includes.");
+            }
+            else
+            {
+                Debug.LogWarning("No World Descriptor found in the current scene.");
+
+			}
+		}
+#endif
 
         private static GameObject AddPrefabInstance(string assetPath)
         {

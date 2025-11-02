@@ -339,7 +339,7 @@ namespace AudioLink
 			audioMaterial.SetVector(_VersionNumberAndFPSProperty, new Vector4(3.02f, AudioLinkVersionNumberMajor, _fpsCount, AudioLinkVersionNumberMinor));
 #if PVR_CCK_WORLDS
 			audioMaterial.SetVector(_PlayerCountAndData, new Vector4(
-				PSharpPlayer.Players.Length,
+				PSharpPlayer.GetPlayerCount(),
 				_localPlayer.IsMaster ? 1.0f : 0.0f,
 #if UNITY_EDITOR
 					0.0f,
@@ -619,7 +619,8 @@ namespace AudioLink
 
 		private void FindAndUpdateMasterName()
 		{
-			PSharpPlayer[] players = PSharpPlayer.Players;
+			PSharpPlayer[] players = new PSharpPlayer[0];
+			PSharpPlayer.GetPlayers(players);
 			
 			foreach (PSharpPlayer player in players)
 			{
@@ -689,16 +690,22 @@ namespace AudioLink
 					i += 1;
 				}
 			}
-
+#if PVR_CCK_WORLDS
+			// Has issues on PoligonVR but doubling the code points length seemingly works??
+			codePointsLength *= 2;
+#endif
 			// Pack them into vectors, clearing previous values in vecs array
 			Array.Clear(globalStringPackedVectors, 0, GlobalStringPackedVectorsLength);
 			int j = 0;
 			for (int i = 0; i < GlobalStringPackedVectorsLength; i++)
 			{
-				if (j < codePointsLength) globalStringPackedVectors[i].x = IntToFloatBits24Bit((uint)globalStringCodePoints[j++]); else break;
-				if (j < codePointsLength) globalStringPackedVectors[i].y = IntToFloatBits24Bit((uint)globalStringCodePoints[j++]); else break;
-				if (j < codePointsLength) globalStringPackedVectors[i].z = IntToFloatBits24Bit((uint)globalStringCodePoints[j++]); else break;
-				if (j < codePointsLength) globalStringPackedVectors[i].w = IntToFloatBits24Bit((uint)globalStringCodePoints[j++]); else break;
+				// Previous method contained illegal C#! you cant tamper with declared structs
+				var packedVector = globalStringPackedVectors[i];
+				if (j < codePointsLength) packedVector.x = IntToFloatBits24Bit((uint)globalStringCodePoints[j++]); else break;
+				if (j < codePointsLength) packedVector.y = IntToFloatBits24Bit((uint)globalStringCodePoints[j++]); else break;
+				if (j < codePointsLength) packedVector.z = IntToFloatBits24Bit((uint)globalStringCodePoints[j++]); else break;
+				if (j < codePointsLength) packedVector.w = IntToFloatBits24Bit((uint)globalStringCodePoints[j++]); else break;
+				globalStringPackedVectors[i] = packedVector;
 			}
 
 			// Expose the vectors to shader without causing additional allocations
