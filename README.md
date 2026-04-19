@@ -2,6 +2,9 @@
 
 # AudioLink
 
+## Welcome to the unnofficial fork of AudioLink for PoligonVR!
+This fork adds support for PoligonVR, while trying to keep functionality with standalone and VRChat.
+
 ## Audio Reactive prefabs for Unity, compatible with VRChat, ChilloutVR and [PoligonVR](https://github.com/TekkyNeko/pvr-audiolink)!
 
 AudioLink is a system that analyzes and processes in-world audio into many different highly reactive data streams and exposes the data to Scripts and Shaders. 
