@@ -11,11 +11,15 @@ namespace AudioLink
 
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
     public class ThemeColorController : UdonSharpBehaviour
+#elif PVR_CCK_WORLDS
+    using PVR.CCK.Worlds.PSharp;
+
+    public class ThemeColorController : PSharpBehaviour
 #else
     public class ThemeColorController : MonoBehaviour
 #endif
     {
-        [UdonSynced] private int _themeColorMode;
+        [UdonSynced, PSharpSynced(SyncType.Manual)] private int _themeColorMode;
 
         [Obsolete("This array will return a copy of the data, causing it to not write any data when trying to write directly to a index. Use " + nameof(GetCustomThemeColors) + " and " + nameof(SetCustomThemeColors) + " instead.", false)]
         public Color[] customThemeColors
@@ -30,13 +34,13 @@ namespace AudioLink
             }
         }
 
-        [UdonSynced]
+        [UdonSynced, PSharpSynced(SyncType.Manual)]
         public Color themeColor1 = Color.yellow;
-        [UdonSynced]
+        [UdonSynced, PSharpSynced(SyncType.Manual)]
         public Color themeColor2 = Color.blue;
-        [UdonSynced]
+        [UdonSynced, PSharpSynced(SyncType.Manual)]
         public Color themeColor3 = Color.red;
-        [UdonSynced]
+        [UdonSynced, PSharpSynced(SyncType.Manual)]
         public Color themeColor4 = Color.green;
 
         public AudioLink audioLink; // Initialized by AudioLinkController.
@@ -50,6 +54,8 @@ namespace AudioLink
 
 #if UDONSHARP
         private VRCPlayerApi localPlayer;
+#elif PVR_CCK_WORLDS
+        private PSharpPlayer localPlayer;
 #endif
 
         // A view-controller for customThemeColors
@@ -70,8 +76,15 @@ namespace AudioLink
             _initCustomThemeColors = GetCustomThemeColors();
         }
 
-#if UDONSHARP
-        public override void OnDeserialization()
+#if PVR_CCK_WORLDS // Use OnNetworkReady on PVR to get local player since its null in start
+		public override void OnNetworkReady()
+		{
+			localPlayer = PSharpPlayer.LocalPlayer;
+		}
+#endif
+
+#if UDONSHARP || PVR_CCK_WORLDS
+		public override void OnDeserialization()
         {
             if (!networkSynced) return;
             UpdateGUI();
@@ -130,6 +143,9 @@ namespace AudioLink
 #if UDONSHARP
             if (!Networking.IsOwner(gameObject))
                 Networking.SetOwner(localPlayer, gameObject);
+#elif PVR_CCK_WORLDS
+            if (!IsOwner)
+                PSharpNetworking.SetOwner(localPlayer, gameObject);
 #endif
             int initalMode = _initThemeColorMode == 1 ? 0 : _initThemeColorMode;
             _themeColorMode = themeColorToggle.isOn ? initalMode : 1;
@@ -138,6 +154,9 @@ namespace AudioLink
 #if UDONSHARP
             if (networkSynced)
                 RequestSerialization();
+#elif PVR_CCK_WORLDS
+            if (networkSynced)
+                Sync("_themeColorMode", "themeColor1", "themeColor2", "themeColor3", "themeColor4");
 #endif
         }
 
@@ -160,6 +179,9 @@ namespace AudioLink
 #if UDONSHARP
             if (!Networking.IsOwner(gameObject))
                 Networking.SetOwner(localPlayer, gameObject);
+#elif PVR_CCK_WORLDS
+            if (!IsOwner)
+                PSharpNetworking.SetOwner(localPlayer, gameObject);
 #endif
             Color[] themeColors = GetCustomThemeColors();
             themeColors[customColorIndex] = Color.HSVToRGB(
@@ -174,6 +196,9 @@ namespace AudioLink
 #if UDONSHARP
             if (networkSynced)
                 RequestSerialization();
+#elif PVR_CCK_WORLDS
+			if (networkSynced)
+				Sync("_themeColorMode", "themeColor1", "themeColor2", "themeColor3", "themeColor4");
 #endif
         }
 
@@ -188,6 +213,9 @@ namespace AudioLink
 #if UDONSHARP
             if (networkSynced)
                 RequestSerialization();
+#elif PVR_CCK_WORLDS
+			if (networkSynced)
+				Sync("_themeColorMode", "themeColor1", "themeColor2", "themeColor3", "themeColor4");
 #endif
         }
 
@@ -247,6 +275,9 @@ namespace AudioLink
 #if UDONSHARP
             if (Networking.IsOwner(gameObject) && networkSynced)
                 RequestSerialization();
+#elif PVR_CCK_WORLDS
+			if (IsOwner && networkSynced)
+				Sync("_themeColorMode", "themeColor1", "themeColor2", "themeColor3", "themeColor4");
 #endif
         }
 
